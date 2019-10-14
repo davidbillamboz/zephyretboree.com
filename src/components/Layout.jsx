@@ -5,9 +5,9 @@ const Layout = ({ data, children }) => {
 
   return (
     <div>
-      <div>{data.header.frontmatter.test}</div>
+      <div>{data.header.frontmatter.title}</div>
       <div>{children}</div>
-      <div>{data.footer.frontmatter.test}</div>
+      <div>{data.footer.frontmatter.title}</div>
     </div>
   );
 };

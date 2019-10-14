@@ -13,11 +13,12 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
+            frontmatter {
+              slug
+            }
             fields {
               name
               isPage
-              slug
-              fullSlug
               lang
             }
           }
@@ -39,20 +40,30 @@ exports.createPages = ({ actions, graphql }) => {
       // console.error(edge);
 
       const { id } = edge.node;
-      const { name, slug, fullSlug, lang } = edge.node.fields;
+      const { slug } = edge.node.frontmatter;
+      const { name, lang } = edge.node.fields;
+
+      // Generate page path
+      let pagePath = `/${slug}/`;
+      // Should be the home page
+      if (!slug) {
+        pagePath = '/';
+      }
+      if (lang !== DEFAULT_LANG) {
+        pagePath = `/${lang}${pagePath}`;
+      }
 
       // TODO: add alternates urls
       // TODO: add facebook redirects
 
       createPage({
-        path: fullSlug,
+        path: pagePath,
         component: path.resolve(`src/templates/page.jsx`),
-        // component: path.resolve(`src/templates/page-${name}.jsx`),
+        // component: path.resolve(`src/templates/${name}.jsx`),
         // additional data can be passed via context
         context: {
           id,
-          slug,
-          fullSlug,
+          name,
           lang,
         },
       });
@@ -92,30 +103,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: lang,
     });
 
-    if (isPage) {
-      const slug = `/${parts.join('/')}/`;
-      const fullSlug = lang !== DEFAULT_LANG ? `/${lang}${slug}` : slug;
-
-      // Add field isPage
-      createNodeField({
-        name: `isPage`,
-        node,
-        value: true,
-      });
-
-      // Add field slug
-      createNodeField({
-        name: `slug`,
-        node,
-        value: slug,
-      });
-
-      // Add field fullSlug
-      createNodeField({
-        name: `fullSlug`,
-        node,
-        value: fullSlug,
-      });
-    }
+    // Add field isPage
+    createNodeField({
+      name: `isPage`,
+      node,
+      value: true,
+    });
   }
 };

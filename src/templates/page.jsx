@@ -6,13 +6,13 @@ const Page = ({ data }) => <div>title: {data.page.frontmatter.title}</div>;
 export default Page;
 
 export const pageQuery = graphql`
-  query PageQuery($lang: String!, $slug: String!) {
+  query PageQuery($lang: String!, $name: String!) {
     header: markdownRemark(
       fields: { lang: { eq: $lang }, name: { eq: "header" } }
     ) {
       id
       frontmatter {
-        test
+        title
       }
     }
     footer: markdownRemark(
@@ -20,10 +20,10 @@ export const pageQuery = graphql`
     ) {
       id
       frontmatter {
-        test
+        title
       }
     }
-    page: markdownRemark(fields: { lang: { eq: $lang }, slug: { eq: $slug } }) {
+    page: markdownRemark(fields: { lang: { eq: $lang }, name: { eq: $name } }) {
       id
       frontmatter {
         title

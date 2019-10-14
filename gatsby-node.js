@@ -37,8 +37,6 @@ exports.createPages = ({ actions, graphql }) => {
     );
 
     pageEdges.forEach(edge => {
-      // console.error(edge);
-
       const { id } = edge.node;
       const { slug } = edge.node.frontmatter;
       const { name, lang } = edge.node.fields;
@@ -58,8 +56,7 @@ exports.createPages = ({ actions, graphql }) => {
 
       createPage({
         path: pagePath,
-        component: path.resolve(`src/templates/page.jsx`),
-        // component: path.resolve(`src/templates/${name}.jsx`),
+        component: path.resolve(`src/templates/${name}.jsx`),
         // additional data can be passed via context
         context: {
           id,
@@ -107,7 +104,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `isPage`,
       node,
-      value: true,
+      value: isPage,
     });
   }
 };

@@ -1,13 +1,13 @@
 import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
 
 const Layout = ({ data, children }) => {
-  console.error(data);
-
   return (
     <div>
-      <div>{data.header.frontmatter.title}</div>
+      <Header data={data.header} />
       <div>{children}</div>
-      <div>{data.footer.frontmatter.title}</div>
+      <Footer data={data.footer} />
     </div>
   );
 };

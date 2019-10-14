@@ -1,12 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-const Page = ({ data }) => <div>title: {data.page.frontmatter.title}</div>;
+const PageIndex = ({ data }) => <div>title: {data.page.frontmatter.title}</div>;
 
-export default Page;
+export default PageIndex;
 
 export const pageQuery = graphql`
-  query PageQuery($lang: String!, $name: String!) {
+  query PageIndexQuery($lang: String!, $name: String!) {
     header: markdownRemark(
       fields: { lang: { eq: $lang }, name: { eq: "header" } }
     ) {

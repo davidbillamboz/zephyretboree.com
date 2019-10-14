@@ -1,2 +1,2 @@
 ---
-test: Footer FR
+title: Footer FR

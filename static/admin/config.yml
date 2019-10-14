@@ -7,6 +7,23 @@ media_folder: static/img
 public_folder: /img
 
 collections: # A list of collections the CMS should be able to edit
+  # Header
+  - name: header 
+    label: Header
+    folder: content/layout/header
+    create: false # Prevent users from creating documents in this collection
+    delete: false # Prevent users from deleting documents in this collection
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+  # Footer
+  - name: footer 
+    label: Footer
+    folder: content/layout/footer
+    create: false # Prevent users from creating documents in this collection
+    delete: false # Prevent users from deleting documents in this collection
+    fields:
+      - {label: "Title", name: "title", widget: "string"}     
+  # Home page 
   - name: index-page
     label: Index Page
     folder: content/pages/index

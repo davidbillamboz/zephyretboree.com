@@ -62,15 +62,21 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-  fmImagesToRelative(node); // convert image paths for gatsby images
+
+  // convert image paths for gatsby images
+  // TODO: document WTF
+  fmImagesToRelative(node);
 
   // TODO: filter on page
   if (node.internal.type === `MarkdownRemark`) {
     const filePath = createFilePath({ node, getNode });
 
-    const parts = filePath.split('/');
-    const lang = parts[1];
-    const name = parts.slice(2, -1).join('-') || 'index';
+    const parts = filePath.split('/').filter(part => !!part);
+
+    const type = parts.shift();
+    const lang = parts.pop();
+    const isPage = type === 'pages';
+    const name = `${isPage ? 'page-' : ''}${parts.join('-')}`;
 
     // Add field name
     createNodeField({
@@ -86,18 +92,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: lang,
     });
 
-    const isPage = !['header', 'footer'].includes(name);
-
     if (isPage) {
-      const slug = `/${parts.slice(2).join('/')}`;
-      const fullSlug =
-        lang !== DEFAULT_LANG ? filePath : `/${parts.slice(2).join('/')}`;
+      const slug = `/${parts.join('/')}/`;
+      const fullSlug = lang !== DEFAULT_LANG ? `/${lang}${slug}` : `/${slug}`;
 
       // Add field isPage
       createNodeField({
         name: `isPage`,
         node,
-        value: isPage,
+        value: true,
       });
 
       // Add field slug

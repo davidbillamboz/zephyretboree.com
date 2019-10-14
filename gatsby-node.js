@@ -73,7 +73,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   // convert image paths for gatsby images
   // TODO: document WTF
-  fmImagesToRelative(node);
+  // fmImagesToRelative(node);
 
   // TODO: filter on page
   if (node.internal.type === `MarkdownRemark`) {

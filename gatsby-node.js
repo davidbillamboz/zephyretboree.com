@@ -94,7 +94,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     if (isPage) {
       const slug = `/${parts.join('/')}/`;
-      const fullSlug = lang !== DEFAULT_LANG ? `/${lang}${slug}` : `/${slug}`;
+      const fullSlug = lang !== DEFAULT_LANG ? `/${lang}${slug}` : slug;
 
       // Add field isPage
       createNodeField({

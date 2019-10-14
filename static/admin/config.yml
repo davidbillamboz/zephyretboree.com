@@ -1,0 +1,18 @@
+# See https://github.com/netlify/netlify-cms/blob/master/example/config.yml
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: static/img
+public_folder: /img
+
+collections: # A list of collections the CMS should be able to edit
+  - name: index-page
+    label: Index Page
+    folder: content/pages/index
+    create: false # Prevent users from creating documents in this collection
+    delete: false # Prevent users from deleting documents in this collection
+    # editor:
+    #   preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}

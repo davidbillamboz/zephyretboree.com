@@ -1,0 +1,6 @@
+.eslintignore
+.eslintrc.js
+.nvmrc
+.prettierignore
+.prettierrc
+README.md

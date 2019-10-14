@@ -5,7 +5,7 @@ hero:
   text2: on utilisait
   text3: le vent de nouveau ?
   text: Zéphyr et Borée conçoit et exploite des navires de commerce innovants pour proposer des solutions de transport bas-carbone
-services:
+presentation:
   services:
     - text: Des solutions sur mesure pour vos besoins de transport
       icon: pencil

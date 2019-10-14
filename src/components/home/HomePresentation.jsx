@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
 import IconTextColumns from '../IconTextColumns';
 
-const HomeServices = ({ services, buttons }) => (
+const HomePresentation = ({ services, buttons }) => (
   <>
     <IconTextColumns items={services} />
     <div className="columns has-text-centered">
@@ -21,7 +21,7 @@ const HomeServices = ({ services, buttons }) => (
   </>
 );
 
-HomeServices.propTypes = {
+HomePresentation.propTypes = {
   services: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string.isRequired,
@@ -36,4 +36,4 @@ HomeServices.propTypes = {
   ).isRequired,
 };
 
-export default HomeServices;
+export default HomePresentation;

@@ -1,5 +1,6 @@
 ---
-logoUrl: /
+logo:
+  url: /
 copyrights: Copyright © 2019 Zéphyr & Borée. Tous droits réservés.
 socialLinks: 
   - title: Nous contacter

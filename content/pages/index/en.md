@@ -5,7 +5,7 @@ hero:
   text2: shipping
   text3: company
   text: Zéphyr & Borée designs and operates innovative vessels to offer low carbon transport services
-services:
+presentation:
   services:
     - text: Custom solutions adapted to your transport needs
       icon: pencil

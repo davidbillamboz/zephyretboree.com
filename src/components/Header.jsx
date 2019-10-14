@@ -73,12 +73,7 @@ const NavbarBrand = styled.div`
 `;
 
 const Header = ({ data }) => {
-  const {
-    logoUrl,
-    links,
-    contactButtonTitle,
-    contactButtonUrl,
-  } = data.frontmatter;
+  const { logo, links, contactButton } = data.frontmatter;
   const [navbarMenuActive, setNavbarActive] = useState(false);
 
   const onBurgerClick = e => {
@@ -93,7 +88,7 @@ const Header = ({ data }) => {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <NavbarBrand className="navbar-brand">
-        <GatsbyLink to={logoUrl} className="navbar-item" onClick={onClickLink}>
+        <GatsbyLink to={logo.url} className="navbar-item" onClick={onClickLink}>
           <Logo
             src="/images/logos/logo_horizontal_color.svg"
             width="210"
@@ -118,21 +113,21 @@ const Header = ({ data }) => {
             ))}
 
           <GatsbyLink
-            to={contactButtonUrl}
+            to={contactButton.url}
             className="navbar-item is-hidden-tablet"
             onClick={onClickLink}
           >
-            {contactButtonTitle}
+            {contactButton.title}
           </GatsbyLink>
 
           <div className="navbar-item is-hidden-mobile">
             <div className="buttons">
               <GatsbyLink
-                to={contactButtonUrl}
+                to={contactButton.url}
                 className="button is-primary"
                 onClick={onClickLink}
               >
-                <strong>{contactButtonTitle}</strong>
+                <strong>{contactButton.title}</strong>
               </GatsbyLink>
             </div>
           </div>
@@ -146,9 +141,13 @@ Header.propTypes = {
   data: PropTypes.shape({
     frontmatter: PropTypes.shape({
       links: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-      contactButtonTitle: PropTypes.string.isRequired,
-      contactButtonUrl: PropTypes.string.isRequired,
-      logoUrl: PropTypes.string.isRequired,
+      contactButton: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+      }).isRequired,
+      logo: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+      }).isRequired,
     }).isRequired,
   }).isRequired,
 };
@@ -165,9 +164,13 @@ export const query = graphql`
           title
           url
         }
-        contactButtonTitle
-        contactButtonUrl
-        logoUrl
+        contactButton {
+          title
+          url
+        }
+        logo {
+          url
+        }
       }
     }
   }

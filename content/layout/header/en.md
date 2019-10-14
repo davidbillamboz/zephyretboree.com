@@ -8,6 +8,8 @@ links:
     url: /en/news/ariane-6/    
   - title: About
     url: /en/about/
-contactButtonTitle: Contact 
-contactButtonUrl: /en/contact/
-logoUrl: /en/
+contactButton:
+  title: Contact 
+  url: /en/contact/
+logo:
+  url: /en/

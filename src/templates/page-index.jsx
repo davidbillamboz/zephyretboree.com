@@ -2,33 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import HomeHero from '../components/home/HomeHero';
-import HomeServices from '../components/home/HomeServices';
+import HomePresentation from '../components/home/HomePresentation';
 import HomeNews from '../components/home/HomeNews';
 import HomeProjects from '../components/home/HomeProjects';
 
-const PageIndex = ({ data }) => (
-  <>
-    <HomeHero {...data.page.frontmatter.hero} />
-    <div className="container">
-      <section className="section">
-        <HomeServices {...data.page.frontmatter.services} />
-      </section>
-      <section className="section">
-        <HomeNews {...data.page.frontmatter.news} />
-      </section>
-      <section className="section">
-        <HomeProjects {...data.page.frontmatter.projects} />
-      </section>
-    </div>
-  </>
-);
+const PageIndex = ({ data }) => {
+  const { hero, presentation, news, projects } = data.page.frontmatter;
+  return (
+    <>
+      <HomeHero {...hero} />
+      <div className="container">
+        <section className="section">
+          <HomePresentation {...presentation} />
+        </section>
+        <section className="section">
+          <HomeNews {...news} />
+        </section>
+        <section className="section">
+          <HomeProjects {...projects} />
+        </section>
+      </div>
+    </>
+  );
+};
 
 PageIndex.propTypes = {
   data: PropTypes.shape({
     page: PropTypes.shape({
       frontmatter: PropTypes.shape({
         hero: PropTypes.shape({}).isRequired,
-        services: PropTypes.shape({}).isRequired,
+        presentation: PropTypes.shape({}).isRequired,
         news: PropTypes.shape({}).isRequired,
         projects: PropTypes.shape({}).isRequired,
       }).isRequired,
@@ -53,7 +56,7 @@ export const pageQuery = graphql`
           text3
           text
         }
-        services {
+        presentation {
           services {
             text
             icon

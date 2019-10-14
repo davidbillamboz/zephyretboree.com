@@ -127,14 +127,14 @@ const Copyrights = styled.p`
 `;
 
 const Footer = ({ data, alternates }) => {
-  const { logoUrl, socialLinks, links, copyrights, links2 } = data.frontmatter;
+  const { logo, socialLinks, links, copyrights, links2 } = data.frontmatter;
   return (
     <footer className="footer">
       <div className="container">
         <div className="content has-text-centered">
           <div className="columns">
             <LogoLinkWrapper className="column is-one-third">
-              <GatsbyLink to={logoUrl} className="navbar-item">
+              <GatsbyLink to={logo.url} className="navbar-item">
                 <Logo src="/images/logos/logo_horizontal_white.png" alt="" />
               </GatsbyLink>
             </LogoLinkWrapper>
@@ -206,7 +206,9 @@ Footer.propTypes = {
   ).isRequired,
   data: PropTypes.shape({
     frontmatter: PropTypes.shape({
-      logoUrl: PropTypes.string.isRequired,
+      logo: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+      }).isRequired,
       copyrights: PropTypes.string.isRequired,
       socialLinks: PropTypes.arrayOf(
         PropTypes.shape({
@@ -239,7 +241,9 @@ export const query = graphql`
       fields: { lang: { eq: $lang }, name: { eq: "footer" } }
     ) {
       frontmatter {
-        logoUrl
+        logo {
+          url
+        }
         copyrights
         socialLinks {
           title

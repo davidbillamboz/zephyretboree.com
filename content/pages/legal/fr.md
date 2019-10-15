@@ -1,6 +1,10 @@
 ---
 adminTitle: Page Legal FR
 slug: legal
+# Metadata
+metadata: 
+  title: Informations Légales
+  description: ""
 title: Informations Légales
 content: >-
   ### 1. Présentation du site.

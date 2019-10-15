@@ -1,10 +1,16 @@
 ---
 adminTitle: Page Home EN 
+# Metadata
+metadata: 
+  title: Home
+  description: ""
+# Hero
 hero:
   text1: sail
   text2: shipping
   text3: company
   text: Zéphyr & Borée designs and operates innovative vessels to offer low carbon transport services
+# Presentation
 presentation:
   services:
     - text: Custom solutions adapted to your transport needs
@@ -18,12 +24,14 @@ presentation:
       url: /en/services/
     - title: Contact us
       url: /en/contact
+# News
 news: 
   title: Latest updates
   subTitle: Buliding of the first sail cargo ship
   button: 
     title: Learn more
     url: /en/ariane-6/
+# Projects
 projects:
   title: Custom-made
   subTitle: Projects adapted to your transport needs

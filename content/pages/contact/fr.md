@@ -1,6 +1,10 @@
 ---
 adminTitle: Page Contact FR
 slug: contact
+# Metadata
+metadata: 
+  title: Nous contacter
+  description: ""
 # Form
 form: 
   title: Contact 

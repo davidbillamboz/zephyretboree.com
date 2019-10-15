@@ -1,6 +1,10 @@
 ---
 adminTitle: Page About FR
 slug: a-propos
+# Metadata
+metadata: 
+  title: À propos
+  description: ""
 # Intro
 intro:
   title: Nos partenaires clefs

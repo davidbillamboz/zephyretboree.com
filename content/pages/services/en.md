@@ -1,14 +1,21 @@
 ---
 adminTitle: Page Service EN
 slug: services
+# Metadata
+metadata: 
+  title: Our services
+  description: ""
+# Intro
 intro: 
   title: Services
   subTitle: "Our goal: develop low carbon maritime transport"
   text: >-
     According to the International Maritime Organisation, to respect the objectives established by the Paris Agreement, CO2 emissions from maritime transport have to be divided by two by 2050. To achieve this goal, we combine innovative technologies to develop pioneering vessels that offer industrial performances while being environmentally friendly. **Thus, we offer to our clients to cut down their carbon footprint while converving competitive cost.**
+# Contact Button
 contactButton: 
   title: You have a project?
   url: /en/contact/  
+# Services
 services:
   - icon: design
     title: Project design

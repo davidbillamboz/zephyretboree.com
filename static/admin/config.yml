@@ -138,7 +138,18 @@ collections:
         widget: string
       - label: Slug
         name: slug
-        widget: string        
+        widget: string     
+      # Metadata
+      - label: Metadata
+        name: metadata
+        widget: objects
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Description
+            name: description
+            widget: string
       # Hero
       - label: Hero
         name: hero
@@ -244,7 +255,18 @@ collections:
         widget: string
       - label: Slug
         name: slug
-        widget: string    
+        widget: string      
+      # Metadata
+      - label: Metadata
+        name: metadata
+        widget: objects
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Description
+            name: description
+            widget: string   
       # Intro    
       - label: Intro
         name: intro
@@ -303,7 +325,18 @@ collections:
         widget: string
       - label: Slug
         name: slug
-        widget: string               
+        widget: string       
+      # Metadata
+      - label: Metadata
+        name: metadata
+        widget: objects
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Description
+            name: description
+            widget: string             
       # Intro
       - label: Intro
         name: intro
@@ -398,7 +431,18 @@ collections:
         widget: string
       - label: Slug
         name: slug
-        widget: string   
+        widget: string        
+      # Metadata
+      - label: Metadata
+        name: metadata
+        widget: objects
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Description
+            name: description
+            widget: string
       # Intro
       - label: Intro
         name: intro
@@ -528,7 +572,18 @@ collections:
         widget: string
       - label: Slug
         name: slug
-        widget: string                   
+        widget: string          
+      # Metadata
+      - label: Metadata
+        name: metadata
+        widget: objects
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Description
+            name: description
+            widget: string              
       # Form
       - label: Form
         name: form
@@ -631,7 +686,18 @@ collections:
         widget: string
       - label: Slug
         name: slug
-        widget: string                       
+        widget: string             
+      # Metadata
+      - label: Metadata
+        name: metadata
+        widget: objects
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Description
+            name: description
+            widget: string               
       - label: Title
         name: title
         widget: string          
@@ -654,7 +720,18 @@ collections:
         widget: string
       - label: Slug
         name: slug
-        widget: string                       
+        widget: string            
+      # Metadata
+      - label: Metadata
+        name: metadata
+        widget: objects
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Description
+            name: description
+            widget: string                
       - label: Title
         name: title
         widget: string          

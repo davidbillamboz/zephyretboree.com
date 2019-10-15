@@ -1,10 +1,16 @@
 ---
 adminTitle: Page Home FR
+# Metadata
+metadata: 
+  title: Accueil
+  description: ""
+# Hero
 hero:
   text1: Et si
   text2: on utilisait
   text3: le vent de nouveau ?
   text: Zéphyr et Borée conçoit et exploite des navires de commerce innovants pour proposer des solutions de transport bas-carbone
+# Presentation
 presentation:
   services:
     - text: Des solutions sur mesure pour vos besoins de transport
@@ -18,12 +24,14 @@ presentation:
       url: /services/
     - title: Contactez-nous
       url: /contact/
+# News
 news: 
   title: Notre actualité
   subTitle: Construction du premier cargo à voile moderne
   button: 
     title: Découvrir
     url: /ariane-6/
+# Projects
 projects:
   title: Sur-mesure
   subTitle: Des projets adaptés à vos besoins de transport

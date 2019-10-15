@@ -1,6 +1,11 @@
 ---
 adminTitle: Page Ariane 6 FR
 slug: ariane-6
+# Metadata
+metadata: 
+  title: Ariane 6
+  description: ""
+# Intro
 intro:
   title: Ariane 6
   subTitle: Canopée, le premier cargo à voile moderne, dédié au transport du lanceur Ariane 6.
@@ -17,6 +22,7 @@ intro:
       logoPath: partners/logo_vplp_color.jpg
     - title: ""
       logoPath: partners/logo_ariane_color.svg
+# Canopee
 canopee:
   title: Navire Canopée
   text: Baptisé Canopée, le navire que nous avons conçu répond à un cahier des charges particulièrement complexe compte tenu des exigences techniques dictées par le transport du lanceur Ariane 6 ainsi que des contraintes nautiques liées à l’accès au port de Pariacabo en Guyane.
@@ -30,6 +36,7 @@ canopee:
     value: "35"
     text: >-
       Réduction de **35%** des émissions polluantes
+# Route
 route:
   title: Les ports desservis
   text: Les différents éléments constituant le lanceur Ariane 6 sont construits par différents pays membres du programme Ariane. Ces éléments seront ensuite collectés et acheminés au centre spatiale guyannais à Kourou.

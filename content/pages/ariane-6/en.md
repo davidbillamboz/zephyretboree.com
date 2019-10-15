@@ -1,6 +1,11 @@
 ---
 adminTitle: Page Ariane 6 EN
 slug: ariane-6
+# Metadata
+metadata: 
+  title: Ariane 6
+  description: ""
+# Intro
 intro:
   title: Ariane 6
   subTitle: Canopée, the first modern sail cargo ship, specially designed for the transport needs of Ariane 6 launcher
@@ -17,6 +22,7 @@ intro:
       logoPath: partners/logo_vplp_color.jpg
     - title: ""
       logoPath: partners/logo_ariane_color.svg
+# Canopee
 canopee:
   title: Canopée vessel
   text: The ship that we have designed and named Canopée, meets strict and complex specifications that take into account the technical requirements imposed by the transport of Ariane 6 launcher, as well as the nautical constraints related to the access to the port of Pariacabo in Guiana.
@@ -30,6 +36,7 @@ canopee:
     value: "35"
     text: >-
       **35%** reduction of polluting emissions
+# Route
 route:
   title: Shipping route
   text: The components of Ariane 6 launcher are built in different member states of the Ariane program. After being collected in several European ports they will be shipped to the Guiana Space Center in Kourou.

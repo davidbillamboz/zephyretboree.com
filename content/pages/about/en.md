@@ -1,6 +1,10 @@
 ---
 adminTitle: Page About EN
 slug: about
+# Metadata
+metadata: 
+  title: About
+  description: ""
 # Intro
 intro:
   title: Our key partnerships

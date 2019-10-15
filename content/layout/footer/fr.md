@@ -1,4 +1,5 @@
 ---
+title: Footer FR
 logo:
   url: /
 copyrights: Copyright © 2019 Zéphyr & Borée. Tous droits réservés.

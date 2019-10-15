@@ -16,7 +16,8 @@ media_folder: static
 # library will be accessed, relative to the base of the built site.
 public_folder: /
 
-collections: # A list of collections the CMS should be able to edit
+# A list of collections the CMS should be able to edit
+collections:
   # Header
   - name: header 
     label: Header
@@ -24,6 +25,9 @@ collections: # A list of collections the CMS should be able to edit
     create: false
     delete: false
     fields:
+      - label: Title
+        name: title
+        widget: string
       # Links
       - label: Menu
         name: links
@@ -59,9 +63,12 @@ collections: # A list of collections the CMS should be able to edit
   - name: footer 
     label: Footer
     folder: content/layout/footer
-    create: false # Prevent users from creating documents in this collection
-    delete: false # Prevent users from deleting documents in this collection
+    create: false
+    delete: false
     fields:
+      - label: Title
+        name: title
+        widget: string
       # Logo
       - label: Logo
         name: logo

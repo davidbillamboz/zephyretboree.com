@@ -5,17 +5,23 @@ import Footer from './Footer';
 import PageTransition from './PageTransition';
 import '../styles/app.scss';
 
-const Layout = ({ data, children }) => {
+const Layout = ({ pageContext, data, children }) => {
   return (
     <>
       <Header {...data.header.frontmatter} />
       <PageTransition id={data.page.id}>{children}</PageTransition>
-      <Footer {...data.footer.frontmatter} alternates={[]} />
+      <Footer
+        {...data.footer.frontmatter}
+        alternates={pageContext.alternates}
+      />
     </>
   );
 };
 
 Layout.propTypes = {
+  pageContext: PropTypes.shape({
+    alternates: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  }).isRequired,
   data: PropTypes.shape({
     header: PropTypes.shape({
       frontmatter: PropTypes.shape({}).isRequired,

@@ -183,8 +183,8 @@ const Footer = ({
                       <FooterMenuItem key={link.lang}>
                         <GatsbyLink
                           key={link.lang}
-                          to={link.url}
-                          onClick={e => onClickLink(e, link.lang, link.url)}
+                          to={link.path}
+                          onClick={e => onClickLink(e, link.lang, link.path)}
                         >
                           {link.lang === 'fr' && 'Version française'}
                           {link.lang === 'en' && 'English version'}
@@ -205,7 +205,7 @@ Footer.propTypes = {
     PropTypes.shape({
       current: PropTypes.bool.isRequired,
       lang: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
     })
   ).isRequired,
   logo: PropTypes.shape({

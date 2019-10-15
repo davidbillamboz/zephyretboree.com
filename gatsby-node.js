@@ -4,6 +4,40 @@ const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
 const DEFAULT_LANG = 'fr';
 
+function getPagePath({ slug, lang }) {
+  // Generate page path
+  let pagePath = `/${slug}/`;
+  // Should be the home page
+  if (!slug) {
+    pagePath = '/';
+  }
+  if (lang !== DEFAULT_LANG) {
+    pagePath = `/${lang}${pagePath}`;
+  }
+  return pagePath;
+}
+
+function getPageAlternates({ id, name }, edges) {
+  return edges
+    .filter(edge => {
+      return name === edge.node.fields.name;
+    })
+    .map(edge => {
+      const { lang } = edge.node.fields;
+      const { slug } = edge.node.frontmatter;
+      const pagePath = getPagePath({
+        slug,
+        lang,
+      });
+      return {
+        current: edge.node.id === id,
+        default: edge.node.fields.lang === DEFAULT_LANG,
+        lang,
+        path: pagePath,
+      };
+    });
+}
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
@@ -40,18 +74,9 @@ exports.createPages = ({ actions, graphql }) => {
       const { id } = edge.node;
       const { slug } = edge.node.frontmatter;
       const { name, lang } = edge.node.fields;
+      const pagePath = getPagePath({ slug, lang });
+      const alternates = getPageAlternates({ id, name }, pageEdges);
 
-      // Generate page path
-      let pagePath = `/${slug}/`;
-      // Should be the home page
-      if (!slug) {
-        pagePath = '/';
-      }
-      if (lang !== DEFAULT_LANG) {
-        pagePath = `/${lang}${pagePath}`;
-      }
-
-      // TODO: add alternates urls
       // TODO: add facebook redirects
 
       const page = {
@@ -62,6 +87,7 @@ exports.createPages = ({ actions, graphql }) => {
           id,
           name,
           lang,
+          alternates,
         },
       };
 

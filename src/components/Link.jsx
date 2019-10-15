@@ -10,12 +10,12 @@ const Link = ({ url, icon, title, ...rest }) => {
     <>
       {isExternal && (
         <a href={fixedUrl} target="_blank" rel="noopener noreferrer">
-          {icon ? <img src={`/images/icons/${icon}.svg`} alt={title} /> : title}
+          {icon ? <img src={icon.publicURL} alt={title} /> : title}
         </a>
       )}
       {!isExternal && (
         <GatsbyLink to={fixedUrl} {...rest}>
-          {icon ? <img src={`/images/icons/${icon}.svg`} alt={title} /> : title}
+          {icon ? <img src={icon.publicURL} alt={title} /> : title}
         </GatsbyLink>
       )}
     </>
@@ -25,7 +25,9 @@ const Link = ({ url, icon, title, ...rest }) => {
 Link.propTypes = {
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  icon: PropTypes.string,
+  icon: PropTypes.shape({
+    publicURL: PropTypes.string.isRequired,
+  }),
 };
 
 Link.defaultProps = {

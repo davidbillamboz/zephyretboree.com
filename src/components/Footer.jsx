@@ -216,7 +216,9 @@ Footer.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
-      icon: PropTypes.string.isRequired,
+      icon: PropTypes.shape({
+        publicURL: PropTypes.string.isRequired,
+      }).isRequired,
     })
   ).isRequired,
   links: PropTypes.arrayOf(
@@ -248,7 +250,9 @@ export const query = graphql`
         socialLinks {
           title
           url
-          icon
+          icon {
+            publicURL
+          }
         }
         links {
           title

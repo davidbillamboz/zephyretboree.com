@@ -99,7 +99,7 @@ collections:
             widget: string
           - label: Icon
             name: icon
-            widget: string
+            widget: image
       # Links 1
       - label: Menu 1
         name: links

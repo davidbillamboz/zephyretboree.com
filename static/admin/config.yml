@@ -5,9 +5,16 @@ backend:
 
 # TODO: to document
 site_url: https://objective-wiles-a57b89.netlify.com/
-publish_mode: editorial_workflow
-media_folder: static/img
-public_folder: /img
+
+# publish_mode: editorial_workflow
+
+# The media_folder option specifies the folder path where uploaded files should be saved, 
+# relative to the base of the repo.
+media_folder: static
+
+# The public_folder option specifies the folder path where the files uploaded by the media 
+# library will be accessed, relative to the base of the built site.
+public_folder: /
 
 collections: # A list of collections the CMS should be able to edit
   # Header

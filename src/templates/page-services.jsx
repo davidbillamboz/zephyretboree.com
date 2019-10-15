@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Title from '../components/Title';
 import SubTitle from '../components/SubTitle';
-import RichText from '../components/RichText';
+import Markdown from '../components/Markdown';
 import ServicesServices from '../components/services/Services';
 
 const PageServices = ({ data }) => {
@@ -18,7 +18,7 @@ const PageServices = ({ data }) => {
       <section className="section">
         <Title>{title}</Title>
         <SubTitle>{subTitle}</SubTitle>
-        <RichText content={text} />
+        <Markdown content={text} />
       </section>
       <section className="section">
         <ServicesServices services={services} contactButton={contactButton} />

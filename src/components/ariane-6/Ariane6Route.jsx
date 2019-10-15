@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import SubTitle from '../SubTitle';
-import RichText from '../RichText';
+import Markdown from '../Markdown';
 
 const ImageContainerStyled = styled.div`
   margin: 3rem 0;
@@ -12,13 +12,13 @@ const ImageContainerStyled = styled.div`
 const Ariane6Route = ({ title, text, image, text2 }) => (
   <>
     <SubTitle>{title}</SubTitle>
-    <RichText content={text} />
+    <Markdown content={text} />
 
     <ImageContainerStyled>
       <img src={`/images/${image}`} alt="" />
     </ImageContainerStyled>
 
-    <RichText content={text2} />
+    <Markdown content={text2} />
   </>
 );
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Title from '../Title';
 import SubTitle from '../SubTitle';
-import RichText from '../RichText';
+import Markdown from '../Markdown';
 import AboutValue from './AboutValue';
 
 const ValuesContainerStyled = styled.div`
@@ -14,7 +14,7 @@ const AboutValues = ({ title, subTitle, text, values }) => (
   <>
     <Title>{title}</Title>
     <SubTitle>{subTitle}</SubTitle>
-    <RichText content={text} />
+    <Markdown content={text} />
 
     <ValuesContainerStyled className="columns">
       {values &&

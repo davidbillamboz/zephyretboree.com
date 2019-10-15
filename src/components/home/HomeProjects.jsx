@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import HomeProject from './HomeProject';
 import Title from '../Title';
 import SubTitle from '../SubTitle';
-import RichText from '../RichText';
+import Markdown from '../Markdown';
 
 const HomeProjects = ({ title, subTitle, text, projects }) => (
   <StaticQuery
@@ -72,7 +72,7 @@ const HomeProjects = ({ title, subTitle, text, projects }) => (
       <>
         <Title>{title}</Title>
         <SubTitle>{subTitle}</SubTitle>
-        <RichText content={text} />
+        <Markdown content={text} />
         <div className="columns">
           {projects &&
             projects.map(project => {

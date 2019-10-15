@@ -28,7 +28,8 @@ canopee:
   image: pages/ariane6/canopee_schema.jpg
   progressBar:
     value: "35"
-    text: <b>35%</b> reduction of polluting emissions
+    text: >-
+      **35%** reduction of polluting emissions
 route:
   title: Shipping route
   text: The components of Ariane 6 launcher are built in different member states of the Ariane program. After being collected in several European ports they will be shipped to the Guiana Space Center in Kourou.

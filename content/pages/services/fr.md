@@ -4,7 +4,8 @@ slug: services
 intro: 
   title: Services
   subTitle: "Notre objectif : développer un transport maritime bas carbone"
-  text: Selon l’Organisation Maritime Internationale, pour respecter les objectifs fixés par l'accord de Paris, les émissions de CO2 du transport maritime doivent être divisées par deux d’ici 2050. Pour atteindre cet objectif, nous conjuguons des technologies innovantes pour concevoir des navires novateurs à la fois performants et respectueux de l’environnement. <b>Nous permettons ainsi à nos clients de réduire l’empreinte carbone de leur supply chain.</b>
+  text: >-
+    Selon l’Organisation Maritime Internationale, pour respecter les objectifs fixés par l'accord de Paris, les émissions de CO2 du transport maritime doivent être divisées par deux d’ici 2050. Pour atteindre cet objectif, nous conjuguons des technologies innovantes pour concevoir des navires novateurs à la fois performants et respectueux de l’environnement. **Nous permettons ainsi à nos clients de réduire l’empreinte carbone de leur supply chain.**
 contactButton: 
   title: Vous avez un projet ?
   url: /contact/  

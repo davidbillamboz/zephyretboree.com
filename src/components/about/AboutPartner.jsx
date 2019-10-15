@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import ReactMarkdown from 'react-markdown';
 import GatsbyImage from 'gatsby-image/withIEPolyfill';
 
 const PartnerContainer = styled.div`
@@ -17,7 +18,7 @@ const Title = styled.h3`
   margin-bottom: 30px;
 `;
 
-const Text = styled.div`
+const TextContainerStyled = styled.div`
   p {
     margin-bottom: 30px;
   }
@@ -56,10 +57,9 @@ const AboutPartner = ({ title, text, link, button, image, logo }) => {
       <div className="columns">
         <div className="column is-three-fifths">
           <Title>{title}</Title>
-          <Text
-            dangerouslySetInnerHTML={{ __html: text }}
-            className={classText}
-          />
+          <TextContainerStyled>
+            <ReactMarkdown source={text} className={classText} />
+          </TextContainerStyled>
           <LogoContainer>
             <a href={link} target="_blank" rel="noopener noreferrer">
               <GatsbyImage fixed={logo} />

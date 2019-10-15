@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import GatsbyImage from 'gatsby-image/withIEPolyfill';
+import ReactMarkdown from 'react-markdown';
 import Title from '../Title';
 import SubTitle from '../SubTitle';
 
@@ -16,9 +17,7 @@ const Image1 = styled.img`
   margin: auto;
 `;
 
-const Text1 = styled.div``;
-const Text2 = styled.div``;
-const Text3 = styled.div`
+const Text3ContainerStyled = styled.div`
   margin-top: 30px;
 `;
 
@@ -43,15 +42,17 @@ const AboutOrigins = ({ title, subTitle, text1, text2, text3 }) => (
           <div className="column">
             <FirstColumn>
               <Image1 src="/images/icons/co2.svg" alt="" width="85" />
-              <Text1 dangerouslySetInnerHTML={{ __html: text1 }} />
+              <ReactMarkdown source={text1} />
             </FirstColumn>
           </div>
           <div className="column">
-            <Text2 dangerouslySetInnerHTML={{ __html: text2 }} />
+            <ReactMarkdown source={text2} />
           </div>
         </div>
         <GatsbyImage fluid={data.image.childImageSharp.fluid} />
-        <Text3 dangerouslySetInnerHTML={{ __html: text3 }} />
+        <Text3ContainerStyled>
+          <ReactMarkdown source={text3} />
+        </Text3ContainerStyled>
       </>
     )}
   />

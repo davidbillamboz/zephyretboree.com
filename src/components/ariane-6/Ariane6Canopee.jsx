@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import SubTitle from '../SubTitle';
-import RichText from '../RichText';
+import Markdown from '../Markdown';
 import IconTextColumns from '../IconTextColumns';
 
 const ImageContainerStyled = styled.div`
@@ -40,7 +40,7 @@ const ProgressBarStyled = styled.progress`
 const Ariane6Canopee = ({ title, text, columns, image, progressBar }) => (
   <>
     <SubTitle>{title}</SubTitle>
-    <RichText content={text} />
+    <Markdown content={text} />
     <IconTextColumns items={columns} />
 
     <ImageContainerStyled>
@@ -49,7 +49,7 @@ const Ariane6Canopee = ({ title, text, columns, image, progressBar }) => (
 
     <ProgressBarContainerStyled>
       <TextContainerStyled>
-        <RichText content={progressBar.text} />
+        <Markdown content={progressBar.text} />
       </TextContainerStyled>
       <ProgressBarStyled
         className="progress is-primary"

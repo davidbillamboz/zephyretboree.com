@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Title from '../Title';
 import SubTitle from '../SubTitle';
-import RichText from '../RichText';
+import Markdown from '../Markdown';
 import YoutubeVideo from '../YoutubeVideo';
 
 const VideoContainerStyled = styled.div`
@@ -29,7 +29,7 @@ const Ariane6Intro = ({ title, subTitle, text, videoId, partners }) => (
   <>
     <Title>{title}</Title>
     <SubTitle>{subTitle}</SubTitle>
-    <RichText content={text} />
+    <Markdown content={text} />
     <VideoContainerStyled>
       <YoutubeVideo videoId={videoId} />
     </VideoContainerStyled>

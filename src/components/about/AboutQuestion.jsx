@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import ReactMarkdown from 'react-markdown';
+import Markdown from '../Markdown';
 
-const QuestionContainer = styled.div`
+const ContainerStyled = styled.div`
   background: #ffffff;
   padding: 30px;
 
@@ -11,7 +13,7 @@ const QuestionContainer = styled.div`
   }
 `;
 
-const Title = styled.h3`
+const TitleStyled = styled.h3`
   font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
   font-size: 28px;
@@ -19,13 +21,11 @@ const Title = styled.h3`
   margin-bottom: 30px;
 `;
 
-const Text = styled.div``;
-
 const AboutQuestion = ({ title, text }) => (
-  <QuestionContainer>
-    <Title>{title}</Title>
-    <Text dangerouslySetInnerHTML={{ __html: text }} />
-  </QuestionContainer>
+  <ContainerStyled>
+    <TitleStyled>{title}</TitleStyled>
+    <ReactMarkdown source={text} />
+  </ContainerStyled>
 );
 
 AboutQuestion.propTypes = {

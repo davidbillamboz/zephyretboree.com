@@ -215,7 +215,7 @@ collections:
             widget: string      
           - label: Text
             name: text
-            widget: text
+            widget: markdown
           - label: Projects
             name: projects
             widget: list
@@ -258,7 +258,7 @@ collections:
             widget: string
           - label: Text
             name: text
-            widget: text
+            widget: markdown
       # Contact Button    
       - label: Contact Button
         name: contactButton
@@ -317,7 +317,7 @@ collections:
             widget: string
           - label: Text
             name: text
-            widget: text   
+            widget: markdown   
           - label: Youtube Video ID
             name: videoID
             widget: string
@@ -341,7 +341,7 @@ collections:
             widget: string  
           - label: Text
             name: text
-            widget: text         
+            widget: markdown         
           - label: Columns
             name: columns
             widget: list   
@@ -364,7 +364,7 @@ collections:
                 widget: string
               - label: Text
                 name: text
-                widget: text                                                                                            
+                widget: markdown                                                                                            
       # Route
       - label: Intro
         name: intro
@@ -375,13 +375,13 @@ collections:
             widget: string   
           - label: Text
             name: text
-            widget: text
+            widget: markdown
           - label: Image
             name: image
             widget: string 
           - label: Text 2
             name: text2
-            widget: text
+            widget: markdown
 
   # About page 
   - name: about-page
@@ -412,7 +412,7 @@ collections:
             widget: string
           - label: Text
             name: text
-            widget: text
+            widget: markdown
       # Partners
       - label: Partners
         name: partners
@@ -437,7 +437,7 @@ collections:
                 widget: string
               - label: Text
                 name: text
-                widget: text
+                widget: markdown
               - label: Link
                 name: link
                 widget: string
@@ -454,7 +454,7 @@ collections:
             widget: string
           - label: Text
             name: text
-            widget: text     
+            widget: markdown     
           - label: Questions
             name: questions
             widget: list
@@ -464,7 +464,7 @@ collections:
                 widget: string
               - label: Text
                 name: text
-                widget: text
+                widget: markdown
       # Origins
       - label: Origins
         name: origins
@@ -478,13 +478,13 @@ collections:
             widget: string
           - label: Text 1
             name: text1
-            widget: text   
+            widget: markdown   
           - label: Text 2
             name: text2
-            widget: text   
+            widget: markdown   
           - label: Text 3
             name: text3
-            widget: text                               
+            widget: markdown                               
       # Values
       - label: Values
         name: values
@@ -498,7 +498,7 @@ collections:
             widget: string
           - label: Text
             name: text
-            widget: text 
+            widget: markdown 
           - label: Values
             name: values
             widget: list
@@ -511,7 +511,7 @@ collections:
                 widget: string
               - label: Text
                 name: text
-                widget: text
+                widget: markdown
 
   # Contact page 
   - name: contact-page

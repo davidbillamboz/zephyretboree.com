@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "https://zephyretboree.netlify.com"
+  to = "https://zephyretboree.com"
+  status = 301
+
+[[redirects]]
+  from = "https://zephyretboree.netlify.com/*"
+  to = "https://zephyretboree.com/:splat"
+  status = 301

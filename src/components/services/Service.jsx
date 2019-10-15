@@ -53,7 +53,7 @@ const Service = ({ contactButton, icon, title, text, tags }) => (
   <ServiceStyled className="media">
     <figure className="media-left is-hidden-mobile">
       <p className="image is-64x64">
-        <img src={`/images/icons/${icon}.svg`} width="40" height="40" alt="" />
+        <img src={icon.publicURL} width="40" height="40" alt="" />
       </p>
     </figure>
     <div className="media-content">
@@ -62,7 +62,7 @@ const Service = ({ contactButton, icon, title, text, tags }) => (
           <div className="image is-64x64">
             <img
               className="is-hidden-tablet"
-              src={`/images/icons/${icon}.svg`}
+              src={icon.publicURL}
               width="40"
               height="40"
               alt=""
@@ -94,7 +94,9 @@ Service.propTypes = {
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
   }).isRequired,
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.shape({
+    publicURL: PropTypes.string.isRequired,
+  }).isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,

@@ -5,12 +5,8 @@ import Service from './Service';
 const Services = ({ services, contactButton }) => (
   <div>
     {services &&
-      services.map(service => (
-        <Service
-          key={service.icon}
-          {...service}
-          contactButton={contactButton}
-        />
+      services.map((service, index) => (
+        <Service key={index} {...service} contactButton={contactButton} />
       ))}
   </div>
 );

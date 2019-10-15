@@ -36,18 +36,8 @@ PageServices.propTypes = {
           subTitle: PropTypes.string.isRequired,
           text: PropTypes.string.isRequired,
         }).isRequired,
-        contactButton: PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          url: PropTypes.string.isRequired,
-        }).isRequired,
-        services: PropTypes.arrayOf(
-          PropTypes.shape({
-            icon: PropTypes.string.isRequired,
-            title: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-            tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-          })
-        ).isRequired,
+        contactButton: PropTypes.shape({}).isRequired,
+        services: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
       }).isRequired,
     }).isRequired,
   }).isRequired,
@@ -77,7 +67,9 @@ export const pageQuery = graphql`
           url
         }
         services {
-          icon
+          icon {
+            publicURL
+          }
           title
           text
           tags

@@ -308,7 +308,7 @@ collections:
         fields: 
           - label: Icon
             name: icon
-            widget: string
+            widget: image
           - label: Title
             name: title
             widget: string    

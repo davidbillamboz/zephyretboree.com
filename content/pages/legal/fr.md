@@ -1,3 +1,6 @@
 ---
 title: Legal FR
-slug: informations-legales
+slug: legal
+body:
+  title: Informations Légales
+  content: "### This is a header\n\nAnd this is a paragraph"

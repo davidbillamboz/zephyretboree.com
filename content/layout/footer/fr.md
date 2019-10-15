@@ -21,4 +21,4 @@ links:
     url: /contact/
 links2:
   - title: Informations Légales
-    url: /informations-legales/
+    url: /legal/

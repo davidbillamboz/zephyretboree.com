@@ -612,3 +612,29 @@ collections:
               - label: Url
                 name: url
                 widget: string
+
+  # Legal page 
+  - name: legal-page
+    label: Legal Page
+    folder: content/pages/legal
+    create: false
+    delete: false
+    editor:
+      preview: false
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Slug
+        name: slug
+        widget: string                       
+      - label: Body
+        name: body
+        widget: object
+        fields: 
+          - label: Title
+            name: title
+            widget: string          
+          - label: Content
+            name: content
+            widget: markdown         

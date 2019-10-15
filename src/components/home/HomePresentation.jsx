@@ -22,12 +22,7 @@ const HomePresentation = ({ services, buttons }) => (
 );
 
 HomePresentation.propTypes = {
-  services: PropTypes.arrayOf(
-    PropTypes.shape({
-      text: PropTypes.string.isRequired,
-      icon: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  services: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,

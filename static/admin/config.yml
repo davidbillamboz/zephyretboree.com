@@ -184,7 +184,7 @@ collections:
                 widget: string 
               - label: Icon
                 name: icon
-                widget: string 
+                widget: image 
           - label: Buttons
             name: buttons
             widget: list

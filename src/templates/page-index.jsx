@@ -70,7 +70,9 @@ export const pageQuery = graphql`
         presentation {
           services {
             text
-            icon
+            icon {
+              publicURL
+            }
           }
           buttons {
             title

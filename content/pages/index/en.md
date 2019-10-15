@@ -15,11 +15,11 @@ hero:
 presentation:
   services:
     - text: Custom solutions adapted to your transport needs
-      icon: pencil
+      icon: /images/icons/pencil.svg
     - text: Pioneers in modern sail shipping
-      icon: sail
+      icon: /images/icons/sail.svg
     - text: R&D service aiming at carbon neutral transport
-      icon: gearing
+      icon: /images/icons/gearing.svg
   buttons: 
     - title: Discover our services
       url: /en/services/

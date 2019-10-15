@@ -24,15 +24,10 @@ const IconTextColumns = ({ items }) => {
   return (
     <div className={`columns ${classColumns}`}>
       {items &&
-        items.map(item => (
-          <Column className="column is-flex" key={item.icon}>
+        items.map((item, index) => (
+          <Column className="column is-flex" key={index}>
             <ColumnContent>
-              <Icon
-                src={`/images/icons/${item.icon}.svg`}
-                with="40"
-                height="40"
-                alt=""
-              />
+              <Icon src={item.icon.publicURL} with="40" height="40" alt="" />
               <div>{item.text}</div>
             </ColumnContent>
           </Column>
@@ -44,7 +39,9 @@ const IconTextColumns = ({ items }) => {
 IconTextColumns.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      icon: PropTypes.string.isRequired,
+      icon: PropTypes.shape({
+        publicURL: PropTypes.string.isRequired,
+      }).isRequired,
       text: PropTypes.string.isRequired,
     })
   ).isRequired,

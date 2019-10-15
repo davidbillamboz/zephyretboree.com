@@ -54,7 +54,7 @@ exports.createPages = ({ actions, graphql }) => {
       // TODO: add alternates urls
       // TODO: add facebook redirects
 
-      createPage({
+      const page = {
         path: pagePath,
         component: path.resolve(`src/templates/${name}.jsx`),
         // additional data can be passed via context
@@ -63,7 +63,9 @@ exports.createPages = ({ actions, graphql }) => {
           name,
           lang,
         },
-      });
+      };
+
+      createPage(page);
     });
   });
 };

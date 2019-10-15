@@ -641,4 +641,27 @@ collections:
         widget: string          
       - label: Content
         name: content
-        widget: markdown         
+        widget: markdown
+
+  # 404 page 
+  - name: 404-page
+    label: 404 Page
+    folder: content/pages/404
+    identifier_field: adminTitle
+    create: false
+    delete: false
+    editor:
+      preview: false
+    fields:
+      - label: Internal Title
+        name: adminTitle
+        widget: string
+      - label: Slug
+        name: slug
+        widget: string                       
+      - label: Title
+        name: title
+        widget: string          
+      - label: Image
+        name: image
+        widget: string

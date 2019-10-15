@@ -163,7 +163,7 @@ collections:
                 name: text
                 widget: string 
               - label: Icon
-                name: text
+                name: icon
                 widget: string 
           - label: Buttons
             name: buttons
@@ -184,7 +184,7 @@ collections:
             name: title
             widget: string 
           - label: Sub Title
-            name: title
+            name: subTitle
             widget: string           
           - label: Button
             name: button
@@ -205,7 +205,7 @@ collections:
             name: title
             widget: string 
           - label: Sub Title
-            name: title
+            name: subTitle
             widget: string      
           - label: Text
             name: text

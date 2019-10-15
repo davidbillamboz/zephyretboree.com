@@ -532,6 +532,9 @@ collections:
           - label: Sub Title
             name: subTitle
             widget: string
+          - label: Icon
+            name: icon
+            widget: image               
           - label: Text 1
             name: text1
             widget: markdown   
@@ -567,7 +570,7 @@ collections:
                 widget: string
               - label: Icon
                 name: icon
-                widget: string
+                widget: image
               - label: Text
                 name: text
                 widget: text

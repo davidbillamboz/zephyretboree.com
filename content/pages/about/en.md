@@ -76,6 +76,7 @@ questions:
 origins:
   title: About
   subTitle: Our background 
+  icon: /images/icons/co2.svg
   text1: >-
     **90%** of international trade transits by the sea on **45 000 vessels** what makes maritime transport an important source of pollution
   text2: Zéphyr & Borée is born in 2014 from this statement and the ambition to push forward the energetic model of the merchant cargo ships in order to reduce the environmental impact of the shipping by using renewable energies and low-carbon technologies. The wind propulsion appeared straightaway as one of the most concrete, efficient, and mature solutions among alternatives to diesel.
@@ -88,11 +89,11 @@ values:
   text: "Our ambition is to contribute actively to the energy transition of maritime transport. We do not consider the company’s profitability as an ultimate goal but more as a way to participate in this changeover. More specifically, the projects developed by Zéphyr & Borée must always satisfy a dual condition: be economically viable for our investors and our clients and participate actively at the decarbonisation of maritime transport. Beyond the principal activity of our company, we are also committed to organise its everyday life around the values which allow the enterprise to have a positive impact on society."
   values: 
     - title: Environment
-      icon: co2
+      icon: /images/icons/co2.svg
       text: We aim at limiting our environmental impact in our everyday organisation. We never take domestic flights, we limit our business trips, we prioritise partners who share these commitments. Our offices are lighted by a supplier of renewable electricity Enercoop.
     - title: Social impact and financial management
-      icon: impact
+      icon: /images/icons/impact.svg
       text: Within the company, we follow governance that gives place to everyone. We deploy an ethical financial policy, based on equitable and transparent management.
     - title: Transparency
-      icon: transparency
+      icon: /images/icons/transparency.svg
       text: We are convinced that the transparency of the enterprise is essential to work in confidence with our clients, our employees, and our partners. Our clients can witness that we are developing our projects collaboratively and transparently.

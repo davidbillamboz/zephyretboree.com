@@ -20,14 +20,22 @@ const Text3ContainerStyled = styled.div`
   margin-top: 30px;
 `;
 
-const AboutOrigins = ({ title, subTitle, text1, text2, image, text3 }) => (
+const AboutOrigins = ({
+  title,
+  subTitle,
+  icon,
+  text1,
+  text2,
+  image,
+  text3,
+}) => (
   <>
     <Title>{title}</Title>
     <SubTitle>{subTitle}</SubTitle>
     <div className="columns">
       <div className="column">
         <FirstColumn>
-          <Image1 src="/images/icons/co2.svg" alt="" width="85" />
+          <Image1 src={icon.publicURL} alt="" width="85" />
           <ReactMarkdown source={text1} />
         </FirstColumn>
       </div>
@@ -45,6 +53,9 @@ const AboutOrigins = ({ title, subTitle, text1, text2, image, text3 }) => (
 AboutOrigins.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
+  icon: PropTypes.shape({
+    publicURL: PropTypes.string.isRequired,
+  }).isRequired,
   text1: PropTypes.string.isRequired,
   text2: PropTypes.string.isRequired,
   image: PropTypes.shape({

@@ -27,14 +27,16 @@ const Text = styled.div``;
 const AboutValue = ({ title, icon, text }) => (
   <Container>
     <Title>{title}</Title>
-    <Icon src={`/images/icons/${icon}.svg`} alt="" width="40" height="40" />
+    <Icon src={icon.publicURL} alt="" width="40" height="40" />
     <Text dangerouslySetInnerHTML={{ __html: text }} />
   </Container>
 );
 
 AboutValue.propTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.shape({
+    publicURL: PropTypes.string.isRequired,
+  }).isRequired,
   text: PropTypes.string.isRequired,
 };
 

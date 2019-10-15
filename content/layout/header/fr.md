@@ -1,5 +1,5 @@
 ---
-title: Header FR
+adminTitle: Header FR
 links: 
   - title: Accueil
     url: /    

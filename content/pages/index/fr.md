@@ -1,5 +1,5 @@
 ---
-title: Home 
+adminTitle: Page Home FR
 hero:
   text1: Et si
   text2: on utilisait

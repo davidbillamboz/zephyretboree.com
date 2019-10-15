@@ -1,5 +1,5 @@
 ---
-title: Contact FR
+adminTitle: Page Contact FR
 slug: contact
 # Form
 form: 

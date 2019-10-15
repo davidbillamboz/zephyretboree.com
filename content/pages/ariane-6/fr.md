@@ -1,5 +1,5 @@
 ---
-title: Ariane6 FR
+adminTitle: Page Ariane 6 FR
 slug: ariane-6
 intro:
   title: Ariane 6

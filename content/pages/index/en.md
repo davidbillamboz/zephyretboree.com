@@ -1,5 +1,5 @@
 ---
-title: Home 
+adminTitle: Page Home EN 
 hero:
   text1: sail
   text2: shipping

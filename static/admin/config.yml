@@ -22,13 +22,14 @@ collections:
   - name: header 
     label: Header
     folder: content/layout/header
+    identifier_field: adminTitle
     create: false
     delete: false
     editor:
       preview: false
     fields:
-      - label: Title
-        name: title
+      - label: Internal Title
+        name: adminTitle
         widget: string
       # Links
       - label: Menu
@@ -65,13 +66,14 @@ collections:
   - name: footer 
     label: Footer
     folder: content/layout/footer
+    identifier_field: adminTitle
     create: false
     delete: false
     editor:
       preview: false
     fields:
-      - label: Title
-        name: title
+      - label: Internal Title
+        name: adminTitle
         widget: string
       # Logo
       - label: Logo
@@ -125,13 +127,14 @@ collections:
   - name: index-page
     label: Index Page
     folder: content/pages/index
+    identifier_field: adminTitle
     create: false
     delete: false
     editor:
       preview: false
     fields:
-      - label: Title
-        name: title
+      - label: Internal Title
+        name: adminTitle
         widget: string
       - label: Slug
         name: slug
@@ -230,13 +233,14 @@ collections:
   - name: services-page
     label: Services Page
     folder: content/pages/services
+    identifier_field: adminTitle
     create: false
     delete: false
     editor:
       preview: false
     fields:
-      - label: Title
-        name: title
+      - label: Internal Title
+        name: adminTitle
         widget: string
       - label: Slug
         name: slug
@@ -288,13 +292,14 @@ collections:
   - name: ariane-6-page
     label: Ariane 6 Page
     folder: content/pages/ariane-6
+    identifier_field: adminTitle
     create: false
     delete: false
     editor:
       preview: false
     fields:
-      - label: Title
-        name: title
+      - label: Internal Title
+        name: adminTitle
         widget: string
       - label: Slug
         name: slug
@@ -382,13 +387,14 @@ collections:
   - name: about-page
     label: About Page
     folder: content/pages/about
+    identifier_field: adminTitle
     create: false
     delete: false
     editor:
       preview: false
     fields:
-      - label: Title
-        name: title
+      - label: Internal Title
+        name: adminTitle
         widget: string
       - label: Slug
         name: slug
@@ -511,13 +517,14 @@ collections:
   - name: contact-page
     label: Contact Page
     folder: content/pages/contact
+    identifier_field: adminTitle
     create: false
     delete: false
     editor:
       preview: false
     fields:
-      - label: Title
-        name: title
+      - label: Internal Title
+        name: adminTitle
         widget: string
       - label: Slug
         name: slug
@@ -617,24 +624,21 @@ collections:
   - name: legal-page
     label: Legal Page
     folder: content/pages/legal
+    identifier_field: adminTitle
     create: false
     delete: false
     editor:
       preview: false
     fields:
-      - label: Title
-        name: title
+      - label: Internal Title
+        name: adminTitle
         widget: string
       - label: Slug
         name: slug
         widget: string                       
-      - label: Body
-        name: body
-        widget: object
-        fields: 
-          - label: Title
-            name: title
-            widget: string          
-          - label: Content
-            name: content
-            widget: markdown         
+      - label: Title
+        name: title
+        widget: string          
+      - label: Content
+        name: content
+        widget: markdown         

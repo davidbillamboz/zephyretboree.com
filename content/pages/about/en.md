@@ -1,5 +1,5 @@
 ---
-title: About EN
+adminTitle: Page About EN
 slug: about
 # Intro
 intro:

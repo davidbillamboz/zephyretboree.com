@@ -1,5 +1,5 @@
 ---
-title: Services EN
+adminTitle: Page Service EN
 slug: services
 intro: 
   title: Services

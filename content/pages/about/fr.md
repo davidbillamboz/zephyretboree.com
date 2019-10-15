@@ -1,5 +1,5 @@
 ---
-title: À propos FR
+adminTitle: Page About FR
 slug: a-propos
 # Intro
 intro:

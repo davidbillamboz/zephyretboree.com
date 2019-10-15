@@ -31,7 +31,7 @@ canopee:
       icon: sail
     - text: Equipé d’un moteur dual fuel Diesel - GNL
       icon: gearing
-  image: pages/ariane6/canopee_schema.jpg
+  image: /images/pages/ariane6/canopee_schema.jpg
   progressBar:
     value: "35"
     text: >-
@@ -40,5 +40,5 @@ canopee:
 route:
   title: Les ports desservis
   text: Les différents éléments constituant le lanceur Ariane 6 sont construits par différents pays membres du programme Ariane. Ces éléments seront ensuite collectés et acheminés au centre spatiale guyannais à Kourou.
-  image: pages/ariane6/canopee_sunset.jpg
+  image: /images/pages/ariane6/canopee_sunset.jpg
   text2: Le navire, dont le lancement est prévu pour 2022, sera construit et exploité par Alizés une joint venture réalisée avec notre partenaire Jifmar Offshore Service. Le choix d’ArianeGroup de nous confier le transport du lanceur Ariane 6 démontre notre capacité à concevoir des projets spécifiques et sur mesure pour répondre à des contraintes industrielles complexes.

@@ -8,7 +8,7 @@ links:
   - title: Ariane 6
     url: /ariane-6/    
   - title: À propos
-    url: /a-propos/
+    url: /about/
 contactButton:
   title: Contact 
   url: /contact/

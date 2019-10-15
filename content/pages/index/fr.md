@@ -6,6 +6,7 @@ metadata:
   description: ""
 # Hero
 hero:
+  image: /images/pages/home/hero.jpg
   text1: Et si
   text2: on utilisait
   text3: le vent de nouveau ?
@@ -28,6 +29,7 @@ presentation:
 news: 
   title: Notre actualité
   subTitle: Construction du premier cargo à voile moderne
+  image: /images/pages/home/news/alizes-canopee.jpg
   button: 
     title: Découvrir
     url: /ariane-6/
@@ -39,10 +41,13 @@ projects:
   projects: 
     - title: Porte-Conteneur
       text: Nous visons les lignes secondaires et le transport de courte à moyenne distance
-      imageKey: porte_conteneur
+      imageDesktop: /images/pages/home/projects/porte_conteneur_desktop.jpg
+      imageMobile: /images/pages/home/projects/porte_conteneur_mobile.jpg      
     - title: Navire roulier
       text: Nous nous adressons au transport de remorques non-accompagnés et voitures pour promouvoir le report modal
-      imageKey: navire_roulier
+      imageDesktop: /images/pages/home/projects/navire_roulier_desktop.jpg
+      imageMobile: /images/pages/home/projects/navire_roulier_mobile.jpg
     - title: Navire sur-mesure
       text: Étudions ensemble vos contraintes logistiques, nous pouvons concevoir un navire adapté à vos besoins
-      imageKey: sur_mesure
+      imageDesktop: /images/pages/home/projects/sur_mesure_desktop.jpg
+      imageMobile: /images/pages/home/projects/sur_mesure_mobile.jpg      

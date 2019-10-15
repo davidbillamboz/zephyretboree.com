@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
 import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image/withIEPolyfill';
+import GatsbyImage from 'gatsby-image/withIEPolyfill';
 import Title from '../Title';
 import SubTitle from '../SubTitle';
 
@@ -23,48 +22,38 @@ const ImageContainer = styled.div`
   }
 `;
 
-const HomeNews = ({ title, subTitle, button }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        file(relativePath: { eq: "pages/home/news/alizes-canopee.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 1000, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Title>{title}</Title>
-        <SubTitle>{subTitle}</SubTitle>
-        <ImageContainer className="has-text-centered">
-          <Img fluid={data.file.childImageSharp.fluid} />
-          <div className="button-container">
-            <GatsbyLink
-              to={button.url}
-              className="button is-primary is-hidden-tablet"
-            >
-              {button.title}
-            </GatsbyLink>
-            <GatsbyLink
-              to={button.url}
-              className="button is-primary is-large is-hidden-mobile"
-            >
-              {button.title}
-            </GatsbyLink>
-          </div>
-        </ImageContainer>
-      </>
-    )}
-  />
+const HomeNews = ({ title, subTitle, image, button }) => (
+  <>
+    <Title>{title}</Title>
+    <SubTitle>{subTitle}</SubTitle>
+    <ImageContainer className="has-text-centered">
+      <GatsbyImage fluid={image.childImageSharp.fluid} />
+      <div className="button-container">
+        <GatsbyLink
+          to={button.url}
+          className="button is-primary is-hidden-tablet"
+        >
+          {button.title}
+        </GatsbyLink>
+        <GatsbyLink
+          to={button.url}
+          className="button is-primary is-large is-hidden-mobile"
+        >
+          {button.title}
+        </GatsbyLink>
+      </div>
+    </ImageContainer>
+  </>
 );
 
 HomeNews.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      fluid: PropTypes.shape({}),
+    }),
+  }).isRequired,
   button: PropTypes.shape({
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,

@@ -6,6 +6,7 @@ metadata:
   description: ""
 # Hero
 hero:
+  image: /images/pages/home/hero.jpg
   text1: sail
   text2: shipping
   text3: company
@@ -28,6 +29,7 @@ presentation:
 news: 
   title: Latest updates
   subTitle: Buliding of the first sail cargo ship
+  image: /images/pages/home/news/alizes-canopee.jpg
   button: 
     title: Learn more
     url: /en/ariane-6/
@@ -39,10 +41,13 @@ projects:
   projects: 
     - title: Ro-ro ship
       text: We target short to medium-distance shipping 
-      imageKey: porte_conteneur
+      imageDesktop: /images/pages/home/projects/porte_conteneur_desktop.jpg
+      imageMobile: /images/pages/home/projects/porte_conteneur_mobile.jpg    
     - title: Container vessel
       text: We aim at transporting unaccompanied trailers and cars to promote modal shift
-      imageKey: navire_roulier
+      imageDesktop: /images/pages/home/projects/navire_roulier_desktop.jpg
+      imageMobile: /images/pages/home/projects/navire_roulier_mobile.jpg
     - title: Custom-made vessel
       text: Based on your logistic constraints, we can develop a ship adapted to your needs
-      imageKey: sur_mesure
+      imageDesktop: /images/pages/home/projects/sur_mesure_desktop.jpg
+      imageMobile: /images/pages/home/projects/sur_mesure_mobile.jpg

@@ -8,21 +8,55 @@ module.exports = {
     imageTwitter: 'https://zephyretboree.com/images/social/twitter.jpg',
   },
   plugins: [
+    'gatsby-transformer-sharp',
+    `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-plugin-netlify-cms-paths`,
       options: {
-        path: `${__dirname}/content`,
-        name: 'content',
+        cmsConfig: `/static/admin/config.yml`,
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
-      options: {},
+      options: {
+        plugins: [],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/static/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/content`,
+      },
     },
     {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve(`./src/components/Layout.jsx`),
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-styled-components',
+      options: {
+        // By default, the displayName of a component will be prefixed with the filename
+        // in order to make the component name as unique as possible.
+        fileName: false,
+        displayName: false,
+      },
+    },
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+      options: {
+        develop: true, // Activates purging in npm run develop
+        // purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
       },
     },
     {
@@ -45,33 +79,7 @@ module.exports = {
         ],
       },
     },
-    'gatsby-transformer-sharp',
-    `gatsby-plugin-sharp`,
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: `${__dirname}/static/images`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-styled-components',
-      options: {
-        // By default, the displayName of a component will be prefixed with the filename
-        // in order to make the component name as unique as possible.
-        fileName: false,
-        displayName: false,
-      },
-    },
-    'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
-      options: {
-        develop: true, // Activates purging in npm run develop
-        // purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
-      },
-    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {},

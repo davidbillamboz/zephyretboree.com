@@ -16,7 +16,7 @@ links:
   - title: Ariane 6
     url: /ariane-6/
   - title: À propos
-    url: /a-propos/
+    url: /about/
   - title: Contact
     url: /contact/
 links2:

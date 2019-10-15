@@ -46,11 +46,17 @@ const ProjectStyled = styled.div`
   }
 `;
 
-const Project = ({ images, title, text }) => (
+const Project = ({ imageDesktop, imageMobile, title, text }) => (
   <ProjectStyled className="column">
     <div>
-      <GatsbyImage fluid={images.mobile} className="is-hidden-tablet" />
-      <GatsbyImage fluid={images.desktop} className="is-hidden-mobile" />
+      <GatsbyImage
+        fluid={imageMobile.childImageSharp.fluid}
+        className="is-hidden-tablet"
+      />
+      <GatsbyImage
+        fluid={imageDesktop.childImageSharp.fluid}
+        className="is-hidden-mobile"
+      />
       <h4>{title}</h4>
       <p>{text}</p>
     </div>
@@ -60,9 +66,15 @@ const Project = ({ images, title, text }) => (
 Project.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  images: PropTypes.shape({
-    desktop: PropTypes.shape({}).isRequired,
-    mobile: PropTypes.shape({}).isRequired,
+  imageDesktop: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      fluid: PropTypes.shape({}),
+    }),
+  }).isRequired,
+  imageMobile: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      fluid: PropTypes.shape({}),
+    }),
   }).isRequired,
 };
 

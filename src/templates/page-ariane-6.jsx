@@ -44,6 +44,10 @@ export const pageQuery = graphql`
     page: markdownRemark(fields: { lang: { eq: $lang }, name: { eq: $name } }) {
       id
       frontmatter {
+        metadata {
+          title
+          description
+        }
         intro {
           title
           subTitle
@@ -61,7 +65,13 @@ export const pageQuery = graphql`
             text
             icon
           }
-          image
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
           progressBar {
             value
             text
@@ -70,7 +80,13 @@ export const pageQuery = graphql`
         route {
           title
           text
-          image
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
           text2
         }
       }

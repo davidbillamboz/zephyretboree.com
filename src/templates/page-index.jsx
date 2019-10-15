@@ -49,8 +49,19 @@ export const pageQuery = graphql`
     page: markdownRemark(fields: { lang: { eq: $lang }, name: { eq: $name } }) {
       id
       frontmatter {
+        metadata {
+          title
+          description
+        }
         title
         hero {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
           text1
           text2
           text3
@@ -69,6 +80,13 @@ export const pageQuery = graphql`
         news {
           title
           subTitle
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
           button {
             title
             url
@@ -81,7 +99,20 @@ export const pageQuery = graphql`
           projects {
             title
             text
-            imageKey
+            imageDesktop {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            imageMobile {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }

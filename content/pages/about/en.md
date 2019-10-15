@@ -15,7 +15,8 @@ partners:
   button:
     title: Learn more
   partners: 
-    - imageKey: vplp
+    - image: /images/pages/about/partners/vplp.jpg
+      logo: /images/partners/logo_vplp_color.jpg
       title: Concept of articulated wing-sails
       text: >-
         Founded by Marc Van Peteghem and Vincent Lauriot Prévost, VPLP design has established itself as one of the best naval architecture firm in the world. VPLP is our long-standing partner and we are working closely with their team on the energetic optimisation early into the project, both at the architectural and propulsive levels.
@@ -29,7 +30,8 @@ partners:
         
         Once this constraint was over, another necessity was to make the system more simple and reliable. The control of the rigging does not require additional sailors, the settings are entirely automated and the structure meets the robustness and reliability imperatives required by maritime regulations and commercial ship activities.
       link: https://vplp.fr
-    - imageKey: cnim
+    - image: /images/pages/about/partners/cnim.jpg
+      logo: /images/partners/logo_cnim_color.png
       title: Building wing-sails adapted to shipping
       text: >-
         To get the best guarantees of reliability and sustainability, VPLP design has developed a partnership with CNIM group to ensure the development and the production of the wing-sails. The CNIM group is a French equipment manufacturer and industrial contractor operating on a worldwide basis. Its activity in advanced engineering, in particular in spatial or defence markets, confer to CNIM credibility in the conception/production of the complex industrial projects with a high added value.
@@ -37,7 +39,8 @@ partners:
         
         The wing-sails will be produced in La Seyne-sur-Mer. Two first demonstrators of 35 square meters were built in 2019 and successfully tested on Energy Observer, a demonstrator vessel of environmentally responsible technologies
       link: https://cnim.com
-    - imageKey: dice
+    - image: /images/pages/about/partners/dice.jpg
+      logo: /images/partners/logo_d_ice_color.png
       title: Weather routing
       text: >-
         The weather routing is a key technology for Zéphyr & Borée. The fuel savings allowed by the wind remain very variable as they depend on multiple factors, in particular on the geographic area, the season, and the operating speed. Thus, on the same route, the fuel savings can be very important if the wind is favorable, and, the other way round, they might very low in certain wind conditions.
@@ -76,6 +79,7 @@ origins:
   text1: >-
     **90%** of international trade transits by the sea on **45 000 vessels** what makes maritime transport an important source of pollution
   text2: Zéphyr & Borée is born in 2014 from this statement and the ambition to push forward the energetic model of the merchant cargo ships in order to reduce the environmental impact of the shipping by using renewable energies and low-carbon technologies. The wind propulsion appeared straightaway as one of the most concrete, efficient, and mature solutions among alternatives to diesel.
+  image: /images/pages/about/team.jpg
   text3: "The meeting in 2015 with architect Marc Van Peteghem, co-founder of VPLP design, was determinant. At that time he started to work on OceanWings, the wing-sails dedicated for merchant vessels. VPLP design very soon became more than a strategic partner, a technological pillar on which Zéphyr & Borée has developed. Today the wing-sails developed by VPLP remain the key technology of our project but we are also working on mixing in other solutions, particularly hydrogen power, therewith to achieve our goal: decarbonise as much as possible the energetic model of the merchant vessels."
 # Values
 values: 

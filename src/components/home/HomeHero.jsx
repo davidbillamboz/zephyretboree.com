@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
 import GatsbyImage from 'gatsby-image/withIEPolyfill';
 
 const Catchline = styled.div`
@@ -106,47 +105,37 @@ const HomeHeroStyled = styled.section`
   }
 `;
 
-const HomeHero = ({ text1, text2, text3, text }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        file(relativePath: { eq: "pages/home/hero.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 1000, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <HomeHeroStyled className="hero is-fullheight-with-navbar">
-        <GatsbyImage fluid={data.file.childImageSharp.fluid} />
-        <div className="hero-head">
-          <div className="container">
-            <div className="columns">
-              <div className="column">
-                <Catchline>
-                  {[text1, text2, text3].map(item => (
-                    <div className="catchline-line" key={item}>
-                      {item}
-                    </div>
-                  ))}
-                </Catchline>
-              </div>
-              <ColumnText className="column">
-                <Text>{text}</Text>
-              </ColumnText>
-            </div>
+const HomeHero = ({ image, text1, text2, text3, text }) => (
+  <HomeHeroStyled className="hero is-fullheight-with-navbar">
+    <GatsbyImage fluid={image.childImageSharp.fluid} />
+    <div className="hero-head">
+      <div className="container">
+        <div className="columns">
+          <div className="column">
+            <Catchline>
+              {[text1, text2, text3].map(item => (
+                <div className="catchline-line" key={item}>
+                  {item}
+                </div>
+              ))}
+            </Catchline>
           </div>
+          <ColumnText className="column">
+            <Text>{text}</Text>
+          </ColumnText>
         </div>
-        <Bar />
-      </HomeHeroStyled>
-    )}
-  />
+      </div>
+    </div>
+    <Bar />
+  </HomeHeroStyled>
 );
 
 HomeHero.propTypes = {
+  image: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      fluid: PropTypes.shape({}),
+    }),
+  }).isRequired,
   text1: PropTypes.string.isRequired,
   text2: PropTypes.string.isRequired,
   text3: PropTypes.string.isRequired,

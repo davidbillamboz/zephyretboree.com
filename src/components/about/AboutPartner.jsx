@@ -62,7 +62,7 @@ const AboutPartner = ({ title, text, link, button, image, logo }) => {
           </TextContainerStyled>
           <LogoContainer>
             <a href={link} target="_blank" rel="noopener noreferrer">
-              <GatsbyImage fixed={logo} />
+              <GatsbyImage fixed={logo.childImageSharp.fixed} />
             </a>
           </LogoContainer>
           {!textVisibility && (
@@ -74,7 +74,7 @@ const AboutPartner = ({ title, text, link, button, image, logo }) => {
           )}
         </div>
         <ImageContainer className="column is-hidden-mobile">
-          <GatsbyImage fluid={image} />
+          <GatsbyImage fluid={image.childImageSharp.fluid} />
         </ImageContainer>
       </div>
     </PartnerContainer>
@@ -88,8 +88,16 @@ AboutPartner.propTypes = {
   button: PropTypes.shape({
     title: PropTypes.string.isRequired,
   }).isRequired,
-  image: PropTypes.shape({}).isRequired,
-  logo: PropTypes.shape({}).isRequired,
+  image: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      fluid: PropTypes.shape({}),
+    }),
+  }).isRequired,
+  logo: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      fixed: PropTypes.shape({}),
+    }),
+  }).isRequired,
 };
 
 export default AboutPartner;

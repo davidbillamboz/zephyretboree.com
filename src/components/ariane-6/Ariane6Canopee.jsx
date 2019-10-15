@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import GatsbyImage from 'gatsby-image/withIEPolyfill';
 import SubTitle from '../SubTitle';
 import Markdown from '../Markdown';
 import IconTextColumns from '../IconTextColumns';
@@ -44,7 +45,7 @@ const Ariane6Canopee = ({ title, text, columns, image, progressBar }) => (
     <IconTextColumns items={columns} />
 
     <ImageContainerStyled>
-      <img src={`/images/${image}`} alt="" />
+      <GatsbyImage fluid={image.childImageSharp.fluid} />
     </ImageContainerStyled>
 
     <ProgressBarContainerStyled>
@@ -71,7 +72,11 @@ Ariane6Canopee.propTypes = {
       icon: PropTypes.string.isRequired,
     })
   ).isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      fluid: PropTypes.shape({}),
+    }),
+  }).isRequired,
   progressBar: PropTypes.shape({
     text: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,

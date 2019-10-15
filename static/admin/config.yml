@@ -10,11 +10,11 @@ site_url: https://objective-wiles-a57b89.netlify.com/
 
 # The media_folder option specifies the folder path where uploaded files should be saved, 
 # relative to the base of the repo.
-media_folder: static
+media_folder: static/images
 
 # The public_folder option specifies the folder path where the files uploaded by the media 
 # library will be accessed, relative to the base of the built site.
-public_folder: /
+public_folder: /images
 
 # A list of collections the CMS should be able to edit
 collections:
@@ -155,6 +155,9 @@ collections:
         name: hero
         widget: object
         fields:
+          - label: Image
+            name: image
+            widget: image          
           - label: Text 1
             name: text1
             widget: string
@@ -202,7 +205,10 @@ collections:
             widget: string 
           - label: Sub Title
             name: subTitle
-            widget: string           
+            widget: string 
+          - label: Image
+            name: image
+            widget: image                      
           - label: Button
             name: button
             widget: object
@@ -237,9 +243,12 @@ collections:
               - label: Text
                 name: text
                 widget: string  
-              - label: Image Key
-                name: imageKey
-                widget: string 
+              - label: Image Desktop (vertical)
+                name: imageDesktop
+                widget: image
+              - label: Image Mobile (horizontal)
+                name: imageMobile
+                widget: image                
   # Services page 
   - name: services-page
     label: Services Page
@@ -387,7 +396,7 @@ collections:
                 widget: string     
           - label: Image
             name: image
-            widget: string    
+            widget: image    
           - label: Progress Bar
             name: progressBar
             widget: object
@@ -411,7 +420,7 @@ collections:
             widget: text
           - label: Image
             name: image
-            widget: string 
+            widget: image
           - label: Text 2
             name: text2
             widget: text
@@ -473,9 +482,12 @@ collections:
             name: partners
             widget: list
             fields: 
-              - label: Image Key
-                name: imageKey
-                widget: string
+              - label: Image
+                name: image
+                widget: image
+              - label: Logo
+                name: logo
+                widget: image                
               - label: Title
                 name: title
                 widget: string
@@ -526,6 +538,9 @@ collections:
           - label: Text 2
             name: text2
             widget: text   
+          - label: Image
+            name: image
+            widget: image            
           - label: Text 3
             name: text3
             widget: text                               

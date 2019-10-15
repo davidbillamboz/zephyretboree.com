@@ -1,6 +1,5 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
-const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
 const DEFAULT_LANG = 'fr';
 
@@ -82,7 +81,6 @@ exports.createPages = ({ actions, graphql }) => {
       const page = {
         path: pagePath,
         component: path.resolve(`src/templates/${name}.jsx`),
-        // additional data can be passed via context
         context: {
           id,
           name,
@@ -98,10 +96,6 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-
-  // convert image paths for gatsby images
-  // TODO: document WTF
-  // fmImagesToRelative(node);
 
   // TODO: filter on page
   if (node.internal.type === `MarkdownRemark`) {

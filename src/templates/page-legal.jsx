@@ -37,6 +37,10 @@ export const pageQuery = graphql`
     page: markdownRemark(fields: { lang: { eq: $lang }, name: { eq: $name } }) {
       id
       frontmatter {
+        metadata {
+          title
+          description
+        }
         title
         content
       }

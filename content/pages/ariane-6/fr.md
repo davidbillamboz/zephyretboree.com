@@ -28,7 +28,7 @@ canopee:
   image: pages/ariane6/canopee_schema.jpg
   progressBar:
     value: "35"
-    text: Réduction de <b>35%<b/> des émissions polluantes
+    text: Réduction de <b>35%</b> des émissions polluantes
 route:
   title: Les ports desservis
   text: Les différents éléments constituant le lanceur Ariane 6 sont construits par différents pays membres du programme Ariane. Ces éléments seront ensuite collectés et acheminés au centre spatiale guyannais à Kourou.

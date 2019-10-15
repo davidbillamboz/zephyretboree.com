@@ -6,6 +6,8 @@ import RichText from '../RichText';
 import IconTextColumns from '../IconTextColumns';
 
 const ImageContainerStyled = styled.div`
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   text-align: center;
 `;
 

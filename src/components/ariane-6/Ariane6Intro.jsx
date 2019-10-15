@@ -6,6 +6,10 @@ import SubTitle from '../SubTitle';
 import RichText from '../RichText';
 import YoutubeVideo from '../YoutubeVideo';
 
+const VideoContainerStyled = styled.div`
+  margin-top: 3rem;
+`;
+
 const PartnerColumnStyled = styled.div`
   display: flex !important;
   align-items: center;
@@ -26,7 +30,9 @@ const Ariane6Intro = ({ title, subTitle, text, videoId, partners }) => (
     <Title>{title}</Title>
     <SubTitle>{subTitle}</SubTitle>
     <RichText content={text} />
-    <YoutubeVideo videoId={videoId} />
+    <VideoContainerStyled>
+      <YoutubeVideo videoId={videoId} />
+    </VideoContainerStyled>
     <div className="columns is-mobile">
       {partners &&
         partners.map(partner => (

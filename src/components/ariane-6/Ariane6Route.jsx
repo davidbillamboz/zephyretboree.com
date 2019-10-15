@@ -5,6 +5,7 @@ import SubTitle from '../SubTitle';
 import RichText from '../RichText';
 
 const ImageContainerStyled = styled.div`
+  margin: 3rem 0;
   text-align: center;
 `;
 

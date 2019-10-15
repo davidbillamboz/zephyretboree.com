@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import GatsbyImage from 'gatsby-image/withIEPolyfill';
 import Title from '../Title';
 import SubTitle from '../SubTitle';
 import Markdown from '../Markdown';
@@ -15,7 +16,7 @@ const PartnerColumnStyled = styled.div`
   align-items: center;
 `;
 
-const PartnerImageStyled = styled.img`
+const PartnerImageContainerStyled = styled.div`
   width: 100%;
   filter: grayscale(100%);
   transition: filter 0.23s;
@@ -24,7 +25,6 @@ const PartnerImageStyled = styled.img`
     filter: none;
   }
 `;
-
 const Ariane6Intro = ({ title, subTitle, text, videoId, partners }) => (
   <>
     <Title>{title}</Title>
@@ -35,12 +35,16 @@ const Ariane6Intro = ({ title, subTitle, text, videoId, partners }) => (
     </VideoContainerStyled>
     <div className="columns is-mobile">
       {partners &&
-        partners.map(partner => (
-          <PartnerColumnStyled className="column" key={partner.logoPath}>
-            <PartnerImageStyled
-              src={`/images/${partner.logoPath}`}
-              alt={partner.title}
-            />
+        partners.map((partner, index) => (
+          <PartnerColumnStyled className="column" key={index}>
+            <PartnerImageContainerStyled>
+              {partner.logo.extension !== 'svg' && (
+                <GatsbyImage fixed={partner.logo.childImageSharp.fixed} />
+              )}
+              {partner.logo.extension === 'svg' && (
+                <img src={partner.logo.publicURL} alt={partner.title} />
+              )}
+            </PartnerImageContainerStyled>
           </PartnerColumnStyled>
         ))}
     </div>
@@ -54,7 +58,13 @@ Ariane6Intro.propTypes = {
   videoId: PropTypes.string.isRequired,
   partners: PropTypes.arrayOf(
     PropTypes.shape({
-      logoPath: PropTypes.string.isRequired,
+      logo: PropTypes.shape({
+        childImageSharp: PropTypes.shape({
+          fixed: PropTypes.shape({}),
+        }),
+        extension: PropTypes.string,
+        publicURL: PropTypes.string,
+      }).isRequired,
       title: PropTypes.string.isRequired,
     })
   ).isRequired,

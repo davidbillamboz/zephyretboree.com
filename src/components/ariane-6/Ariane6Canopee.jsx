@@ -66,12 +66,7 @@ const Ariane6Canopee = ({ title, text, columns, image, progressBar }) => (
 Ariane6Canopee.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  columns: PropTypes.arrayOf(
-    PropTypes.shape({
-      text: PropTypes.string.isRequired,
-      icon: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  columns: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
   image: PropTypes.shape({
     childImageSharp: PropTypes.shape({
       fluid: PropTypes.shape({}),

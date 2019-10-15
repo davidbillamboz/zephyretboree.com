@@ -55,7 +55,15 @@ export const pageQuery = graphql`
           videoId
           partners {
             title
-            logoPath
+            logo {
+              childImageSharp {
+                fixed(width: 250, quality: 100) {
+                  ...GatsbyImageSharpFixed_withWebp_noBase64
+                }
+              }
+              extension
+              publicURL
+            }
           }
         }
         canopee {
@@ -63,7 +71,9 @@ export const pageQuery = graphql`
           text
           columns {
             text
-            icon
+            icon {
+              publicURL
+            }
           }
           image {
             childImageSharp {

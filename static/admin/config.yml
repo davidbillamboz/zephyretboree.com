@@ -370,9 +370,9 @@ collections:
               - label: Title
                 name: title
                 widget: string        
-              - label: Logo Path
-                name: logoPath
-                widget: string                                                                    
+              - label: Logo
+                name: logo
+                widget: image                                                                    
       # Canopee
       - label: Canopee
         name: canopee
@@ -393,7 +393,7 @@ collections:
                 widget: string
               - label: Icon
                 name: icon
-                widget: string     
+                widget: image     
           - label: Image
             name: image
             widget: image    

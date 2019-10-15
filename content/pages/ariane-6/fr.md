@@ -13,24 +13,24 @@ intro:
   videoId: MPV9wnD1ekk
   partners: 
     - title: ""
-      logoPath: partners/logo_alizes_color.svg
+      logo: /images/partners/logo_alizes_color.svg
     - title: ""
-      logoPath: partners/logo_jifmar_color.svg
+      logo: /images/partners/logo_jifmar_color.svg
     - title: ""
-      logoPath: logos/logo_horizontal_color.svg
+      logo: /images/logos/logo_horizontal_color.svg
     - title: ""
-      logoPath: partners/logo_vplp_color.jpg
+      logo: /images/partners/logo_vplp_color.jpg
     - title: ""
-      logoPath: partners/logo_ariane_color.svg
+      logo: /images/partners/logo_ariane_color.svg
 # Canopee
 canopee:
   title: Navire Canopée
   text: Baptisé Canopée, le navire que nous avons conçu répond à un cahier des charges particulièrement complexe compte tenu des exigences techniques dictées par le transport du lanceur Ariane 6 ainsi que des contraintes nautiques liées à l’accès au port de Pariacabo en Guyane.
   columns:
     - text: Equipé de quatre ailes articulées de 375 m²
-      icon: sail
+      icon: /images/icons/sail.svg
     - text: Equipé d’un moteur dual fuel Diesel - GNL
-      icon: gearing
+      icon: /images/icons/gearing.svg
   image: /images/pages/ariane6/canopee_schema.jpg
   progressBar:
     value: "35"

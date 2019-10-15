@@ -13,24 +13,24 @@ intro:
   videoId: MPV9wnD1ekk
   partners: 
     - title: ""
-      logoPath: partners/logo_alizes_color.svg
+      logo: /images/partners/logo_alizes_color.svg
     - title: ""
-      logoPath: partners/logo_jifmar_color.svg
+      logo: /images/partners/logo_jifmar_color.svg
     - title: ""
-      logoPath: logos/logo_horizontal_color.svg
+      logo: /images/logos/logo_horizontal_color.svg
     - title: ""
-      logoPath: partners/logo_vplp_color.jpg
+      logo: /images/partners/logo_vplp_color.jpg
     - title: ""
-      logoPath: partners/logo_ariane_color.svg
+      logo: /images/partners/logo_ariane_color.svg
 # Canopee
 canopee:
   title: Canopée vessel
   text: The ship that we have designed and named Canopée, meets strict and complex specifications that take into account the technical requirements imposed by the transport of Ariane 6 launcher, as well as the nautical constraints related to the access to the port of Pariacabo in Guiana.
   columns:
     - text: Equipped with four articulated wing-sails of 363 square meters each
-      icon: sail
+      icon: /images/icons/sail.svg
     - text: Equipped with dual engine diesel/LNG
-      icon: gearing
+      icon: /images/icons/gearing.svg
   image: /images/pages/ariane6/canopee_schema.jpg
   progressBar:
     value: "35"

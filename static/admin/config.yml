@@ -215,7 +215,7 @@ collections:
             widget: string      
           - label: Text
             name: text
-            widget: markdown
+            widget: text
           - label: Projects
             name: projects
             widget: list
@@ -341,7 +341,7 @@ collections:
             widget: string  
           - label: Text
             name: text
-            widget: markdown         
+            widget: text         
           - label: Columns
             name: columns
             widget: list   
@@ -375,13 +375,13 @@ collections:
             widget: string   
           - label: Text
             name: text
-            widget: markdown
+            widget: text
           - label: Image
             name: image
             widget: string 
           - label: Text 2
             name: text2
-            widget: markdown
+            widget: text
 
   # About page 
   - name: about-page
@@ -412,7 +412,7 @@ collections:
             widget: string
           - label: Text
             name: text
-            widget: markdown
+            widget: text
       # Partners
       - label: Partners
         name: partners
@@ -454,7 +454,7 @@ collections:
             widget: string
           - label: Text
             name: text
-            widget: markdown     
+            widget: text     
           - label: Questions
             name: questions
             widget: list
@@ -481,10 +481,10 @@ collections:
             widget: markdown   
           - label: Text 2
             name: text2
-            widget: markdown   
+            widget: text   
           - label: Text 3
             name: text3
-            widget: markdown                               
+            widget: text                               
       # Values
       - label: Values
         name: values
@@ -498,7 +498,7 @@ collections:
             widget: string
           - label: Text
             name: text
-            widget: markdown 
+            widget: text 
           - label: Values
             name: values
             widget: list
@@ -511,7 +511,7 @@ collections:
                 widget: string
               - label: Text
                 name: text
-                widget: markdown
+                widget: text
 
   # Contact page 
   - name: contact-page

@@ -3,6 +3,9 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 
+# TODO: to document
+site_url: https://objective-wiles-a57b89.netlify.com/
+publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 
@@ -11,10 +14,40 @@ collections: # A list of collections the CMS should be able to edit
   - name: header 
     label: Header
     folder: content/layout/header
-    create: false # Prevent users from creating documents in this collection
-    delete: false # Prevent users from deleting documents in this collection
+    create: false
+    delete: false
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      # Links
+      - label: Menu
+        name: links
+        widget: list
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Url
+            name: url
+            widget: string
+      # Contact Button
+      - label: Contact Button
+        name: contactButton
+        widget: object
+        fields: 
+          - label: Title
+            name: title
+            widget: string
+          - label: Url
+            name: url
+            widget: string
+      # Logo
+      - label: Logo
+        name: logo
+        widget: object
+        fields: 
+          - label: Url
+            name: url
+            widget: string
+
   # Footer
   - name: footer 
     label: Footer

@@ -72,8 +72,7 @@ const NavbarBrand = styled.div`
   }
 `;
 
-const Header = ({ data }) => {
-  const { logo, links, contactButton } = data.frontmatter;
+const Header = ({ logo, links, contactButton }) => {
   const [navbarMenuActive, setNavbarActive] = useState(false);
 
   const onBurgerClick = e => {
@@ -138,17 +137,13 @@ const Header = ({ data }) => {
 };
 
 Header.propTypes = {
-  data: PropTypes.shape({
-    frontmatter: PropTypes.shape({
-      links: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-      contactButton: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-      }).isRequired,
-      logo: PropTypes.shape({
-        url: PropTypes.string.isRequired,
-      }).isRequired,
-    }).isRequired,
+  links: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  contactButton: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  }).isRequired,
+  logo: PropTypes.shape({
+    url: PropTypes.string.isRequired,
   }).isRequired,
 };
 

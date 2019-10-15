@@ -126,75 +126,79 @@ const Copyrights = styled.p`
   margin-bottom: 0 !important;
 `;
 
-const Footer = ({ data, alternates }) => {
-  const { logo, socialLinks, links, copyrights, links2 } = data.frontmatter;
-  return (
-    <footer className="footer">
-      <div className="container">
-        <div className="content has-text-centered">
-          <div className="columns">
-            <LogoLinkWrapper className="column is-one-third">
-              <GatsbyLink to={logo.url} className="navbar-item">
-                <Logo src="/images/logos/logo_horizontal_white.png" alt="" />
-              </GatsbyLink>
-            </LogoLinkWrapper>
+const Footer = ({
+  logo,
+  socialLinks,
+  links,
+  copyrights,
+  links2,
+  alternates,
+}) => (
+  <footer className="footer">
+    <div className="container">
+      <div className="content has-text-centered">
+        <div className="columns">
+          <LogoLinkWrapper className="column is-one-third">
+            <GatsbyLink to={logo.url} className="navbar-item">
+              <Logo src="/images/logos/logo_horizontal_white.png" alt="" />
+            </GatsbyLink>
+          </LogoLinkWrapper>
 
-            <div className="column">
-              <SocialLinks>
-                {socialLinks &&
-                  socialLinks.map(link => (
-                    <SocialLink key={link.url}>
-                      <Link {...link} />
-                    </SocialLink>
-                  ))}
-              </SocialLinks>
+          <div className="column">
+            <SocialLinks>
+              {socialLinks &&
+                socialLinks.map(link => (
+                  <SocialLink key={link.url}>
+                    <Link {...link} />
+                  </SocialLink>
+                ))}
+            </SocialLinks>
 
-              <FooterMenuTop>
-                {links &&
-                  links.map(link => (
-                    <FooterMenuItem key={link.url}>
-                      <Link {...link} />
-                    </FooterMenuItem>
-                  ))}
-              </FooterMenuTop>
-            </div>
+            <FooterMenuTop>
+              {links &&
+                links.map(link => (
+                  <FooterMenuItem key={link.url}>
+                    <Link {...link} />
+                  </FooterMenuItem>
+                ))}
+            </FooterMenuTop>
           </div>
-          <Copyrights>{copyrights}</Copyrights>
-
-          <FooterMenuBottom>
-            {links2 &&
-              links2.map(link => (
-                <FooterMenuItem key={link.url}>
-                  <Link {...link} />
-                </FooterMenuItem>
-              ))}
-            <LangSwitcher>
-              {onClickLink => (
-                <>
-                  {alternates &&
-                    alternates
-                      .filter(link => !link.current)
-                      .map(link => (
-                        <FooterMenuItem key={link.lang}>
-                          <GatsbyLink
-                            key={link.lang}
-                            to={link.url}
-                            onClick={e => onClickLink(e, link.lang, link.url)}
-                          >
-                            {link.lang === 'fr' && 'Version française'}
-                            {link.lang === 'en' && 'English version'}
-                          </GatsbyLink>
-                        </FooterMenuItem>
-                      ))}
-                </>
-              )}
-            </LangSwitcher>
-          </FooterMenuBottom>
         </div>
+        <Copyrights>{copyrights}</Copyrights>
+
+        <FooterMenuBottom>
+          {links2 &&
+            links2.map(link => (
+              <FooterMenuItem key={link.url}>
+                <Link {...link} />
+              </FooterMenuItem>
+            ))}
+          <LangSwitcher>
+            {onClickLink => (
+              <>
+                {alternates &&
+                  alternates
+                    .filter(link => !link.current)
+                    .map(link => (
+                      <FooterMenuItem key={link.lang}>
+                        <GatsbyLink
+                          key={link.lang}
+                          to={link.url}
+                          onClick={e => onClickLink(e, link.lang, link.url)}
+                        >
+                          {link.lang === 'fr' && 'Version française'}
+                          {link.lang === 'en' && 'English version'}
+                        </GatsbyLink>
+                      </FooterMenuItem>
+                    ))}
+              </>
+            )}
+          </LangSwitcher>
+        </FooterMenuBottom>
       </div>
-    </footer>
-  );
-};
+    </div>
+  </footer>
+);
 
 Footer.propTypes = {
   alternates: PropTypes.arrayOf(
@@ -204,33 +208,29 @@ Footer.propTypes = {
       url: PropTypes.string.isRequired,
     })
   ).isRequired,
-  data: PropTypes.shape({
-    frontmatter: PropTypes.shape({
-      logo: PropTypes.shape({
-        url: PropTypes.string.isRequired,
-      }).isRequired,
-      copyrights: PropTypes.string.isRequired,
-      socialLinks: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          url: PropTypes.string.isRequired,
-          icon: PropTypes.string.isRequired,
-        })
-      ).isRequired,
-      links: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          url: PropTypes.string.isRequired,
-        })
-      ).isRequired,
-      links2: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          url: PropTypes.string.isRequired,
-        })
-      ).isRequired,
-    }).isRequired,
+  logo: PropTypes.shape({
+    url: PropTypes.string.isRequired,
   }).isRequired,
+  copyrights: PropTypes.string.isRequired,
+  socialLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      icon: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  links2: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Footer;

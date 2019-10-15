@@ -8,20 +8,24 @@ import '../styles/app.scss';
 const Layout = ({ data, children }) => {
   return (
     <>
-      <Header data={data.header} />
+      <Header {...data.header.frontmatter} />
       <PageTransition id={data.page.id}>{children}</PageTransition>
-      <Footer data={data.footer} alternates={[]} />
+      <Footer {...data.footer.frontmatter} alternates={[]} />
     </>
   );
 };
 
 Layout.propTypes = {
   data: PropTypes.shape({
-    header: PropTypes.shape({}).isRequired,
+    header: PropTypes.shape({
+      frontmatter: PropTypes.shape({}).isRequired,
+    }).isRequired,
     page: PropTypes.shape({
       id: PropTypes.string.isRequired,
     }).isRequired,
-    footer: PropTypes.shape({}).isRequired,
+    footer: PropTypes.shape({
+      frontmatter: PropTypes.shape({}).isRequired,
+    }).isRequired,
   }).isRequired,
   children: PropTypes.node.isRequired,
 };

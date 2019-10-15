@@ -6,4 +6,4 @@ metadata:
   title: Page non trouvée
   description: ""
 title: Oups ! Page non trouvée !
-image: pages/ariane6/canopee_sunset.jpg
+image: /images/pages/ariane6/canopee_sunset.jpg

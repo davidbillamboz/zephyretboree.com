@@ -55,13 +55,60 @@ collections: # A list of collections the CMS should be able to edit
     create: false # Prevent users from creating documents in this collection
     delete: false # Prevent users from deleting documents in this collection
     fields:
-      - {label: "Title", name: "title", widget: "string"}     
+      # Logo
+      - label: Logo
+        name: logo
+        widget: object
+        fields: 
+          - label: Url
+            name: url
+            widget: string
+      - label: Copyrights
+        name: copyrights
+        widget: string
+      # Social links
+      - label: Social Links
+        name: socialLinks
+        widget: list
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Url
+            name: url
+            widget: string
+          - label: Icon
+            name: icon
+            widget: string
+      # Links 1
+      - label: Menu 1
+        name: links
+        widget: list
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Url
+            name: url
+            widget: string
+      # Links 2
+      - label: Menu 2
+        name: links2
+        widget: list
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Url
+            name: url
+            widget: string
+
   # Home page 
   - name: index-page
     label: Index Page
     folder: content/pages/index
-    create: false # Prevent users from creating documents in this collection
-    delete: false # Prevent users from deleting documents in this collection
+    create: false
+    delete: false
     # editor:
     #   preview: true
     fields:

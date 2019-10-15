@@ -379,7 +379,7 @@ collections:
             widget: text
 
   # About page 
-  - name: About-page
+  - name: about-page
     label: About Page
     folder: content/pages/about
     create: false
@@ -506,3 +506,109 @@ collections:
               - label: Text
                 name: text
                 widget: text
+
+  # Contact page 
+  - name: contact-page
+    label: Contact Page
+    folder: content/pages/contact
+    create: false
+    delete: false
+    editor:
+      preview: false
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Slug
+        name: slug
+        widget: string                   
+      # Form
+      - label: Form
+        name: form
+        widget: object
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Sub Title
+            name: subTitle
+            widget: string
+          - label: Form
+            name: form
+            widget: object
+            fields: 
+              - label: Placeholders
+                name: placeholders
+                widget: object    
+                fields:          
+                  - label: Name
+                    name: name
+                    widget: string                 
+                  - label: Email
+                    name: email
+                    widget: string                 
+                  - label: Phone
+                    name: phone
+                    widget: string                 
+                  - label: Message
+                    name: message
+                    widget: string   
+              - label: Button Send
+                name: buttonSend
+                widget: object    
+                fields:      
+                  - label: Title
+                    name: title
+                    widget: string      
+              - label: Messages
+                name: messages
+                widget: object    
+                fields:      
+                  - label: Success
+                    name: success
+                    widget: string                                                                            
+                  - label: Error
+                    name: error
+                    widget: string                                                                                                
+      # Contacts
+      - label: Contacts
+        name: contacts
+        widget: object
+        fields:
+          - label: Contacts
+            name: contacts
+            widget: list
+            fields:           
+              - label: Name
+                name: name
+                widget: string
+              - label: Role
+                name: role
+                widget: string
+              - label: Email
+                name: email
+                widget: string
+              - label: Phone
+                name: phone
+                widget: string       
+      # Press
+      - label: Form
+        name: form
+        widget: object
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Sub Title
+            name: subTitle
+            widget: string
+          - label: Button Download
+            name: buttonDownload
+            widget: object
+            fields: 
+              - label: Title
+                name: title
+                widget: string
+              - label: Url
+                name: url
+                widget: string

@@ -24,6 +24,8 @@ collections:
     folder: content/layout/header
     create: false
     delete: false
+    editor:
+      preview: false
     fields:
       - label: Title
         name: title
@@ -65,6 +67,8 @@ collections:
     folder: content/layout/footer
     create: false
     delete: false
+    editor:
+      preview: false
     fields:
       - label: Title
         name: title
@@ -123,7 +127,7 @@ collections:
     folder: content/pages/index
     create: false
     delete: false
-    # editor:
-    #   preview: true
+    editor:
+      preview: false
     fields:
       - {label: "Title", name: "title", widget: "string"}

@@ -6,12 +6,7 @@ import theme from '../../styles/theme';
 import '../../styles/app.scss';
 
 const HeaderPreview = ({ entry, widgetFor }) => {
-  console.error(entry);
-  console.error(entry.getIn(['data']));
-  console.error(entry.getIn(['data', 'links']));
-  console.error(entry.getIn(['data', 'contactButton']));
-  console.error(entry.getIn(['data', 'logo']));
-
+  // TODO: fix data extraction
   return (
     <ThemeProvider theme={theme}>
       <Header

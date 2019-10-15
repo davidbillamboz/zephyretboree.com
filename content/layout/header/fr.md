@@ -6,7 +6,7 @@ links:
   - title: Services
     url: /services/    
   - title: Ariane 6
-    url: /actualite/ariane-6/    
+    url: /ariane-6/    
   - title: À propos
     url: /a-propos/
 contactButton:

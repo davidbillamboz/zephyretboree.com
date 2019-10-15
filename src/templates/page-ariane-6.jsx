@@ -1,9 +1,38 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import Ariane6Intro from '../components/ariane-6/Ariane6Intro';
+import Ariane6Canopee from '../components/ariane-6/Ariane6Canopee';
+import Ariane6Route from '../components/ariane-6/Ariane6Route';
 
-const PageAriane6 = ({ data }) => (
-  <div>title: {data.page.frontmatter.title}</div>
-);
+const PageAriane6 = ({ data }) => {
+  const { intro, canopee, route } = data.page.frontmatter;
+  return (
+    <div className="container">
+      <section className="section">
+        <Ariane6Intro {...intro} />
+      </section>
+      <section className="section">
+        <Ariane6Canopee {...canopee} />
+      </section>
+      <section className="section">
+        <Ariane6Route {...route} />
+      </section>
+    </div>
+  );
+};
+
+PageAriane6.propTypes = {
+  data: PropTypes.shape({
+    page: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        intro: PropTypes.shape({}).isRequired,
+        canopee: PropTypes.shape({}).isRequired,
+        route: PropTypes.shape({}).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default PageAriane6;
 
@@ -15,7 +44,35 @@ export const pageQuery = graphql`
     page: markdownRemark(fields: { lang: { eq: $lang }, name: { eq: $name } }) {
       id
       frontmatter {
-        title
+        intro {
+          title
+          subTitle
+          text
+          videoId
+          partners {
+            title
+            logoPath
+          }
+        }
+        canopee {
+          title
+          text
+          columns {
+            text
+            icon
+          }
+          image
+          progressBar {
+            value
+            text
+          }
+        }
+        route {
+          title
+          text
+          image
+          text2
+        }
       }
     }
   }

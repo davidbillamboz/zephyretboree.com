@@ -133,6 +133,9 @@ collections:
       - label: Title
         name: title
         widget: string
+      - label: Slug
+        name: slug
+        widget: string        
       # Hero
       - label: Hero
         name: hero
@@ -280,3 +283,96 @@ collections:
           - label: Tags
             name: tags
             widget: list
+
+  # Ariane 6 page 
+  - name: ariane-6-page
+    label: Ariane 6 Page
+    folder: content/pages/ariane-6
+    create: false
+    delete: false
+    editor:
+      preview: false
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Slug
+        name: slug
+        widget: string               
+      # Intro
+      - label: Intro
+        name: intro
+        widget: object
+        fields:
+          - label: Title
+            name: title
+            widget: string   
+          - label: Sub Title
+            name: subTitle
+            widget: string
+          - label: Text
+            name: text
+            widget: text   
+          - label: Youtube Video ID
+            name: videoID
+            widget: string
+          - label: Partners
+            name: partners
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string        
+              - label: Logo Path
+                name: logoPath
+                widget: string                                                                    
+      # Canopee
+      - label: Canopee
+        name: canopee
+        widget: object
+        fields:
+          - label: Title
+            name: title
+            widget: string  
+          - label: Text
+            name: text
+            widget: text         
+          - label: Columns
+            name: columns
+            widget: list    
+              - label: Text
+                name: text
+                widget: string
+              - label: Icon
+                name: icon
+                widget: string     
+          - label: Image
+            name: image
+            widget: string    
+          - label: Progress Bar
+            name: progressBar
+            widget: object
+            fields:
+              - label: Value
+                name: value
+                widget: string
+              - label: Text
+                name: text
+                widget: text                                                                                            
+      # Route
+      - label: Intro
+        name: intro
+        widget: object
+        fields:
+          - label: Title
+            name: title
+            widget: string   
+          - label: Text
+            name: text
+            widget: text
+          - label: Image
+            name: image
+            widget: string 
+          - label: Text 2
+            name: text2
+            widget: text

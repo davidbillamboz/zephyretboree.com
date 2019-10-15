@@ -14,7 +14,7 @@ links:
   - title: Services
     url: /en/services/
   - title: Ariane 6
-    url: /en/news/ariane-6/
+    url: /en/ariane-6/
   - title: About
     url: /en/about/
   - title: Contact

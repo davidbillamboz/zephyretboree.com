@@ -23,7 +23,7 @@ news:
   subTitle: Construction du premier cargo à voile moderne
   button: 
     title: Découvrir
-    url: /actuality/ariane-6/
+    url: /ariane-6/
 projects:
   title: Sur-mesure
   subTitle: Des projets adaptés à vos besoins de transport

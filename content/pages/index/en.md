@@ -23,7 +23,7 @@ news:
   subTitle: Buliding of the first sail cargo ship
   button: 
     title: Learn more
-    url: /en/news/ariane-6/
+    url: /en/ariane-6/
 projects:
   title: Custom-made
   subTitle: Projects adapted to your transport needs

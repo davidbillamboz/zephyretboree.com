@@ -130,4 +130,96 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - label: Title
+        name: title
+        widget: string
+      # Hero
+      - label: Hero
+        name: hero
+        widget: object
+        fields:
+          - label: Text 1
+            name: text1
+            widget: string
+          - label: Text 2
+            name: text2
+            widget: string
+          - label: Text 3
+            name: text3
+            widget: string  
+          - label: Text
+            name: text
+            widget: string   
+      # Presentation                     
+      - label: Presentation
+        name: presentation
+        widget: object
+        fields:
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - label: Text
+                name: text
+                widget: string 
+              - label: Icon
+                name: text
+                widget: string 
+          - label: Buttons
+            name: buttons
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string 
+              - label: Url
+                name: url
+                widget: string                 
+      # News                   
+      - label: News
+        name: news
+        widget: object
+        fields:
+          - label: Title
+            name: title
+            widget: string 
+          - label: Sub Title
+            name: title
+            widget: string           
+          - label: Button
+            name: button
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string 
+              - label: Url
+                name: url
+                widget: string 
+      # Projects                   
+      - label: Projects
+        name: projects
+        widget: object
+        fields:
+          - label: Title
+            name: title
+            widget: string 
+          - label: Sub Title
+            name: title
+            widget: string      
+          - label: Text
+            name: text
+            widget: text
+          - label: Projects
+            name: projects
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string 
+              - label: Text
+                name: text
+                widget: string  
+              - label: Image Key
+                name: imageKey
+                widget: string 

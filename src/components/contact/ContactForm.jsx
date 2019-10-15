@@ -21,7 +21,13 @@ const encode = data => {
     .join('&');
 };
 
-const ContactForm = ({ title, subTitle, form }) => {
+const ContactForm = ({
+  title,
+  subTitle,
+  placeholders,
+  buttonSend,
+  messages,
+}) => {
   const [formDisabled, setFormDisabled] = useState(false);
   const [formSent, setFormSent] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -71,7 +77,7 @@ const ContactForm = ({ title, subTitle, form }) => {
       {formSent && (
         <div>
           <AnimatedCheck />
-          <FormSuccessMessage>{form.messages.success}</FormSuccessMessage>
+          <FormSuccessMessage>{messages.success}</FormSuccessMessage>
         </div>
       )}
       {!formSent && (
@@ -97,7 +103,7 @@ const ContactForm = ({ title, subTitle, form }) => {
                   value={formData.name}
                   className="input"
                   type="text"
-                  placeholder={form.placeholders.name}
+                  placeholder={placeholders.name}
                   required
                 />
               </div>
@@ -110,7 +116,7 @@ const ContactForm = ({ title, subTitle, form }) => {
                   value={formData.email}
                   className="input"
                   type="email"
-                  placeholder={form.placeholders.email}
+                  placeholder={placeholders.email}
                   required
                 />
               </div>
@@ -123,7 +129,7 @@ const ContactForm = ({ title, subTitle, form }) => {
                   value={formData.phone}
                   className="input"
                   type="phone"
-                  placeholder={form.placeholders.phone}
+                  placeholder={placeholders.phone}
                   required
                 />
               </div>
@@ -135,22 +141,20 @@ const ContactForm = ({ title, subTitle, form }) => {
                   onChange={handleInputChange}
                   value={formData.message}
                   className="textarea"
-                  placeholder={form.placeholders.message}
+                  placeholder={placeholders.message}
                   required
                 />
               </div>
             </div>
             <div className="field">
               {hasError && (
-                <div className="notification is-warning">
-                  {form.messages.error}
-                </div>
+                <div className="notification is-warning">{messages.error}</div>
               )}
             </div>
             <div className="field is-grouped">
               <div className="control">
                 <button className="button is-primary" type="submit">
-                  {form.buttonSend.title}
+                  {buttonSend.title}
                 </button>
               </div>
             </div>
@@ -164,20 +168,18 @@ const ContactForm = ({ title, subTitle, form }) => {
 ContactForm.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
-  form: PropTypes.shape({
-    placeholders: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      email: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
-      message: PropTypes.string.isRequired,
-    }).isRequired,
-    buttonSend: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-    }).isRequired,
-    messages: PropTypes.shape({
-      success: PropTypes.string.isRequired,
-      error: PropTypes.string.isRequired,
-    }).isRequired,
+  placeholders: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
+  }).isRequired,
+  buttonSend: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+  messages: PropTypes.shape({
+    success: PropTypes.string.isRequired,
+    error: PropTypes.string.isRequired,
   }).isRequired,
 };
 

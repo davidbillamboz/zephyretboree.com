@@ -317,9 +317,9 @@ collections:
             widget: string
           - label: Text
             name: text
-            widget: markdown   
+            widget: text   
           - label: Youtube Video ID
-            name: videoID
+            name: videoId
             widget: string
           - label: Partners
             name: partners
@@ -366,8 +366,8 @@ collections:
                 name: text
                 widget: markdown                                                                                            
       # Route
-      - label: Intro
-        name: intro
+      - label: Route
+        name: route
         widget: object
         fields:
           - label: Title
@@ -540,43 +540,39 @@ collections:
           - label: Sub Title
             name: subTitle
             widget: string
-          - label: Form
-            name: form
-            widget: object
-            fields: 
-              - label: Placeholders
-                name: placeholders
-                widget: object    
-                fields:          
-                  - label: Name
-                    name: name
-                    widget: string                 
-                  - label: Email
-                    name: email
-                    widget: string                 
-                  - label: Phone
-                    name: phone
-                    widget: string                 
-                  - label: Message
-                    name: message
-                    widget: string   
-              - label: Button Send
-                name: buttonSend
-                widget: object    
-                fields:      
-                  - label: Title
-                    name: title
-                    widget: string      
-              - label: Messages
-                name: messages
-                widget: object    
-                fields:      
-                  - label: Success
-                    name: success
-                    widget: string                                                                            
-                  - label: Error
-                    name: error
-                    widget: string                                                                                                
+          - label: Placeholders
+            name: placeholders
+            widget: object    
+            fields:          
+              - label: Name
+                name: name
+                widget: string                 
+              - label: Email
+                name: email
+                widget: string                 
+              - label: Phone
+                name: phone
+                widget: string                 
+              - label: Message
+                name: message
+                widget: string   
+          - label: Button Send
+            name: buttonSend
+            widget: object    
+            fields:      
+              - label: Title
+                name: title
+                widget: string      
+          - label: Messages
+            name: messages
+            widget: object    
+            fields:      
+              - label: Success
+                name: success
+                widget: string                                                                            
+              - label: Error
+                name: error
+                widget: string                                                                                                
       # Contacts
       - label: Contacts
         name: contacts
@@ -599,8 +595,8 @@ collections:
                 name: phone
                 widget: string       
       # Press
-      - label: Form
-        name: form
+      - label: Press
+        name: press
         widget: object
         fields:
           - label: Title

@@ -5,17 +5,16 @@ slug: contact
 form: 
   title: Contact 
   subTitle: Let’s work together
-  form: 
-    placeholders: 
-      name: Name
-      email: Email
-      phone: Phone
-      message: Message
-    buttonSend: 
-      title: Submit
-    messages:
-      success: Your message has been sent! Thank you!
-      error: An error occured! You can use the direct contact informations to contact us.
+  placeholders: 
+    name: Name
+    email: Email
+    phone: Phone
+    message: Message
+  buttonSend: 
+    title: Submit
+  messages:
+    success: Your message has been sent! Thank you!
+    error: An error occured! You can use the direct contact informations to contact us.
 # Contacts
 contacts:
   contacts:

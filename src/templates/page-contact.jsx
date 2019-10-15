@@ -47,20 +47,18 @@ export const pageQuery = graphql`
         form {
           title
           subTitle
-          form {
-            placeholders {
-              name
-              email
-              phone
-              message
-            }
-            buttonSend {
-              title
-            }
-            messages {
-              success
-              error
-            }
+          placeholders {
+            name
+            email
+            phone
+            message
+          }
+          buttonSend {
+            title
+          }
+          messages {
+            success
+            error
           }
         }
         contacts {

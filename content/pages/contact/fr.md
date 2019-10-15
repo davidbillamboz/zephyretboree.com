@@ -5,17 +5,16 @@ slug: contact
 form: 
   title: Contact 
   subTitle: Travaillons ensemble
-  form: 
-    placeholders: 
-      name: Votre prénom et nom
-      email: Votre email
-      phone: Votre téléphone
-      message: Votre message
-    buttonSend: 
-      title: Envoyer
-    messages:
-      success: Votre message a bien été envoyé !
-      error: Oups ! Une erreur est survenue, merci de réessayer plus tard !
+  placeholders: 
+    name: Votre prénom et nom
+    email: Votre email
+    phone: Votre téléphone
+    message: Votre message
+  buttonSend: 
+    title: Envoyer
+  messages:
+    success: Votre message a bien été envoyé !
+    error: Oups ! Une erreur est survenue, merci de réessayer plus tard !
 # Infos
 contacts:
   contacts: 

@@ -5,12 +5,12 @@ import Title from '../components/Title';
 import Markdown from '../components/Markdown';
 
 const PageLegal = ({ data }) => {
-  const { body } = data.page.frontmatter;
+  const { title, content } = data.page.frontmatter;
   return (
     <div className="container">
       <section className="section">
-        <Title>{body.title}</Title>
-        <Markdown content={body.content} />
+        <Title>{title}</Title>
+        <Markdown content={content} />
       </section>
     </div>
   );
@@ -20,10 +20,8 @@ PageLegal.propTypes = {
   data: PropTypes.shape({
     page: PropTypes.shape({
       frontmatter: PropTypes.shape({
-        body: PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          content: PropTypes.string.isRequired,
-        }).isRequired,
+        title: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   }).isRequired,
@@ -39,10 +37,8 @@ export const pageQuery = graphql`
     page: markdownRemark(fields: { lang: { eq: $lang }, name: { eq: $name } }) {
       id
       frontmatter {
-        body {
-          title
-          content
-        }
+        title
+        content
       }
     }
   }

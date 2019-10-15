@@ -22,6 +22,7 @@ module.exports = {
     'prettier/prettier': 'error',
     'import/prefer-default-export': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/no-array-index-key': 'off',
   },
   settings: {
     'import/core-modules': [],

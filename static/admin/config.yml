@@ -339,7 +339,8 @@ collections:
             widget: text         
           - label: Columns
             name: columns
-            widget: list    
+            widget: list   
+            fields: 
               - label: Text
                 name: text
                 widget: string
@@ -376,3 +377,132 @@ collections:
           - label: Text 2
             name: text2
             widget: text
+
+  # About page 
+  - name: About-page
+    label: About Page
+    folder: content/pages/about
+    create: false
+    delete: false
+    editor:
+      preview: false
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Slug
+        name: slug
+        widget: string   
+      # Intro
+      - label: Intro
+        name: intro
+        widget: object    
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Sub Title
+            name: subTitle
+            widget: string
+          - label: Text
+            name: text
+            widget: text
+      # Partners
+      - label: Partners
+        name: partners
+        widget: object    
+        fields:
+          - label: Button
+            name: button
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+          - label: Partners
+            name: partners
+            widget: list
+            fields: 
+              - label: Image Key
+                name: imageKey
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+              - label: Text
+                name: text
+                widget: text
+              - label: Link
+                name: link
+                widget: string
+      # Questions
+      - label: Questions
+        name: questions
+        widget: object    
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Sub Title
+            name: subTitle
+            widget: string
+          - label: Text
+            name: text
+            widget: text     
+          - label: Questions
+            name: questions
+            widget: list
+            fields: 
+              - label: Title
+                name: title
+                widget: string
+              - label: Text
+                name: text
+                widget: text
+      # Origins
+      - label: Origins
+        name: origins
+        widget: object    
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Sub Title
+            name: subTitle
+            widget: string
+          - label: Text 1
+            name: text1
+            widget: text   
+          - label: Text 2
+            name: text2
+            widget: text   
+          - label: Text 3
+            name: text3
+            widget: text                               
+      # Values
+      - label: Values
+        name: values
+        widget: object    
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Sub Title
+            name: subTitle
+            widget: string
+          - label: Text
+            name: text
+            widget: text 
+          - label: Values
+            name: values
+            widget: list
+            fields: 
+              - label: Title
+                name: title
+                widget: string
+              - label: Icon
+                name: icon
+                widget: string
+              - label: Text
+                name: text
+                widget: text

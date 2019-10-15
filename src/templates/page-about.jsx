@@ -1,7 +1,48 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import AboutIntro from '../components/about/AboutIntro';
+import AboutPartners from '../components/about/AboutPartners';
+import AboutQuestions from '../components/about/AboutQuestions';
+import AboutOrigins from '../components/about/AboutOrigins';
+import AboutValues from '../components/about/AboutValues';
 
-const PageAbout = ({ data }) => <div>title: {data.page.frontmatter.title}</div>;
+const PageAbout = ({ data }) => {
+  const { intro, partners, questions, origins, values } = data.page.frontmatter;
+  return (
+    <div className="container">
+      <section className="section">
+        <AboutIntro {...intro} />
+      </section>
+      <section className="section">
+        <AboutPartners {...partners} />
+      </section>
+      <section className="section">
+        <AboutQuestions {...questions} />
+      </section>
+      <section className="section">
+        <AboutOrigins {...origins} />
+      </section>
+      <section className="section">
+        <AboutValues {...values} />
+      </section>
+    </div>
+  );
+};
+
+PageAbout.propTypes = {
+  data: PropTypes.shape({
+    page: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        intro: PropTypes.shape({}).isRequired,
+        partners: PropTypes.shape({}).isRequired,
+        questions: PropTypes.shape({}).isRequired,
+        origins: PropTypes.shape({}).isRequired,
+        values: PropTypes.shape({}).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default PageAbout;
 
@@ -13,7 +54,48 @@ export const pageQuery = graphql`
     page: markdownRemark(fields: { lang: { eq: $lang }, name: { eq: $name } }) {
       id
       frontmatter {
-        title
+        intro {
+          title
+          subTitle
+          text
+        }
+        partners {
+          button {
+            title
+          }
+          partners {
+            imageKey
+            title
+            text
+            link
+          }
+        }
+        questions {
+          title
+          subTitle
+          text
+          questions {
+            title
+            text
+          }
+        }
+        origins {
+          title
+          subTitle
+          text1
+          text2
+          text3
+        }
+        values {
+          title
+          subTitle
+          text
+          values {
+            title
+            icon
+            text
+          }
+        }
       }
     }
   }

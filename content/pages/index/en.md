@@ -6,7 +6,7 @@ metadata:
   description: ""
 # Hero
 hero:
-  image: /images/pages/home/hero.jpg
+  image: /images/page_home_hero.jpg
   text1: sail
   text2: shipping
   text3: company
@@ -15,11 +15,11 @@ hero:
 presentation:
   services:
     - text: Custom solutions adapted to your transport needs
-      icon: /images/icons/pencil.svg
+      icon: /images/icon_pencil.svg
     - text: Pioneers in modern sail shipping
-      icon: /images/icons/sail.svg
+      icon: /images/icon_sail.svg
     - text: R&D service aiming at carbon neutral transport
-      icon: /images/icons/gearing.svg
+      icon: /images/icon_gearing.svg
   buttons: 
     - title: Discover our services
       url: /en/services/
@@ -29,7 +29,7 @@ presentation:
 news: 
   title: Latest updates
   subTitle: Buliding of the first sail cargo ship
-  image: /images/pages/home/news/alizes-canopee.jpg
+  image: /images/page_home_canopee.jpg
   button: 
     title: Learn more
     url: /en/ariane-6/
@@ -41,13 +41,13 @@ projects:
   projects: 
     - title: Ro-ro ship
       text: We target short to medium-distance shipping 
-      imageDesktop: /images/pages/home/projects/porte_conteneur_desktop.jpg
-      imageMobile: /images/pages/home/projects/porte_conteneur_mobile.jpg    
+      imageDesktop: /images/page_home_project_porte_conteneur_desktop.jpg
+      imageMobile: /images/page_home_project_porte_conteneur_mobile.jpg    
     - title: Container vessel
       text: We aim at transporting unaccompanied trailers and cars to promote modal shift
-      imageDesktop: /images/pages/home/projects/navire_roulier_desktop.jpg
-      imageMobile: /images/pages/home/projects/navire_roulier_mobile.jpg
+      imageDesktop: /images/page_home_project_navire_roulier_desktop.jpg
+      imageMobile: /images/page_home_project_navire_roulier_mobile.jpg
     - title: Custom-made vessel
       text: Based on your logistic constraints, we can develop a ship adapted to your needs
-      imageDesktop: /images/pages/home/projects/sur_mesure_desktop.jpg
-      imageMobile: /images/pages/home/projects/sur_mesure_mobile.jpg
+      imageDesktop: /images/page_home_project_sur_mesure_desktop.jpg
+      imageMobile: /images/page_home_project_sur_mesure_mobile.jpg

@@ -89,7 +89,7 @@ const Header = ({ logo, links, contactButton }) => {
       <NavbarBrand className="navbar-brand">
         <GatsbyLink to={logo.url} className="navbar-item" onClick={onClickLink}>
           <Logo
-            src="/images/logos/logo_horizontal_color.svg"
+            src="/images/logo_horizontal_color.svg"
             width="210"
             height="68"
             alt=""

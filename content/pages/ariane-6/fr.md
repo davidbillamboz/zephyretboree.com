@@ -13,25 +13,25 @@ intro:
   videoId: MPV9wnD1ekk
   partners: 
     - title: ""
-      logo: /images/partners/logo_alizes_color.svg
+      logo: /images/partner_logo_alizes_color.svg
     - title: ""
-      logo: /images/partners/logo_jifmar_color.svg
+      logo: /images/partner_logo_jifmar_color.svg
     - title: ""
-      logo: /images/logos/logo_horizontal_color.svg
+      logo: /images/logo_horizontal_color.svg
     - title: ""
-      logo: /images/partners/logo_vplp_color.jpg
+      logo: /images/partner_logo_vplp_color.jpg
     - title: ""
-      logo: /images/partners/logo_ariane_color.svg
+      logo: /images/partner_logo_ariane_color.svg
 # Canopee
 canopee:
   title: Navire Canopée
   text: Baptisé Canopée, le navire que nous avons conçu répond à un cahier des charges particulièrement complexe compte tenu des exigences techniques dictées par le transport du lanceur Ariane 6 ainsi que des contraintes nautiques liées à l’accès au port de Pariacabo en Guyane.
   columns:
     - text: Equipé de quatre ailes articulées de 375 m²
-      icon: /images/icons/sail.svg
+      icon: /images/icon_sail.svg
     - text: Equipé d’un moteur dual fuel Diesel - GNL
-      icon: /images/icons/gearing.svg
-  image: /images/pages/ariane6/canopee_schema.jpg
+      icon: /images/icon_gearing.svg
+  image: /images/page_ariane6_canopee_schema.jpg
   progressBar:
     value: "35"
     text: >-
@@ -40,5 +40,5 @@ canopee:
 route:
   title: Les ports desservis
   text: Les différents éléments constituant le lanceur Ariane 6 sont construits par différents pays membres du programme Ariane. Ces éléments seront ensuite collectés et acheminés au centre spatiale guyannais à Kourou.
-  image: /images/pages/ariane6/canopee_sunset.jpg
+  image: /images/page_ariane6_canopee_sunset.jpg
   text2: Le navire, dont le lancement est prévu pour 2022, sera construit et exploité par Alizés une joint venture réalisée avec notre partenaire Jifmar Offshore Service. Le choix d’ArianeGroup de nous confier le transport du lanceur Ariane 6 démontre notre capacité à concevoir des projets spécifiques et sur mesure pour répondre à des contraintes industrielles complexes.

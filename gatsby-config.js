@@ -4,8 +4,8 @@ module.exports = {
     titleTemplate: '%s - Zéphyr & Borée',
     descriptionFr: 'Zéphyr & Borée : et si on utilisait le vent de nouveau ?',
     descriptionEn: 'Zéphyr & Borée : Low carbon shipping',
-    imageFacebook: 'https://zephyretboree.com/images/social/facebook.jpg',
-    imageTwitter: 'https://zephyretboree.com/images/social/twitter.jpg',
+    imageFacebook: 'https://zephyretboree.com/images/social_facebook.jpg',
+    imageTwitter: 'https://zephyretboree.com/images/social_twitter.jpg',
   },
   plugins: [
     'gatsby-transformer-sharp',

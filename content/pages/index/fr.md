@@ -6,7 +6,7 @@ metadata:
   description: ""
 # Hero
 hero:
-  image: /images/pages/home/hero.jpg
+  image: /images/page_home_hero.jpg
   text1: Et si
   text2: on utilisait
   text3: le vent de nouveau ?
@@ -15,11 +15,11 @@ hero:
 presentation:
   services:
     - text: Des solutions sur mesure pour vos besoins de transport
-      icon: /images/icons/pencil.svg
+      icon: /images/icon_pencil.svg
     - text: Pionniers du transport à la voile
-      icon: /images/icons/sail.svg
+      icon: /images/icon_sail.svg
     - text: Un service R&D qui vise un transport zéro-carbone à terme
-      icon: /images/icons/gearing.svg
+      icon: /images/icon_gearing.svg
   buttons: 
     - title: Découvrez nos services
       url: /services/
@@ -29,7 +29,7 @@ presentation:
 news: 
   title: Notre actualité
   subTitle: Construction du premier cargo à voile moderne
-  image: /images/pages/home/news/alizes-canopee.jpg
+  image: /images/page_home_canopee.jpg
   button: 
     title: Découvrir
     url: /ariane-6/
@@ -41,13 +41,13 @@ projects:
   projects: 
     - title: Porte-Conteneur
       text: Nous visons les lignes secondaires et le transport de courte à moyenne distance
-      imageDesktop: /images/pages/home/projects/porte_conteneur_desktop.jpg
-      imageMobile: /images/pages/home/projects/porte_conteneur_mobile.jpg      
+      imageDesktop: /images/page_home_project_porte_conteneur_desktop.jpg
+      imageMobile: /images/page_home_project_porte_conteneur_mobile.jpg      
     - title: Navire roulier
       text: Nous nous adressons au transport de remorques non-accompagnés et voitures pour promouvoir le report modal
-      imageDesktop: /images/pages/home/projects/navire_roulier_desktop.jpg
-      imageMobile: /images/pages/home/projects/navire_roulier_mobile.jpg
+      imageDesktop: /images/page_home_project_navire_roulier_desktop.jpg
+      imageMobile: /images/page_home_project_navire_roulier_mobile.jpg
     - title: Navire sur-mesure
       text: Étudions ensemble vos contraintes logistiques, nous pouvons concevoir un navire adapté à vos besoins
-      imageDesktop: /images/pages/home/projects/sur_mesure_desktop.jpg
-      imageMobile: /images/pages/home/projects/sur_mesure_mobile.jpg      
+      imageDesktop: /images/page_home_project_sur_mesure_desktop.jpg
+      imageMobile: /images/page_home_project_sur_mesure_mobile.jpg      

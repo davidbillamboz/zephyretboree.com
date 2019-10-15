@@ -15,8 +15,8 @@ partners:
   button:
     title: En savoir plus
   partners: 
-    - image: /images/pages/about/partners/vplp.jpg
-      logo: /images/partners/logo_vplp_color.jpg
+    - image: /images/page_about_partner_vplp.jpg
+      logo: /images/partner_logo_vplp_color.jpg
       title: Le concept des ailes propulsives articulées
       text: >-
         Fondé par Marc Van Peteghem et Vincent Lauriot Prévost, VPLP design est aujourd’hui reconnu comme l’un des meilleurs cabinets d’architecture navale dans le monde. VPLP design est notre partenaire historique et nous travaillons étroitement avec leurs équipes très en amont des projets à l’optimisation énergétique, tant sur le plan architectural que propulsif, des navires que nous développons.
@@ -30,8 +30,8 @@ partners:
         
         En 2016 VPLP design conçu un premier prototype d’aile épaisse, affalable et automatisée cofinancé par l’ADEME qui permis de valider le concept des ailes épaisses à surface réglable.
       link: https://vplp.fr
-    - image: /images/pages/about/partners/cnim.jpg
-      logo: /images/partners/logo_cnim_color.png
+    - image: /images/page_about_partner_cnim.jpg
+      logo: /images/partner_logo_cnim_color.png
       title: La production des ailes adaptées au shipping
       text: >-
         Afin d'obtenir les meilleures garanties de fiabilité et de durabilité, VPLP design s’est associé au groupe CNIM pour assurer le développement et la production des ailes. Le groupe CNIM est un équipementier et ensemblier industriel français de dimension internationale. Ses activités d’ingénierie de haut niveau, notamment dans les domaines de l’aéro-spatial ou de la défense, confèrent à CNIM une crédibilité dans la conception/fabrication de projet industriels complexes à forte valeur ajoutée.
@@ -39,8 +39,8 @@ partners:
         
         Les ailes seront produites sur le site de la Seyne-sur-Mer. Deux premiers démonstrateurs de 35 m2 ont été construits en 2019 et testés avec succès sur l’Energy Observer, navire démonstrateur de technologies écoresponsables.
       link: https://cnim.com
-    - image: /images/pages/about/partners/dice.jpg
-      logo: /images/partners/logo_d_ice_color.png
+    - image: /images/page_about_partner_dice.jpg
+      logo: /images/partner_logo_d_ice_color.png
       title: Le routage météorologique
       text: >-
         Le routage météorologique est une briquetechnologique clef pour Zéphyr & Borée. Les économies de carburant permises par l’utilisation du vent sont très variables et dépendent de multiples facteurs, notamment la zone géographique, la saison, et la vitesse d’exploitation. Ainsi, sur un même trajet, les économies de carburant pourront être parfois très importantes si les vents sont favorables, et inversement, ces économies pourront aussi être faibles dans certaines conditions de vent.
@@ -73,11 +73,11 @@ questions:
 origins:
   title: À propos
   subTitle: Nos origines
-  icon: /images/icons/co2.svg
+  icon: /images/icon_co2.svg
   text1: >-
     **90%** des échanges de marchandises dans le monde transitent par voie maritime sur **45 000 cargos**. Faisant de l’industrie du transport maritime une importante source de pollution
   text2: Le projet Zéphyr & Borée est né en 2014 de ce constat et de la volonté de faire évoluer le modèle énergétique des navires de commerce pour réduire l’impact environnemental du shipping en utilisant des énergies renouvelables et des technologies bas-carbones. Rapidement la propulsion éolienne nous est apparue comme une des solutions les plus concrètes, efficaces, et matures parmi les alternatives au fuel.
-  image: /images/pages/about/team.jpg
+  image: /images/page_about_team.jpg
   text3: "La rencontre en 2015 avec l’architecte Marc Van Peteghem, co-fondateur de VPLP design, fut déterminante. Il débutait ses travaux sur les OceanWings, les ailes articulées dédiées aux navires de transport. VPLP design est rapidement devenu plus qu’un partenaire stratégique, un pilier technologique sur lequel Zéphyr & Borée s’est développé. Aujourd’hui les ailes rigides développées par VPLP restent une technologie clef des projets que nous développons et nous travaillons à l’association d’autres technologies, notamment la propulsion hydrogène, afin poursuivre notre objectif : décarboner au maximum le modèle énergétique des navires de commerce."
 # Values
 values: 
@@ -86,11 +86,11 @@ values:
   text: "Notre ambition est de contribuer activement à la transition énergétique du transport maritime. Nous ne considérons pas la rentabilité de l’entreprise comme la finalité mais le moyen de participer à cette transition. Concrètement, les projets développés par Zéphyr & Borée répondent toujours à une double condition : être économiquement viables pour nos investisseurs et nos clients et participer activement à la décarbonation du transport maritime. Au delà de l’activité principale de l’entreprise, nous sommes aussi attachés à organiser la vie quotidienne de celle-ci autour de valeurs permettant de rendre l’entreprise vertueuse pour la société."
   values: 
     - title: Environnement
-      icon: /images/icons/co2.svg
+      icon: /images/icon_co2.svg
       text: Nous tentons de réduire notre impact environnemental dans notre organisation quotidienne. Nous ne prenons jamais de vols intérieurs, nous limitons nos déplacements, nous privilégions des partenaires partageant ces engagements. Nous sommes éclairés au bureau par le fournisseur d’électricité renouvelable Enercoop. 
     - title: Impact social  et gestion financière
-      icon: /images/icons/impact.svg
+      icon: /images/icon_impact.svg
       text: Nous pratiquons au sein de l’entreprise une gouvernance qui donne une place à chacun. Nous déployons une politique financière éthique, fondée sur une gestion équitable et transparente.
     - title: Transparence
-      icon: /images/icons/transparency.svg
+      icon: /images/icon_transparency.svg
       text: Nous sommes convaincus que la transparence des entreprises est primordiale pour travailler en confiance avec nos clients, nos employés et nos partenaires. Nos clients en font l’expérience, nous construisons les projets de manière collaborative et transparente.

@@ -13,25 +13,25 @@ intro:
   videoId: MPV9wnD1ekk
   partners: 
     - title: ""
-      logo: /images/partners/logo_alizes_color.svg
+      logo: /images/partner_logo_alizes_color.svg
     - title: ""
-      logo: /images/partners/logo_jifmar_color.svg
+      logo: /images/partner_logo_jifmar_color.svg
     - title: ""
-      logo: /images/logos/logo_horizontal_color.svg
+      logo: /images/logo_horizontal_color.svg
     - title: ""
-      logo: /images/partners/logo_vplp_color.jpg
+      logo: /images/partner_logo_vplp_color.jpg
     - title: ""
-      logo: /images/partners/logo_ariane_color.svg
+      logo: /images/partner_logo_ariane_color.svg
 # Canopee
 canopee:
   title: Canopée vessel
   text: The ship that we have designed and named Canopée, meets strict and complex specifications that take into account the technical requirements imposed by the transport of Ariane 6 launcher, as well as the nautical constraints related to the access to the port of Pariacabo in Guiana.
   columns:
     - text: Equipped with four articulated wing-sails of 363 square meters each
-      icon: /images/icons/sail.svg
+      icon: /images/icon_sail.svg
     - text: Equipped with dual engine diesel/LNG
-      icon: /images/icons/gearing.svg
-  image: /images/pages/ariane6/canopee_schema.jpg
+      icon: /images/icon_gearing.svg
+  image: /images/page_ariane6_canopee_schema.jpg
   progressBar:
     value: "35"
     text: >-
@@ -40,5 +40,5 @@ canopee:
 route:
   title: Shipping route
   text: The components of Ariane 6 launcher are built in different member states of the Ariane program. After being collected in several European ports they will be shipped to the Guiana Space Center in Kourou.
-  image: /images/pages/ariane6/canopee_sunset.jpg
+  image: /images/page_ariane6_canopee_sunset.jpg
   text2: The vessel, whose launching is planned for 2022, will be built and operated by a joint venture with our partner Jifmar Offshore Service called Alizés. Being untrusted to transport of Ariane 6 launcher by ArianeGroup proves our capacity to develop specific and customised projects that meet complex industrial constraints.

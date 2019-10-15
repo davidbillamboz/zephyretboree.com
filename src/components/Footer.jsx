@@ -140,7 +140,7 @@ const Footer = ({
         <div className="columns">
           <LogoLinkWrapper className="column is-one-third">
             <GatsbyLink to={logo.url} className="navbar-item">
-              <Logo src="/images/logos/logo_horizontal_white.png" alt="" />
+              <Logo src="/images/logo_horizontal_white.png" alt="" />
             </GatsbyLink>
           </LogoLinkWrapper>
 

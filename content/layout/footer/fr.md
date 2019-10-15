@@ -6,10 +6,10 @@ copyrights: Copyright © 2019 Zéphyr & Borée. Tous droits réservés.
 socialLinks: 
   - title: Nous contacter
     url: /contact/
-    icon: /images/icons/mail2.svg
+    icon: /images/icon_mail2.svg
   - title: Linkedin 
     url: https://www.linkedin.com/company/zephyr-bor%C3%A9e
-    icon: /images/icons/lkndin.svg
+    icon: /images/icon_lkndin.svg
 links: 
   - title: Services
     url: /services/

@@ -8,7 +8,7 @@ metadata:
 # Intro
 intro:
   title: Nos partenaires clefs
-  subTitle: Des briques technologiques développées par  nos partenaires 
+  subTitle: Les briques technologiques développées par nos partenaires 
   text: Nos solutions de transport reposent sur différentes briques technologiques développées par nos partenaires. Parmi ceux-ci nous sommes particulièrement fiers de travailler avec VPLP design, CNIM, et D-Ice Engineering qui sont des partenaires clefs dans le développement de nos projets.
 # Partners
 partners:

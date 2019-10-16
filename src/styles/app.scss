@@ -1,3 +1,7 @@
 @import './fonts.css';
 @import './variables.scss';
 @import '~bulma/bulma.sass';
+
+.section + .section {
+  padding-top: 0; 
+}

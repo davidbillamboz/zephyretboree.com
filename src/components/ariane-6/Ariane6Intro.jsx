@@ -39,7 +39,7 @@ const Ariane6Intro = ({ title, subTitle, text, videoId, partners }) => (
           <PartnerColumnStyled className="column" key={index}>
             <PartnerImageContainerStyled>
               {partner.logo.extension !== 'svg' && (
-                <GatsbyImage fixed={partner.logo.childImageSharp.fixed} />
+                <GatsbyImage fluid={partner.logo.childImageSharp.fluid} />
               )}
               {partner.logo.extension === 'svg' && (
                 <img src={partner.logo.publicURL} alt={partner.title} />
@@ -60,7 +60,7 @@ Ariane6Intro.propTypes = {
     PropTypes.shape({
       logo: PropTypes.shape({
         childImageSharp: PropTypes.shape({
-          fixed: PropTypes.shape({}),
+          fluid: PropTypes.shape({}),
         }),
         extension: PropTypes.string,
         publicURL: PropTypes.string,

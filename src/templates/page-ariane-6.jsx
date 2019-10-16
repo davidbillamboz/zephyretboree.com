@@ -57,8 +57,8 @@ export const pageQuery = graphql`
             title
             logo {
               childImageSharp {
-                fixed(width: 250, quality: 100) {
-                  ...GatsbyImageSharpFixed_withWebp_noBase64
+                fluid(maxWidth: 250, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }
               extension

@@ -14,9 +14,7 @@ const PageAbout = ({ data }) => {
       <section className="section">
         <AboutIntro {...intro} />
       </section>
-      <section className="section">
-        <AboutPartners {...partners} />
-      </section>
+      <AboutPartners {...partners} />
       <section className="section">
         <AboutQuestions {...questions} />
       </section>

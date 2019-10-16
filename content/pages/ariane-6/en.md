@@ -41,4 +41,8 @@ route:
   title: Shipping route
   text: The components of Ariane 6 launcher are built in different member states of the Ariane program. After being collected in several European ports they will be shipped to the Guiana Space Center in Kourou.
   image: /images/page_ariane6_canopee_sunset.jpg
-  text2: The vessel, whose launching is planned for 2022, will be built and operated by a joint venture with our partner Jifmar Offshore Service called Alizés. Being untrusted to transport of Ariane 6 launcher by ArianeGroup proves our capacity to develop specific and customised projects that meet complex industrial constraints.
+  text2: >-
+    The vessel, whose launching is planned for 2022, will be built and operated by a joint venture with our partner Jifmar Offshore Service called Alizés.
+    
+    
+    Being untrusted to transport of Ariane 6 launcher by ArianeGroup proves our capacity to develop specific and customised projects that meet complex industrial constraints.

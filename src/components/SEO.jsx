@@ -12,20 +12,19 @@ const SEO = ({ metadata, lang, alternates }) => {
             siteMetadata {
               siteUrl
               titleTemplate
-              descriptionFr
-              descriptionEn
-              imageTwitter
-              imageFacebook
+              description {
+                fr
+                en
+              }
+              twitterImage
+              facebookImage
             }
           }
         }
       `}
       render={data => {
         const globalMetadata = data.site.siteMetadata;
-        const defaultDescription =
-          lang === 'fr'
-            ? globalMetadata.descriptionFr
-            : globalMetadata.descriptionEn;
+        const defaultDescription = globalMetadata.description[lang];
 
         const title = globalMetadata.titleTemplate.replace(
           '%s',
@@ -50,6 +49,10 @@ const SEO = ({ metadata, lang, alternates }) => {
         const currentAlternateUrl = currentAlternate
           ? currentAlternate.url
           : null;
+
+        const imageFacebookUrl = `${globalMetadata.siteUrl}/${globalMetadata.facebookImage}`;
+        const imageTwitterUrl = `${globalMetadata.siteUrl}/${globalMetadata.twitterImage}`;
+
         return (
           <Helmet
             htmlAttributes={{
@@ -81,35 +84,18 @@ const SEO = ({ metadata, lang, alternates }) => {
               <meta property="og:url" content={currentAlternateUrl} />
             )}
 
-            <meta property="og:title" content={metadata.og_title || title} />
+            <meta property="og:title" content={title} />
             <meta
               property="og:description"
-              content={
-                metadata.og_description ||
-                metadata.description ||
-                defaultDescription
-              }
+              content={metadata.description || defaultDescription}
             />
-            <meta
-              property="og:image"
-              content={metadata.og_image || globalMetadata.imageFacebook}
-            />
-            <meta
-              name="twitter:title"
-              content={metadata.twitter_title || title}
-            />
+            <meta property="og:image" content={imageFacebookUrl} />
+            <meta name="twitter:title" content={title} />
             <meta
               name="twitter:description"
-              content={
-                metadata.twitter_description ||
-                metadata.description ||
-                defaultDescription
-              }
+              content={metadata.description || defaultDescription}
             />
-            <meta
-              name="twitter:image"
-              content={metadata.twitter_image || globalMetadata.imageTwitter}
-            />
+            <meta name="twitter:image" content={imageTwitterUrl} />
           </Helmet>
         );
       }}

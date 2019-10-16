@@ -1,12 +1,35 @@
-module.exports = {
-  siteMetadata: {
-    siteUrl: 'https://zephyretboree.com',
-    titleTemplate: '%s - Zéphyr & Borée',
-    descriptionFr: 'Zéphyr & Borée : et si on utilisait le vent de nouveau ?',
-    descriptionEn: 'Zéphyr & Borée : Low carbon shipping',
-    imageFacebook: 'https://zephyretboree.com/images/social_facebook.jpg',
-    imageTwitter: 'https://zephyretboree.com/images/social_twitter.jpg',
+const MAIN_SITE_URL = 'https://zephyretboree.com';
+const LOCALHOST = 'http://localhost:8001'; // TODO: should automatically fetch that
+
+const {
+  URL: SITE_URL = MAIN_SITE_URL,
+  DEPLOY_PRIME_URL = SITE_URL,
+  CONTEXT: NODE_ENV = process.env.NODE_ENV || 'development',
+} = process.env;
+
+const isProduction = NODE_ENV === `production`;
+const isDev = NODE_ENV === `development`;
+
+let siteUrl;
+if (isDev) {
+  siteUrl = LOCALHOST;
+} else {
+  siteUrl = isProduction ? SITE_URL : DEPLOY_PRIME_URL;
+}
+
+const siteMetadata = {
+  siteUrl,
+  titleTemplate: '%s - Zéphyr & Borée',
+  description: {
+    fr: 'Zéphyr & Borée : et si on utilisait le vent de nouveau ?',
+    en: 'Zéphyr & Borée: Low carbon shipping',
   },
+  facebookImage: 'images/social_facebook.jpg',
+  twitterImage: 'images/social_twitter.jpg',
+};
+
+module.exports = {
+  siteMetadata,
   plugins: [
     'gatsby-transformer-sharp',
     `gatsby-plugin-sharp`,
@@ -56,7 +79,6 @@ module.exports = {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
         develop: true, // Activates purging in npm run develop
-        // purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
       },
     },
     {
@@ -80,6 +102,14 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-149700755-1',
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {},

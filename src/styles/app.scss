@@ -5,3 +5,7 @@
 .section + .section {
   padding-top: 0; 
 }
+
+html.has-navbar-fixed-top, body.has-navbar-fixed-top {
+  padding-top: 7.2rem;
+}

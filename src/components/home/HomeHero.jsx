@@ -66,13 +66,9 @@ const Bar = styled.div`
 `;
 
 const HomeHeroStyled = styled.section`
+  position: relative;
   height: 100vh !important;
   min-height: 500px !important;
-  padding-top: 5.25rem;
-
-  @media (min-width: 769px) {
-    padding-top: 7.2rem;
-  }
 
   .gatsby-image-wrapper {
     position: absolute !important;
@@ -85,12 +81,18 @@ const HomeHeroStyled = styled.section`
   .container {
     width: 100%;
     max-width: 1200px;
-    padding: 30px;
+    padding: 5.25rem 30px 10px;
+    @media (min-width: 769px) {
+      padding-top: 7.2rem;
+    }
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -95%);
+    top: 0;
+    bottom: 50%;
+    transform: translateX(-50%);
     margin: 0 auto !important;
+    display: flex;
+    align-items: flex-end;
   }
 
   .hero-head .container {

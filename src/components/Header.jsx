@@ -118,7 +118,7 @@ const Header = ({
     setNavbarActive(false);
   };
 
-  let lastScrollTop = document.documentElement.scrollTop;
+  let lastScrollTop = 0;
   let scrollDirection = null;
   let lastScrollTopBeforeDirectionChange = lastScrollTop;
 
@@ -199,8 +199,6 @@ const Header = ({
   if (navbarMenuActive) {
     classes.push('is-menu-open');
   }
-
-  console.error(bodyClass);
 
   return (
     <BodyClassName className={bodyClass}>

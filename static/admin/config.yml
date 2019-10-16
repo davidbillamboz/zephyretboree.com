@@ -4,7 +4,7 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
 
 # TODO: to document
-site_url: https://objective-wiles-a57b89.netlify.com/
+site_url: https://zephyetboree.com
 
 # publish_mode: editorial_workflow
 

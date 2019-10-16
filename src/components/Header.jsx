@@ -85,7 +85,11 @@ const Header = ({ logo, links, contactButton }) => {
   };
 
   return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <nav
+      className="navbar is-spaced"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <NavbarBrand className="navbar-brand">
         <GatsbyLink to={logo.url} className="navbar-item" onClick={onClickLink}>
           <Logo

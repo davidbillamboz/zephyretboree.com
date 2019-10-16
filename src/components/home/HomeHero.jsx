@@ -66,14 +66,15 @@ const Bar = styled.div`
 `;
 
 const HomeHeroStyled = styled.section`
-  min-height: calc(100vh - 5.25rem) !important;
+  /* to let the content be visible when the screen height is small */
+  min-height: 500px !important;
+  /* adapt the height to match the navbar height */
+  height: calc(100vh - 5.25rem) !important;
   position: relative;
 
-  @media (max-height: 500px) {
-    min-height: 500px !important;
-  }
-
-  .hero-head {
+  /* navbar has a .is-spaced class that adds padding on tablets */
+  @media (min-width: 769px) {
+    height: calc(100vh - 7.2rem) !important;
   }
 
   .gatsby-image-wrapper {

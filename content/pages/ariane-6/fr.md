@@ -40,6 +40,7 @@ canopee:
 route:
   title: Les ports desservis
   text: Les différents éléments constituant le lanceur Ariane 6 sont construits par différents pays membres du programme Ariane. Ces éléments seront ensuite collectés et acheminés au centre spatiale guyannais à Kourou.
+  routeMapImage: /images/page_ariane6_route_map.png
   image: /images/page_ariane6_canopee_sunset.jpg
   text2: >-
     Le navire, dont le lancement est prévu pour 2022, sera construit et exploité par Alizés une joint venture réalisée avec notre partenaire Jifmar Offshore Service.

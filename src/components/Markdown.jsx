@@ -19,6 +19,10 @@ const TextContainer = styled.div`
     font-size: 1.5rem;
     line-height: 1.5rem;
   }
+
+  p {
+    margin-bottom: 10px;
+  }
 `;
 
 const Markdown = ({ content }) => (

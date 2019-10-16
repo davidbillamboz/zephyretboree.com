@@ -90,6 +90,13 @@ export const pageQuery = graphql`
         route {
           title
           text
+          routeMapImage {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
           image {
             childImageSharp {
               fluid(maxWidth: 1000, quality: 100) {

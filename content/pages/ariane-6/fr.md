@@ -13,15 +13,15 @@ intro:
   videoId: MPV9wnD1ekk
   partners: 
     - title: ""
-      logo: /images/partner_logo_alizes_color.svg
+      logo: /images/partner_logo_alizes_color.png
     - title: ""
-      logo: /images/partner_logo_jifmar_color.svg
+      logo: /images/partner_logo_jifmar_color.png
     - title: ""
-      logo: /images/logo_horizontal_color.svg
+      logo: /images/logo_vertical_color.png
     - title: ""
       logo: /images/partner_logo_vplp_color.jpg
     - title: ""
-      logo: /images/partner_logo_ariane_color.svg
+      logo: /images/partner_logo_ariane_color.png
 # Canopee
 canopee:
   title: Navire Canopée

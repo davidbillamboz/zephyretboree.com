@@ -43,6 +43,7 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "react-markdown": "^4.2.2",
+    "react-svg": "^10.0.23",
     "react-transition-group": "^4.3.0",
     "styled-components": "^4.4.0"
   },

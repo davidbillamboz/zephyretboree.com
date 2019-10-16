@@ -14,15 +14,21 @@ const VideoContainerStyled = styled.div`
 const PartnerColumnStyled = styled.div`
   display: flex !important;
   align-items: center;
+  justify-content: center;
 `;
 
 const PartnerImageContainerStyled = styled.div`
+  padding: 0.5rem;
   width: 100%;
   filter: grayscale(100%);
   transition: filter 0.23s;
 
   &:hover {
     filter: none;
+  }
+
+  img {
+    width: 100%;
   }
 `;
 const Ariane6Intro = ({ title, subTitle, text, videoId, partners }) => (

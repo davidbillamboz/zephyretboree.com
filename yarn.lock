@@ -1322,6 +1322,13 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
+"@tanem/svg-injector@^8.0.34":
+  version "8.0.34"
+  resolved "https://registry.yarnpkg.com/@tanem/svg-injector/-/svg-injector-8.0.34.tgz#c94a4ec0ff67f258b57319026e53b69b5370dd02"
+  integrity sha512-No0yGzauJOpxb8RcFtf3wpz7TxUy65ppbif+0cEA9TRcGMEqXQ+stUAOBwGF8ewFJlmttTvYjrS/G6QsSjFCuw==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+
 "@types/configstore@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"
@@ -11882,6 +11889,15 @@ react-style-proptype@^3.0.0:
   integrity sha512-ywYLSjNkxKHiZOqNlso9PZByNEY+FTyh3C+7uuziK0xFXu9xzdyfHwg4S9iyiRRoPCR4k2LqaBBsWVmSBwCWYQ==
   dependencies:
     prop-types "^15.5.4"
+
+react-svg@^10.0.23:
+  version "10.0.23"
+  resolved "https://registry.yarnpkg.com/react-svg/-/react-svg-10.0.23.tgz#de51da303e83b7aec929f518b6f9d87896596056"
+  integrity sha512-903OK45tu78OJYWu0wjGO9ObbXaxvdff4ai+LiKQV3ZG6fhAQmDXjg0oMWHqilRxPavHQTWTla48ERZJEVNgEw==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    "@tanem/svg-injector" "^8.0.34"
+    prop-types "^15.7.2"
 
 react-textarea-autosize@^7.1.0:
   version "7.1.0"

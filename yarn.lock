@@ -11599,6 +11599,14 @@ react-aria-menubutton@^6.0.0:
     prop-types "^15.6.0"
     teeny-tap "^0.2.0"
 
+react-body-classname@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/react-body-classname/-/react-body-classname-1.3.1.tgz#f9542289fb99ee7eaf5792e1d852cc88e4d810a0"
+  integrity sha512-PxskbhmoV8kzIyspjiIc/smQkyyBOQHeUsrh1oj9CC5O1Kg/4gvHWPKsYGWEIq0X51TtCT941u/ulM1dTZ/bOw==
+  dependencies:
+    prop-types "^15.5.6"
+    react-side-effect "^1.1.0 || ^2.1.0"
+
 react-datetime@^2.16.3:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/react-datetime/-/react-datetime-2.16.3.tgz#7f9ac7d4014a939c11c761d0c22d1fb506cb505e"
@@ -11864,6 +11872,11 @@ react-side-effect@^1.1.0:
   integrity sha512-v1ht1aHg5k/thv56DRcjw+WtojuuDHFUgGfc+bFHOWsF4ZK6C2V57DO0Or0GPsg6+LSTE0M6Ry/gfzhzSwbc5w==
   dependencies:
     shallowequal "^1.0.1"
+
+"react-side-effect@^1.1.0 || ^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.0.tgz#1ce4a8b4445168c487ed24dab886421f74d380d3"
+  integrity sha512-IgmcegOSi5SNX+2Snh1vqmF0Vg/CbkycU9XZbOHJlZ6kMzTmi3yc254oB1WCkgA7OQtIAoLmcSFuHTc/tlcqXg==
 
 react-sortable-hoc@^1.0.0:
   version "1.10.1"

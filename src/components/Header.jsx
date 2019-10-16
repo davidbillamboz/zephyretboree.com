@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import GatsbyLink from 'gatsby-link';
 import styled from 'styled-components';
+import BodyClassName from 'react-body-classname';
+
 import Link from './Link';
 
 const Logo = styled.img`
@@ -116,12 +118,6 @@ const Header = ({
     setNavbarActive(false);
   };
 
-  if (withBodyPadding) {
-    document.body.classList.add('has-navbar-fixed-top');
-  } else {
-    document.body.classList.remove('has-navbar-fixed-top');
-  }
-
   let lastScrollTop = document.documentElement.scrollTop;
   let scrollDirection = null;
   let lastScrollTopBeforeDirectionChange = lastScrollTop;
@@ -185,6 +181,8 @@ const Header = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const bodyClass = withBodyPadding ? 'has-navbar-fixed-top' : '';
+
   const classes = [];
   if (!isDensed) {
     classes.push('is-spaced');
@@ -202,59 +200,67 @@ const Header = ({
     classes.push('is-menu-open');
   }
 
-  return (
-    <NavBar
-      className={`navbar is-fixed-top ${classes.join(' ')}`}
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <NavbarBrand className="navbar-brand">
-        <GatsbyLink to={logo.url} className="navbar-item" onClick={onClickLink}>
-          <Logo
-            src="/images/logo_horizontal_color.svg"
-            width="210"
-            height="68"
-            alt=""
-          />
-        </GatsbyLink>
-        <NavbarBurger isActive={navbarMenuActive} onClick={onBurgerClick} />
-      </NavbarBrand>
-      <NavbarMenu
-        className={`navbar-menu${navbarMenuActive ? ' is-active' : ''}`}
-      >
-        <div className="navbar-end">
-          {links &&
-            links.map(link => (
-              <Link
-                className="navbar-item"
-                key={link.url}
-                {...link}
-                onClick={onClickLink}
-              />
-            ))}
+  console.error(bodyClass);
 
+  return (
+    <BodyClassName className={bodyClass}>
+      <NavBar
+        className={`navbar is-fixed-top ${classes.join(' ')}`}
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <NavbarBrand className="navbar-brand">
           <GatsbyLink
-            to={contactButton.url}
-            className="navbar-item is-hidden-tablet"
+            to={logo.url}
+            className="navbar-item"
             onClick={onClickLink}
           >
-            {contactButton.title}
+            <Logo
+              src="/images/logo_horizontal_color.svg"
+              width="210"
+              height="68"
+              alt=""
+            />
           </GatsbyLink>
+          <NavbarBurger isActive={navbarMenuActive} onClick={onBurgerClick} />
+        </NavbarBrand>
+        <NavbarMenu
+          className={`navbar-menu${navbarMenuActive ? ' is-active' : ''}`}
+        >
+          <div className="navbar-end">
+            {links &&
+              links.map(link => (
+                <Link
+                  className="navbar-item"
+                  key={link.url}
+                  {...link}
+                  onClick={onClickLink}
+                />
+              ))}
 
-          <div className="navbar-item is-hidden-mobile">
-            <div className="buttons">
-              <GatsbyLink
-                to={contactButton.url}
-                className="button is-primary"
-                onClick={onClickLink}
-              >
-                <strong>{contactButton.title}</strong>
-              </GatsbyLink>
+            <GatsbyLink
+              to={contactButton.url}
+              className="navbar-item is-hidden-tablet"
+              onClick={onClickLink}
+            >
+              {contactButton.title}
+            </GatsbyLink>
+
+            <div className="navbar-item is-hidden-mobile">
+              <div className="buttons">
+                <GatsbyLink
+                  to={contactButton.url}
+                  className="button is-primary"
+                  onClick={onClickLink}
+                >
+                  <strong>{contactButton.title}</strong>
+                </GatsbyLink>
+              </div>
             </div>
           </div>
-        </div>
-      </NavbarMenu>
-    </NavBar>
+        </NavbarMenu>
+      </NavBar>
+    </BodyClassName>
   );
 };
 

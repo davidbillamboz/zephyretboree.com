@@ -122,8 +122,12 @@ const Header = ({
   let scrollDirection = null;
   let lastScrollTopBeforeDirectionChange = lastScrollTop;
 
+  const getScrollTop = () => {
+    return (document.scrollingElement || document.documentElement).scrollTop;
+  };
+
   const handleScroll = () => {
-    const { scrollTop } = document.documentElement;
+    const scrollTop = getScrollTop();
 
     // Change the layout when the scroll initied
     if (scrollTop > THRESHOLD_SCROLL_TOP) {

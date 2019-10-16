@@ -53,11 +53,11 @@ const SocialLink = styled.div`
     height: 40px;
     font-size: 1.5em;
     line-height: 40px;
-    border: 1px solid ${props => props.theme.lightBlue4};
-    color: ${props => props.theme.lightBlue4};
+    border: 1px solid ${props => props.theme.blue1};
+    color: ${props => props.theme.blue1};
 
     &:hover {
-      color: ${props => props.theme.lightBlue4};
+      color: ${props => props.theme.blue1};
       opacity: 0.5;
     }
 
@@ -95,7 +95,7 @@ const FooterMenuTop = styled(FooterMenu)`
     color: #ffffff;
 
     &:hover {
-      color: ${props => props.theme.lightBlue4};
+      color: ${props => props.theme.blue1};
     }
   }
 `;
@@ -112,7 +112,7 @@ const FooterMenuBottom = styled(FooterMenu)`
     }
 
     a {
-    color: ${props => props.theme.lightBlue4};
+    color: ${props => props.theme.blue1};
 
     &:hover {
       color: #ffffff;
@@ -122,7 +122,7 @@ const FooterMenuBottom = styled(FooterMenu)`
 
 const Copyrights = styled.p`
   cursor: default;
-  color: ${props => props.theme.lightBlue4};
+  color: ${props => props.theme.blue1};
   margin-bottom: 0 !important;
 `;
 

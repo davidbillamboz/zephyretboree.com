@@ -28,10 +28,10 @@ const Catchline = styled.div`
       color: #ffffff;
     }
     &:nth-child(2) {
-      color: ${props => props.theme.lightBlue2};
+      color: ${props => props.theme.blue3};
     }
     &:nth-child(3) {
-      color: ${props => props.theme.darkBlue1};
+      color: ${props => props.theme.anthracite};
     }
   }
 `;
@@ -43,7 +43,7 @@ const ColumnText = styled.div`
 `;
 
 const Text = styled.div`
-  color: ${props => props.theme.lightBlue2};
+  color: ${props => props.theme.blue3};
   font-weight: 800;
   font-size: 1rem;
   line-height: 1.2rem;
@@ -62,7 +62,7 @@ const Bar = styled.div`
   right: 0;
   width: 100%;
   height: 10px;
-  background: ${props => props.theme.darkBlue1};
+  background: ${props => props.theme.anthracite};
 `;
 
 const HomeHeroStyled = styled.section`

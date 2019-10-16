@@ -1,23 +1,24 @@
 @import './node_modules/bulma/sass/utilities/initial-variables.sass';
 
-$dark-blue-1: #233341;
-$dark-blue-2:#31338D;
-$light-blue-1:#005ca5;
-$light-blue-2:#007FC0;
-$light-blue-3:#00a2de;
-$light-blue-4:#00afea;
-$black:#231F20;
+$anthracite: #263242;
+$blue-5: #362791;
+$blue-4: #1056a9;
+$blue-3: #007bc3;
+$blue-2: #009fe2;
+$blue-1: #00b2ee;
+$black: #000000;
+$gray: #dcddde;
 
 // Warning: gatsby build does not seems to work with :export
 // Keep synced ./theme.js
 :export {
-  primary: $light-blue-3;
-  dark-blue-1: $dark-blue-1;
-  dark-blue-2: $dark-blue-2;
-  light-blue-1: $light-blue-1;
-  light-blue-2: $light-blue-2;
-  light-blue-3: $light-blue-3;
-  light-blue-4: $light-blue-4;
+  primary: $blue-2;
+  anthracite: $anthracite;
+  blue-5: $blue-5;
+  blue-4: $blue-4;
+  blue-3: $blue-3;
+  blue-2: $blue-2;
+  blue-1: $blue-1;
   black: $black;
   breakpoint-tablet: $tablet;
   breakpoint-desktop: $desktop;

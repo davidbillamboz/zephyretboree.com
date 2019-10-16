@@ -1,16 +1,28 @@
 // export * from './theme.scss';
 
+const anthracite = '#263242';
+const blue5 = '#362791';
+const blue4 = '#1056a9';
+const blue3 = '#007bc3';
+const blue2 = '#009fe2';
+const blue1 = '#00b2ee';
+const black = '#000000';
+const gray = '#dcddde';
+
+const primary = blue2;
+
 export default {
-  black: '#231F20',
   breakpointDesktop: '1024px',
   breakpointFullhd: '1408px',
   breakpointTablet: '769px',
   breakpointWidescreen: '1216px',
-  darkBlue1: '#233341',
-  darkBlue2: '#31338D',
-  lightBlue1: '#005ca5',
-  lightBlue2: '#007FC0',
-  lightBlue3: '#00a2de',
-  lightBlue4: '#00afea',
-  primary: '#00a2de',
+  anthracite,
+  blue5,
+  blue4,
+  blue3,
+  blue2,
+  blue1,
+  black,
+  gray,
+  primary,
 };

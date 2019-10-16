@@ -11,7 +11,7 @@ const ContactContainer = styled.div`
 `;
 
 const ContactNameRole = styled.div`
-  border: 1px solid ${props => props.theme.darkBlue1};
+  border: 1px solid ${props => props.theme.anthracite};
   padding: 10px;
   text-align: center;
   margin-bottom: 10px;

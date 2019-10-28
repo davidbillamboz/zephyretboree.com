@@ -15,16 +15,22 @@ sections:
   create: documents
   match: "**/*"
 upload_dir: static/images
-public_path: ''
+public_path: '/'
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
+instant_preview: true
 build:
+  preview_command: yarn run forestry:publish
+  publish_command: yarn run forestry:publish
   preview_env:
-  - GATSBY_WEBPACK_PUBLICPATH=/
+  - PATH_PREFIX=/
+  publish_env:
+  - PATH_PREFIX=/
   preview_output_directory: public
-  install_dependencies_command: yarn install
+  output_directory: public
+  instant_preview_command: yarn run forestry:preview
+  install_dependencies_command: yarn
   preview_docker_image: node:10
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: npx run gatsby develop -p 8080 -H 0.0.0.0

@@ -112,5 +112,5 @@ fields:
       name: imageMobile
       label: imageMobile
 pages:
-- content/pages/index/en.md
 - content/pages/index/fr.md
+- content/pages/index/en.md

@@ -7,15 +7,13 @@ sections:
 - type: directory
   path: content/pages
   label: Pages
-  create: all
-  match: "**/*"
   create: none
+  match: "**/*"
 - type: directory
   path: content/layout
   label: Layout
-  create: documents
-  match: "**/*"
   create: none
+  match: "**/*"
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''

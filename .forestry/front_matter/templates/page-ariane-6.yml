@@ -96,3 +96,6 @@ fields:
   - type: textarea
     name: text2
     label: text2
+pages:
+- content/pages/ariane-6/en.md
+- content/pages/ariane-6/fr.md

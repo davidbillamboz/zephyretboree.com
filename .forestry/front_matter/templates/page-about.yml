@@ -135,3 +135,6 @@ fields:
     - type: textarea
       name: text
       label: text
+pages:
+- content/pages/about/en.md
+- content/pages/about/fr.md

@@ -101,3 +101,6 @@ fields:
     - type: text
       name: url
       label: url
+pages:
+- content/pages/contact/en.md
+- content/pages/contact/fr.md

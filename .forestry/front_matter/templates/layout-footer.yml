@@ -48,3 +48,6 @@ fields:
   - type: text
     name: url
     label: url
+pages:
+- content/layout/footer/en.md
+- content/layout/footer/fr.md

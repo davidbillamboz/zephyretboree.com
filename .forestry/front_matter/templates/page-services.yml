@@ -57,3 +57,6 @@ fields:
   - type: list
     name: tags
     label: tags
+pages:
+- content/pages/services/en.md
+- content/pages/services/fr.md

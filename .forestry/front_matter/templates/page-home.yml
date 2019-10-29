@@ -110,3 +110,6 @@ fields:
     - type: file
       name: imageMobile
       label: imageMobile
+pages:
+- content/pages/index/en.md
+- content/pages/index/fr.md

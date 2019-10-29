@@ -32,3 +32,6 @@ fields:
   - type: text
     name: url
     label: url
+pages:
+- content/layout/header/en.md
+- content/layout/header/fr.md

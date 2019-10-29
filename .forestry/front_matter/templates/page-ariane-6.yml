@@ -1,0 +1,98 @@
+---
+label: Page Ariane 6
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: slug
+  label: slug
+- type: field_group
+  name: metadata
+  label: metadata
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: description
+    label: description
+- type: field_group
+  name: intro
+  label: intro
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: textarea
+    name: subTitle
+    label: subTitle
+  - type: textarea
+    name: text
+    label: text
+  - type: text
+    name: videoId
+    label: videoId
+  - type: field_group_list
+    name: partners
+    label: partners
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: file
+      name: logo
+      label: logo
+- type: field_group
+  name: canopee
+  label: canopee
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: textarea
+    name: text
+    label: text
+  - type: field_group_list
+    name: columns
+    label: columns
+    fields:
+    - type: text
+      name: text
+      label: text
+    - type: file
+      name: icon
+      label: icon
+  - type: file
+    name: image
+    label: image
+  - type: field_group
+    name: progressBar
+    label: progressBar
+    fields:
+    - type: text
+      name: value
+      label: value
+    - type: text
+      name: text
+      label: text
+- type: field_group
+  name: route
+  label: route
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: textarea
+    name: text
+    label: text
+  - type: file
+    name: routeMapImage
+    label: routeMapImage
+  - type: file
+    name: image
+    label: image
+  - type: textarea
+    name: text2
+    label: text2

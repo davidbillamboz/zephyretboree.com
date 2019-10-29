@@ -9,11 +9,13 @@ sections:
   label: Pages
   create: all
   match: "**/*"
+  create: none
 - type: directory
   path: content/layout
   label: Layout
   create: documents
   match: "**/*"
+  create: none
 upload_dir: static/images
 public_path: '/images'
 front_matter_path: ''

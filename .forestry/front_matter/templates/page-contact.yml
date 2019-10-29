@@ -1,0 +1,103 @@
+---
+label: Page Contact
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: slug
+  label: slug
+- type: field_group
+  name: metadata
+  label: metadata
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: description
+    label: description
+- type: field_group
+  name: form
+  label: form
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: subTitle
+    label: subTitle
+  - type: field_group
+    name: placeholders
+    label: placeholders
+    fields:
+    - type: text
+      name: name
+      label: name
+    - type: text
+      name: email
+      label: email
+    - type: text
+      name: phone
+      label: phone
+    - type: text
+      name: message
+      label: message
+  - type: field_group
+    name: buttonSend
+    label: buttonSend
+    fields:
+    - type: text
+      name: title
+      label: title
+  - type: field_group
+    name: messages
+    label: messages
+    fields:
+    - type: text
+      name: success
+      label: success
+    - type: text
+      name: error
+      label: error
+- type: field_group
+  name: contacts
+  label: contacts
+  fields:
+  - type: field_group_list
+    name: contacts
+    label: contacts
+    fields:
+    - type: text
+      name: name
+      label: name
+    - type: text
+      name: role
+      label: role
+    - type: text
+      name: email
+      label: email
+    - type: text
+      name: phone
+      label: phone
+- type: field_group
+  name: press
+  label: press
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: subTitle
+    label: subTitle
+  - type: field_group
+    name: buttonDownload
+    label: buttonDownload
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: text
+      name: url
+      label: url

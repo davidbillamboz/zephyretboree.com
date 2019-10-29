@@ -34,12 +34,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-netlify-cms-paths`,
-      options: {
-        cmsConfig: `/static/admin/config.yml`,
-      },
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [],
@@ -118,12 +112,6 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         exclude: ['/en/404'],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        enableIdentityWidget: true,
       },
     },
   ],

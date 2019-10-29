@@ -108,7 +108,11 @@ function fileExists(filePath) {
 
 function transformAbsoluteMediaFilePath(nodeAbsoluteFilePath, value) {
   // Not a string and not an absolute path
-  if (typeof value !== 'string' || value.substr(0, 1) !== '/') {
+  if (
+    typeof value !== 'string' ||
+    value.substr(0, 1) !== '/' ||
+    value === '/'
+  ) {
     return value;
   }
 

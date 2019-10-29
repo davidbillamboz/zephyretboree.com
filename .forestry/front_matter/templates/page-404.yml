@@ -1,0 +1,26 @@
+---
+label: Page 404
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: slug
+  label: slug
+- type: field_group
+  name: metadata
+  label: metadata
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: description
+    label: description
+- type: text
+  name: pageTitle
+  label: pageTitle
+- type: file
+  name: image
+  label: image

@@ -26,3 +26,4 @@ fields:
   label: image
 pages:
 - content/pages/404/en.md
+- content/pages/404/fr.md

@@ -1,9 +1,10 @@
 ---
-title: 404 FR # admin title
+title: 404 FR
 slug: "404"
-# Metadata
-metadata: 
+metadata:
   title: Page non trouvée
-  description: ""
+  description: ''
 pageTitle: Oups ! Page non trouvée !
-image: /images/page_ariane6_canopee_sunset.jpg
+image: "/images/page_ariane6_canopee_sunset.jpg"
+
+---

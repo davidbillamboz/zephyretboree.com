@@ -1,0 +1,59 @@
+---
+label: Page Services
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: slug
+  label: slug
+- type: field_group
+  name: metadata
+  label: metadata
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: description
+    label: description
+- type: field_group
+  name: intro
+  label: intro
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: subTitle
+    label: subTitle
+  - type: textarea
+    name: text
+    label: text
+- type: field_group
+  name: contactButton
+  label: contactButton
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: url
+    label: url
+- type: field_group_list
+  name: services
+  label: services
+  fields:
+  - type: file
+    name: icon
+    label: icon
+  - type: text
+    name: title
+    label: title
+  - type: textarea
+    name: text
+    label: text
+  - type: list
+    name: tags
+    label: tags

@@ -1,11 +1,11 @@
 ---
-adminTitle: Page Legal FR
+title: Legal FR # admin title
 slug: legal
 # Metadata
 metadata: 
   title: Informations Légales
   description: ""
-title: Informations Légales
+pageTitle: Informations Légales
 content: >-
   ### 1. Présentation du site.
 

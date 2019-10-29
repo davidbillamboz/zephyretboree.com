@@ -1,5 +1,5 @@
 ---
-adminTitle: Footer EN
+title: Footer EN # admin title
 logo:
   url: /en/
 copyrights: Copyright © 2019 Zéphyr & Borée All Rights Reserved

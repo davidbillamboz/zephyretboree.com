@@ -1,5 +1,5 @@
 ---
-adminTitle: Page Home EN 
+title: Home EN # admin title
 # Metadata
 metadata: 
   title: Home

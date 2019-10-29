@@ -1,5 +1,5 @@
 ---
-adminTitle: Header EN
+title: Header EN  # admin title
 links: 
   - title: Home
     url: /en/

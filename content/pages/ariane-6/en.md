@@ -1,5 +1,5 @@
 ---
-adminTitle: Page Ariane 6 EN
+title: Ariane 6 EN # admin title
 slug: ariane-6
 # Metadata
 metadata: 

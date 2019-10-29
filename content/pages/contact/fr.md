@@ -1,5 +1,5 @@
 ---
-adminTitle: Page Contact FR
+title: Contact FR # admin title
 slug: contact
 # Metadata
 metadata: 

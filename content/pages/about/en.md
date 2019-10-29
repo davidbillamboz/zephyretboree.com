@@ -1,5 +1,5 @@
 ---
-adminTitle: Page About EN
+title: About EN  # admin title
 slug: about
 # Metadata
 metadata: 

@@ -1,5 +1,5 @@
 ---
-adminTitle: Page Service FR
+title: Service FR # admin title
 slug: services
 # Metadata
 metadata: 

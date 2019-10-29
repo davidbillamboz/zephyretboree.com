@@ -10,11 +10,11 @@ const ImageContainerStyled = styled.div`
 `;
 
 const Page404 = ({ data }) => {
-  const { title, image } = data.page.frontmatter;
+  const { pageTitle, image } = data.page.frontmatter;
   return (
     <div className="container">
       <section className="section">
-        <Title>{title}</Title>
+        <Title>{pageTitle}</Title>
         <ImageContainerStyled>
           <GatsbyImage fluid={image.childImageSharp.fluid} />
         </ImageContainerStyled>
@@ -27,7 +27,7 @@ Page404.propTypes = {
   data: PropTypes.shape({
     page: PropTypes.shape({
       frontmatter: PropTypes.shape({
-        title: PropTypes.string.isRequired,
+        pageTitle: PropTypes.string.isRequired,
         image: PropTypes.shape({
           childImageSharp: PropTypes.shape({
             fluid: PropTypes.shape({}).isRequired,
@@ -52,7 +52,7 @@ export const pageQuery = graphql`
           title
           description
         }
-        title
+        pageTitle
         image {
           childImageSharp {
             fluid(maxWidth: 1000, quality: 100) {

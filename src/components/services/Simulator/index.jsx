@@ -1,0 +1,140 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Title from '../../Title';
+import SubTitle from '../../SubTitle';
+import Markdown from '../../Markdown';
+import PropulsionDetail from './PropulsionDetail';
+import Slider from './Slider';
+
+const PropulsionDetailsStyled = styled.div`
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  padding: 1rem;
+  margin-top: 1rem;
+
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    padding: 2rem;
+    padding-top: 3rem;
+    margin-top: 3rem;
+  }
+`;
+
+const SliderTitleStyled = styled.div`
+  color: ${props => props.theme.blue2};
+  font-weight: bold;
+  font-size: 0.9rem;
+
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    font-size: 1rem;
+  }
+`;
+
+const PropulsionTextStyled = styled.div``;
+
+const ServicesSimulator = ({
+  title,
+  subTitle,
+  text,
+  sliderConfig,
+  valuesConfig,
+  propulsions,
+}) => {
+  const sliderDefaultValue = sliderConfig.min.value;
+  const [sliderValue, setSliderValue] = useState(sliderDefaultValue);
+
+  const range = Math.abs(sliderConfig.max.value - sliderConfig.min.value);
+  const ratio = (sliderValue - sliderConfig.min.value) / range;
+
+  // Update current propulsion
+  const currentPropulsion = Math.min(
+    propulsions.length - 1,
+    Math.floor(ratio * propulsions.length)
+  );
+
+  // Update values
+  const values = valuesConfig.reduce((accumulator, { min, max, name }) => {
+    const minValue = Math.min(min, max);
+    const rangeValue = Math.abs(max - min);
+    const percentage = min >= max ? ratio : 1 - ratio;
+    const result = minValue + rangeValue * percentage;
+    accumulator[name] = result;
+    return accumulator;
+  }, {});
+
+  return (
+    <>
+      <Title>{title}</Title>
+      <SubTitle>{subTitle}</SubTitle>
+      <Markdown content={text} />
+
+      <div className="columns is-mobile">
+        <SliderTitleStyled className="column">
+          {sliderConfig.min.title}
+        </SliderTitleStyled>
+        <SliderTitleStyled className="column has-text-right">
+          {sliderConfig.max.title}
+        </SliderTitleStyled>
+      </div>
+
+      <Slider
+        defaultValue={sliderDefaultValue}
+        onChange={setSliderValue}
+        min={sliderConfig.min.value}
+        max={sliderConfig.max.value}
+      />
+
+      <PropulsionDetailsStyled>
+        {valuesConfig.map(({ name, title: valueTitle }) => (
+          <PropulsionDetail
+            key={name}
+            title={valueTitle}
+            text={propulsions[currentPropulsion].valuesText[name]}
+            value={values[name]}
+          />
+        ))}
+
+        <PropulsionTextStyled>
+          {propulsions[currentPropulsion].text}
+        </PropulsionTextStyled>
+      </PropulsionDetailsStyled>
+    </>
+  );
+};
+
+ServicesSimulator.propTypes = {
+  title: PropTypes.string.isRequired,
+  subTitle: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  sliderConfig: PropTypes.shape({
+    min: PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+    }).isRequired,
+    max: PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  valuesConfig: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      max: PropTypes.number.isRequired,
+      min: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+  propulsions: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      valuesText: PropTypes.shape({
+        delay: PropTypes.string.isRequired,
+        speed: PropTypes.string.isRequired,
+        emissions: PropTypes.string.isRequired,
+        price: PropTypes.string.isRequired,
+      }),
+    })
+  ).isRequired,
+};
+
+export default ServicesSimulator;

@@ -3,6 +3,7 @@
 const black = '#000000';
 const white = '#ffffff';
 const gray = '#dcddde';
+const grayDark = '#aaaaaa';
 
 const anthracite = '#263242';
 const blue5 = '#362791';
@@ -21,6 +22,7 @@ export default {
   white,
   black,
   gray,
+  grayDark,
   anthracite,
   blue5,
   blue4,

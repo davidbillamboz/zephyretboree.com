@@ -10945,6 +10945,11 @@ react-side-effect@^1.1.0:
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.0.tgz#1ce4a8b4445168c487ed24dab886421f74d380d3"
   integrity sha512-IgmcegOSi5SNX+2Snh1vqmF0Vg/CbkycU9XZbOHJlZ6kMzTmi3yc254oB1WCkgA7OQtIAoLmcSFuHTc/tlcqXg==
 
+react-slider@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-slider/-/react-slider-1.0.1.tgz#4cb212d31c35d804805e31f02ce37771e95d5d45"
+  integrity sha512-SI2anLzeKlFxnntoM93VXrf3ll9uL/TYjIJB6PsQVp4mDVt2VfWyGtMoUvK/ir/PnjuirNtF1pU3cG9XCezfBA==
+
 react-svg@10.0.25:
   version "10.0.25"
   resolved "https://registry.yarnpkg.com/react-svg/-/react-svg-10.0.25.tgz#354196ca85e793ee54edf43c276a3541dfad3454"

@@ -99,14 +99,14 @@ export const pageQuery = graphql`
           projects {
             title
             text
-            imageDesktop {
+            imageHorizontal {
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
-            imageMobile {
+            imageVertical {
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp

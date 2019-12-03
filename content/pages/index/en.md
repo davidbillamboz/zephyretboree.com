@@ -38,13 +38,13 @@ projects:
   projects: 
     - title: Ro-ro ship
       text: We target short to medium-distance shipping 
-      imageDesktop: /images/page_home_project_porte_conteneur_desktop.jpg
-      imageMobile: /images/page_home_project_porte_conteneur_mobile.jpg    
+      imageHorizontal: /images/page_home_project_porte_conteneur_horizontal.jpg
+      imageVertical: /images/page_home_project_porte_conteneur_vertical.jpg    
     - title: Container vessel
       text: We aim at transporting unaccompanied trailers and cars to promote modal shift
-      imageDesktop: /images/page_home_project_navire_roulier_desktop.jpg
-      imageMobile: /images/page_home_project_navire_roulier_mobile.jpg
+      imageHorizontal: /images/page_home_project_navire_roulier_horizontal.jpg
+      imageVertical: /images/page_home_project_navire_roulier_vertical.jpg
     - title: Custom-made vessel
       text: Based on your logistic constraints, we can develop a ship adapted to your needs
-      imageDesktop: /images/page_home_project_sur_mesure_desktop.jpg
-      imageMobile: /images/page_home_project_sur_mesure_mobile.jpg
+      imageHorizontal: /images/page_home_project_sur_mesure_horizontal.jpg
+      imageVertical: /images/page_home_project_sur_mesure_vertical.jpg

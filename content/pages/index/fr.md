@@ -38,13 +38,13 @@ projects:
   projects: 
     - title: Porte-Conteneur
       text: Nous visons les lignes secondaires et le transport de courte à moyenne distance
-      imageDesktop: /images/page_home_project_porte_conteneur_desktop.jpg
-      imageMobile: /images/page_home_project_porte_conteneur_mobile.jpg      
+      imageHorizontal: /images/page_home_project_porte_conteneur_horizontal.jpg
+      imageVertical: /images/page_home_project_porte_conteneur_vertical.jpg      
     - title: Navire roulier
       text: Nous nous adressons au transport de remorques non-accompagnés et voitures pour promouvoir le report modal
-      imageDesktop: /images/page_home_project_navire_roulier_desktop.jpg
-      imageMobile: /images/page_home_project_navire_roulier_mobile.jpg
+      imageHorizontal: /images/page_home_project_navire_roulier_horizontal.jpg
+      imageVertical: /images/page_home_project_navire_roulier_vertical.jpg
     - title: Navire sur-mesure
       text: Étudions ensemble vos contraintes logistiques, nous pouvons concevoir un navire adapté à vos besoins
-      imageDesktop: /images/page_home_project_sur_mesure_desktop.jpg
-      imageMobile: /images/page_home_project_sur_mesure_mobile.jpg      
+      imageHorizontal: /images/page_home_project_sur_mesure_horizontal.jpg
+      imageVertical: /images/page_home_project_sur_mesure_vertical.jpg      

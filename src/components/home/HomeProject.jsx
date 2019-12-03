@@ -7,8 +7,6 @@ const ProjectStyled = styled.div`
   @media (min-width: ${props => props.theme.breakpointTablet}) {
     div {
       width: 100%;
-      max-width: 250px;
-      margin: auto;
     }
   }
 
@@ -46,15 +44,15 @@ const ProjectStyled = styled.div`
   }
 `;
 
-const Project = ({ imageDesktop, imageMobile, title, text }) => (
+const Project = ({ imageHorizontal, imageVertical, title, text }) => (
   <ProjectStyled className="column">
     <div>
       <GatsbyImage
-        fluid={imageMobile.childImageSharp.fluid}
+        fluid={imageHorizontal.childImageSharp.fluid}
         className="is-hidden-tablet"
       />
       <GatsbyImage
-        fluid={imageDesktop.childImageSharp.fluid}
+        fluid={imageVertical.childImageSharp.fluid}
         className="is-hidden-mobile"
       />
       <h4>{title}</h4>
@@ -66,12 +64,12 @@ const Project = ({ imageDesktop, imageMobile, title, text }) => (
 Project.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  imageDesktop: PropTypes.shape({
+  imageHorizontal: PropTypes.shape({
     childImageSharp: PropTypes.shape({
       fluid: PropTypes.shape({}),
     }),
   }).isRequired,
-  imageMobile: PropTypes.shape({
+  imageVertical: PropTypes.shape({
     childImageSharp: PropTypes.shape({
       fluid: PropTypes.shape({}),
     }),

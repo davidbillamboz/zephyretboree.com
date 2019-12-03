@@ -4,40 +4,40 @@ import { graphql } from 'gatsby';
 import GatsbyLink from 'gatsby-link';
 import styled from 'styled-components';
 import BodyClassName from 'react-body-classname';
-
 import Link from './Link';
 
-const Logo = styled.img`
+const THRESHOLD_SCROLL_TOP = 20;
+const THRESHOLD_SCROLL_CHANGE = 10;
+const THRESHOLD_MIN_WIN_HEIGHT_TOP = 0.33;
+
+const LogoStyled = styled.img`
   width: 210px;
   height: auto;
   max-height: 68px !important;
 `;
 
-const BurgerStyled = styled.a`
-  height: auto !important;
+const LinkStyled = styled(Link)`
+  font-family: 'ZephyrEtBoree';
 `;
 
-const NavbarBurger = ({ onClick, isActive }) => (
-  <BurgerStyled
-    href="/"
-    role="button"
-    className={`navbar-burger burger${isActive ? ' is-active' : ''}`}
-    aria-label="menu"
-    aria-expanded="false"
-    onClick={onClick}
-  >
-    <span aria-hidden="true" />
-    <span aria-hidden="true" />
-    <span aria-hidden="true" />
-  </BurgerStyled>
-);
+const ButtonStyled = styled(GatsbyLink)`
+  font-family: 'ZephyrEtBoree';
+`;
 
-NavbarBurger.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  isActive: PropTypes.bool.isRequired,
-};
+const BurgerStyled = styled.div`
+  height: auto !important;
+  -webkit-tap-highlight-color: transparent;
 
-const NavbarMenu = styled.div`
+  &:hover {
+    background-color: transparent !important;
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+const NavbarMenuStyled = styled.div`
   @media (max-width: 768px) {
     padding: 1rem !important;
     text-align: right;
@@ -66,7 +66,7 @@ const NavbarMenu = styled.div`
   }
 `;
 
-const NavbarBrand = styled.div`
+const NavbarBrandStyled = styled.div`
   @media (max-width: 768px) {
     position: relative;
     z-index: 2;
@@ -75,13 +75,13 @@ const NavbarBrand = styled.div`
   }
 `;
 
-const NavBar = styled.nav`
+const NavbarStyled = styled.nav`
   transition: all 0.23s ease-in-out;
 
   &.can-be-transparent.is-transparent:not(.is-menu-open) {
     background-color: transparent !important;
 
-    ${NavbarBrand} {
+    ${NavbarBrandStyled} {
       @media (max-width: 768px) {
         background: transparent;
       }
@@ -93,10 +93,6 @@ const NavBar = styled.nav`
   }
 `;
 
-const THRESHOLD_SCROLL_TOP = 20;
-const THRESHOLD_SCROLL_CHANGE = 10;
-const THRESHOLD_MIN_WIN_HEIGHT_TOP = 0.33;
-
 const Header = ({
   logo,
   links,
@@ -106,7 +102,6 @@ const Header = ({
 }) => {
   const [navbarMenuActive, setNavbarActive] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
-  const [isDensed, setIsDensed] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
 
   const onBurgerClick = e => {
@@ -132,10 +127,8 @@ const Header = ({
     // Change the layout when the scroll initied
     if (scrollTop > THRESHOLD_SCROLL_TOP) {
       setIsTransparent(false);
-      setIsDensed(true);
     } else {
       setIsTransparent(true);
-      setIsDensed(false);
     }
 
     const newDirection = scrollTop < lastScrollTop ? 'up' : 'down';
@@ -188,9 +181,6 @@ const Header = ({
   const bodyClass = withBodyPadding ? 'has-navbar-fixed-top' : '';
 
   const classes = [];
-  if (!isDensed) {
-    classes.push('is-spaced');
-  }
   if (canBeTransparent) {
     classes.push('can-be-transparent');
   }
@@ -206,33 +196,42 @@ const Header = ({
 
   return (
     <BodyClassName className={bodyClass}>
-      <NavBar
+      <NavbarStyled
         className={`navbar is-fixed-top ${classes.join(' ')}`}
         role="navigation"
         aria-label="main navigation"
       >
-        <NavbarBrand className="navbar-brand">
+        <NavbarBrandStyled className="navbar-brand">
           <GatsbyLink
             to={logo.url}
             className="navbar-item"
             onClick={onClickLink}
           >
-            <Logo
+            <LogoStyled
               src="/images/logo_horizontal_color.svg"
               width="210"
               height="68"
               alt=""
             />
           </GatsbyLink>
-          <NavbarBurger isActive={navbarMenuActive} onClick={onBurgerClick} />
-        </NavbarBrand>
-        <NavbarMenu
+          <BurgerStyled
+            className={`navbar-burger burger ${
+              navbarMenuActive ? 'is-active' : ''
+            }`}
+            onClick={onBurgerClick}
+          >
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </BurgerStyled>
+        </NavbarBrandStyled>
+        <NavbarMenuStyled
           className={`navbar-menu${navbarMenuActive ? ' is-active' : ''}`}
         >
           <div className="navbar-end">
             {links &&
               links.map(link => (
-                <Link
+                <LinkStyled
                   className="navbar-item"
                   key={link.url}
                   {...link}
@@ -240,28 +239,28 @@ const Header = ({
                 />
               ))}
 
-            <GatsbyLink
+            <ButtonStyled
               to={contactButton.url}
               className="navbar-item is-hidden-tablet"
               onClick={onClickLink}
             >
               {contactButton.title}
-            </GatsbyLink>
+            </ButtonStyled>
 
             <div className="navbar-item is-hidden-mobile">
               <div className="buttons">
-                <GatsbyLink
+                <ButtonStyled
                   to={contactButton.url}
                   className="button is-primary"
                   onClick={onClickLink}
                 >
                   <strong>{contactButton.title}</strong>
-                </GatsbyLink>
+                </ButtonStyled>
               </div>
             </div>
           </div>
-        </NavbarMenu>
-      </NavBar>
+        </NavbarMenuStyled>
+      </NavbarStyled>
     </BodyClassName>
   );
 };

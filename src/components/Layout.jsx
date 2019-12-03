@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from './Header';
+import Navbar from './Navbar';
 import Footer from './Footer';
 import SEO from './SEO';
 import PageTransition from './PageTransition';
@@ -18,7 +18,7 @@ const Layout = ({ pageContext, data, children }) => {
         lang={pageContext.lang}
         alternates={pageContext.alternates}
       />
-      <Header
+      <Navbar
         withBodyPadding={withBodyPadding}
         canBeTransparent={canBeTransparent}
         {...data.header.frontmatter}

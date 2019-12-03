@@ -1,11 +1,22 @@
 @import './theme.scss';
 
+// theme
 $body-background-color: #f8f9f9;
 $primary: $blue-2;
-$footer-background-color: $blue-4;
-$footer-color: true;
-$navbar-breakpoint: $tablet;
 
-$family-sans-serif: "NeueHaasGroteskDisp Std", "Helvetica", "Arial", sans-serif;
+// layout
 $widescreen-enabled: false;
 $fullhd-enabled: false;
+
+// global
+$family-sans-serif: "NeueHaasGroteskDisp Std", "Helvetica", "Arial", sans-serif;
+$radius: 25px;
+
+// navbar
+$navbar-breakpoint: $tablet;
+$navbar-item-hover-background-color: transparent;
+$navbar-item-active-background-color: transparent;
+
+// footer
+$footer-background-color: $blue-4;
+$footer-color: true;

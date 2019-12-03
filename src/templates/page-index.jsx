@@ -76,10 +76,6 @@ export const pageQuery = graphql`
               publicURL
             }
           }
-          buttons {
-            title
-            url
-          }
         }
         news {
           title

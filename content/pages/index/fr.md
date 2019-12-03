@@ -22,11 +22,6 @@ presentation:
       icon: /images/icon_sail.svg
     - text: Un service R&D qui vise un transport zéro-carbone à terme
       icon: /images/icon_gearing.svg
-  buttons: 
-    - title: Découvrez nos services
-      url: /services/
-    - title: Contactez-nous
-      url: /contact/
 # News
 news: 
   title: Notre actualité

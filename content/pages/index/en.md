@@ -22,11 +22,6 @@ presentation:
       icon: /images/icon_sail.svg
     - text: R&D service aiming at carbon neutral transport
       icon: /images/icon_gearing.svg
-  buttons: 
-    - title: Discover our services
-      url: /en/services/
-    - title: Contact us
-      url: /en/contact
 # News
 news: 
   title: Latest updates

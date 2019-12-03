@@ -1,5 +1,6 @@
 // export * from './theme.scss';
 
+const white = '#ffffff';
 const anthracite = '#263242';
 const blue5 = '#362791';
 const blue4 = '#1056a9';
@@ -16,6 +17,7 @@ export default {
   breakpointFullhd: '1408px',
   breakpointTablet: '769px',
   breakpointWidescreen: '1216px',
+  white,
   anthracite,
   blue5,
   blue4,

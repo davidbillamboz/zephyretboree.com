@@ -57,15 +57,17 @@ export const pageQuery = graphql`
         hero {
           image {
             childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
+              fluid(maxWidth: 1985, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
-          text1
-          text2
-          text3
+          catchline
           text
+          button {
+            title
+            url
+          }
         }
         presentation {
           services {

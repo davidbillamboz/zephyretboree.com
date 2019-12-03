@@ -6,6 +6,13 @@ import getBrowserLang from 'browser-lang';
 import { ThemeProvider } from 'styled-components';
 import theme from './src/styles/theme';
 
+export const onClientEntry = () => {
+  // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
+  if (typeof window.IntersectionObserver === `undefined`) {
+    import(`intersection-observer`);
+  }
+};
+
 function getPagePathForLang(homeSlug, defaultLang, page, lang) {
   const pageSlug = page.slug === homeSlug ? '' : page.slug;
   let pagePath = lang === defaultLang ? '/' : `${lang}/`;

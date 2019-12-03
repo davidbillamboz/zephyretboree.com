@@ -14,6 +14,11 @@ const LogoStyled = styled.img`
   width: 210px;
   height: auto;
   max-height: 68px !important;
+  transition: all 0.23s ease-in-out;
+
+  &.is-small {
+    width: 168px;
+  }
 `;
 
 const LinkStyled = styled(Link)`
@@ -76,7 +81,12 @@ const NavbarBrandStyled = styled.div`
 `;
 
 const NavbarStyled = styled.nav`
+  padding: 1rem;
   transition: all 0.23s ease-in-out;
+
+  &.is-densed {
+    padding: 0.5rem 1rem;
+  }
 
   &.can-be-transparent.is-transparent:not(.is-menu-open) {
     background-color: transparent !important;
@@ -102,6 +112,7 @@ const Header = ({
 }) => {
   const [navbarMenuActive, setNavbarActive] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
+  const [isDensed, setIsDensed] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
 
   const onBurgerClick = e => {
@@ -127,8 +138,10 @@ const Header = ({
     // Change the layout when the scroll initied
     if (scrollTop > THRESHOLD_SCROLL_TOP) {
       setIsTransparent(false);
+      setIsDensed(true);
     } else {
       setIsTransparent(true);
+      setIsDensed(false);
     }
 
     const newDirection = scrollTop < lastScrollTop ? 'up' : 'down';
@@ -184,6 +197,9 @@ const Header = ({
   if (canBeTransparent) {
     classes.push('can-be-transparent');
   }
+  if (isDensed) {
+    classes.push('is-densed');
+  }
   if (isTransparent) {
     classes.push('is-transparent');
   }
@@ -212,6 +228,7 @@ const Header = ({
               width="210"
               height="68"
               alt=""
+              className={`${isDensed ? ' is-small' : ''}`}
             />
           </GatsbyLink>
           <BurgerStyled

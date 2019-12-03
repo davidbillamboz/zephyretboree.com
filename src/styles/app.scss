@@ -2,6 +2,10 @@
 @import './variables.scss';
 @import '~bulma/bulma.sass';
 
+body {
+  padding: 0.5rem;
+}
+
 .section + .section {
   padding-top: 0; 
 }
@@ -13,3 +17,4 @@ html.has-navbar-fixed-top, body.has-navbar-fixed-top {
     padding-top: 7.2rem;
   }
 }
+

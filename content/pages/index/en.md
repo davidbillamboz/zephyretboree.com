@@ -7,10 +7,12 @@ metadata:
 # Hero
 hero:
   image: /images/page_home_hero.jpg
-  text1: sail
-  text2: shipping
-  text3: company
+  catchline: >-
+    <span>sail</span> <span>shipping</span><br><span>company</span>  
   text: Zéphyr & Borée designs and operates innovative vessels to offer low carbon transport services
+  button:
+    title: Discover our services
+    url: /en/services/  
 # Presentation
 presentation:
   services:

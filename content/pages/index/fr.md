@@ -7,10 +7,12 @@ metadata:
 # Hero
 hero:
   image: /images/page_home_hero.jpg
-  text1: Et si
-  text2: on utilisait
-  text3: le vent de nouveau ?
+  catchline: >-
+    <span class="color-1">Et si on utilisait</span><br><span class="color-2">le vent</span> <span class="color-3">de nouveau</span>
   text: Zéphyr et Borée conçoit et exploite des navires de commerce innovants pour proposer des solutions de transport bas-carbone
+  button:
+    title: Découvrez nos services
+    url: /services/
 # Presentation
 presentation:
   services:

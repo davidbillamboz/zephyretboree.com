@@ -1,126 +1,161 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import GatsbyImage from 'gatsby-image/withIEPolyfill';
+import GatsbyBackgroundImage from 'gatsby-background-image';
+import GatsbyLink from 'gatsby-link';
 
-const CatchlineStyled = styled.div`
-  text-align: right;
-
-  .catchline-line {
-    font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
-    font-weight: bold;
-    font-size: 1.7rem;
-    line-height: 2.1rem;
-    font-size: 9vw;
-    line-height: 11vw;
-
-    @media (min-width: 769px) {
-      font-size: 5vw;
-      line-height: 6vw;
-    }
-
-    @media (min-width: 1200px) {
-      font-size: 3.8rem;
-      line-height: 4.5rem;
-    }
-
-    &:nth-child(1) {
-      color: #ffffff;
-    }
-    &:nth-child(2) {
-      color: ${props => props.theme.blue3};
-    }
-    &:nth-child(3) {
-      color: ${props => props.theme.anthracite};
-    }
-  }
-`;
-
-const ColumnTextStyled = styled.div`
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
-    align-self: flex-end;
-  }
-`;
-
-const TextStyled = styled.div`
-  color: ${props => props.theme.blue3};
-  font-weight: 800;
-  font-size: 1rem;
-  line-height: 1.2rem;
-
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
-    margin-bottom: 6px;
-    font-size: 1rem;
-    line-height: 1.1rem;
-  }
-`;
-
-const BarStyled = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 10px;
-  background: ${props => props.theme.anthracite};
-`;
+const outerBorderSize = 0.5;
 
 const HomeHeroStyled = styled.section`
   position: relative;
   height: 100vh !important;
   min-height: 500px !important;
+  margin: -${outerBorderSize}rem;
+`;
 
-  .gatsby-image-wrapper {
-    position: absolute !important;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+const BackgroundImageStyled = styled(GatsbyBackgroundImage)`
+  width: 100%;
+  height: 100%;
+`;
+
+const ContainerStyled = styled.div`
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 40%;
+  text-align: center;
+  padding: 1rem;
+`;
+
+const CatchlineStyled = styled.div`
+  font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
+  font-weight: bold;
+  line-height: 100%;
+  font-size: 11vw;
+
+  @media (min-width: 500px) {
+    font-size: 8vw;
   }
 
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    padding: 5.25rem 30px 10px;
-    @media (min-width: 769px) {
-      padding-top: 7.2rem;
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    font-size: 5rem;
+  }
+
+  span {
+    &.color-1 {
+      color: ${props => props.theme.white};
     }
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 50%;
-    transform: translateX(-50%);
-    margin: 0 auto !important;
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .hero-head .container {
-    margin-top: 40px;
-    margin-top: 4vh;
-
-    @media (min-width: ${props => props.theme.breakpointTablet}) {
-      margin-top: 40px;
+    &.color-2 {
+      color: ${props => props.theme.anthracite};
+    }
+    &.color-3 {
+      color: ${props => props.theme.blue2};
     }
   }
 `;
 
-const HomeHero = ({ image, catchline, text }) => (
+const TextStyled = styled.div`
+  color: ${props => props.theme.anthracite};
+  font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 100%;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 1rem;
+
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    max-width: auto;
+    width: 70%;
+  }
+`;
+
+const ButtonWrapperStyled = styled.div`
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 20%;
+  text-align: center;
+`;
+
+const ButtonStyled = styled(GatsbyLink)`
+  font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
+  margin-top: 4rem;
+  font-size: 1rem;
+
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    margin-top: 8rem;
+    font-size: 1.5rem !important;
+  }
+`;
+
+const BorderStyled = styled.div`
+  position: absolute;
+  background: ${props => props.theme.white};
+`;
+
+const BorderLeftStyled = styled(BorderStyled)`
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: ${outerBorderSize}rem;
+  height: 100%;
+`;
+
+const BorderTopStyled = styled(BorderStyled)`
+  left: 0;
+  right: 0;
+  top: 0;
+  height: ${outerBorderSize}rem;
+  width: 100%;
+`;
+
+const BorderRightStyled = styled(BorderStyled)`
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: ${outerBorderSize}rem;
+  height: 100%;
+`;
+
+const BorderBottomStyled = styled(BorderStyled)`
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: ${outerBorderSize + outerBorderSize / 2}rem;
+  width: 100%;
+  padding: 0 ${outerBorderSize}rem;
+`;
+
+const BorderBottomBisStyled = styled.div`
+  width: 100%;
+  height: ${outerBorderSize / 2}rem;
+  background: ${props => props.theme.anthracite};
+`;
+
+const HomeHero = ({ image, catchline, text, button }) => (
   <HomeHeroStyled className="hero is-fullheight-with-navbar">
-    <GatsbyImage fluid={image.childImageSharp.fluid} />
-    <div className="hero-head">
-      <div className="container">
-        <div className="columns">
-          <div className="column">
-            <CatchlineStyled dangerouslySetInnerHTML={{ __html: catchline }} />
-          </div>
-          <ColumnTextStyled className="column">
-            <TextStyled>{text}</TextStyled>
-          </ColumnTextStyled>
-        </div>
-      </div>
-    </div>
-    <BarStyled />
+    <BackgroundImageStyled fluid={image.childImageSharp.fluid}>
+      <ContainerStyled>
+        <CatchlineStyled dangerouslySetInnerHTML={{ __html: catchline }} />
+        <TextStyled>{text}</TextStyled>
+      </ContainerStyled>
+      <ButtonWrapperStyled>
+        <ButtonStyled className="button" to={button.url}>
+          {button.title}
+        </ButtonStyled>
+      </ButtonWrapperStyled>
+    </BackgroundImageStyled>
+    <BorderLeftStyled />
+    <BorderTopStyled />
+    <BorderRightStyled />
+    <BorderBottomStyled>
+      <BorderBottomBisStyled />
+    </BorderBottomStyled>
   </HomeHeroStyled>
 );
 
@@ -132,6 +167,10 @@ HomeHero.propTypes = {
   }).isRequired,
   catchline: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  button: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default HomeHero;

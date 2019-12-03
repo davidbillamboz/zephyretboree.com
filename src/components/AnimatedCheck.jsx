@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // Extracted from https://codepen.io/haniotis/pen/KwvYLO
 
-const Container = styled.div`
+const ContainerStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +62,7 @@ const Container = styled.div`
 `;
 
 const AnimatedCheck = () => (
-  <Container>
+  <ContainerStyled>
     <svg
       className="checkmark"
       xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ const AnimatedCheck = () => (
         d="M14.1 27.2l7.1 7.2 16.7-16.8"
       />
     </svg>
-  </Container>
+  </ContainerStyled>
 );
 
 export default AnimatedCheck;

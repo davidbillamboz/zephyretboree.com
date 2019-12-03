@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
-import Markdown from '../Markdown';
 
 const ContainerStyled = styled.div`
   background: #ffffff;

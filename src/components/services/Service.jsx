@@ -4,7 +4,7 @@ import GatsbyLink from 'gatsby-link';
 import styled from 'styled-components';
 import ServiceTag from './ServiceTag';
 
-const ServiceTitle = styled.h4`
+const ServiceTitleStyled = styled.h4`
   font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
   color: ${props => props.theme.black};
@@ -29,7 +29,7 @@ const ServiceStyled = styled.div`
     align-items: center;
 
     @media (max-width: ${props => props.theme.breakpointTablet}) {
-      ${ServiceTitle} {
+      ${ServiceTitleStyled} {
         margin-bottom: 0;
         margin-left: 20px;
       }
@@ -68,7 +68,7 @@ const Service = ({ contactButton, icon, title, text, tags }) => (
               alt=""
             />
           </div>
-          <ServiceTitle>{title}</ServiceTitle>
+          <ServiceTitleStyled>{title}</ServiceTitleStyled>
         </div>
         <div>
           {text}

@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const VideoContainer = styled.div`
+const VideoContainerStyled = styled.div`
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 30px;
@@ -20,7 +20,7 @@ const VideoContainer = styled.div`
 `;
 
 const YoutubeVideo = ({ videoId }) => (
-  <VideoContainer>
+  <VideoContainerStyled>
     <iframe
       width="560"
       height="315"
@@ -29,7 +29,7 @@ const YoutubeVideo = ({ videoId }) => (
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
     />
-  </VideoContainer>
+  </VideoContainerStyled>
 );
 
 YoutubeVideo.propTypes = {

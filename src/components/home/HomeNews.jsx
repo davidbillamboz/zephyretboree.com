@@ -6,7 +6,7 @@ import GatsbyImage from 'gatsby-image/withIEPolyfill';
 import Title from '../Title';
 import SubTitle from '../SubTitle';
 
-const ImageContainer = styled.div`
+const ImageContainerStyled = styled.div`
   position: relative;
 
   .button-container {
@@ -26,7 +26,7 @@ const HomeNews = ({ title, subTitle, image, button }) => (
   <>
     <Title>{title}</Title>
     <SubTitle>{subTitle}</SubTitle>
-    <ImageContainer className="has-text-centered">
+    <ImageContainerStyled className="has-text-centered">
       <GatsbyImage fluid={image.childImageSharp.fluid} />
       <div className="button-container">
         <GatsbyLink
@@ -42,7 +42,7 @@ const HomeNews = ({ title, subTitle, image, button }) => (
           {button.title}
         </GatsbyLink>
       </div>
-    </ImageContainer>
+    </ImageContainerStyled>
   </>
 );
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import GatsbyImage from 'gatsby-image/withIEPolyfill';
 
-const Catchline = styled.div`
+const CatchlineStyled = styled.div`
   text-align: right;
 
   .catchline-line {
@@ -36,13 +36,13 @@ const Catchline = styled.div`
   }
 `;
 
-const ColumnText = styled.div`
+const ColumnTextStyled = styled.div`
   @media (min-width: ${props => props.theme.breakpointTablet}) {
     align-self: flex-end;
   }
 `;
 
-const Text = styled.div`
+const TextStyled = styled.div`
   color: ${props => props.theme.blue3};
   font-weight: 800;
   font-size: 1rem;
@@ -55,7 +55,7 @@ const Text = styled.div`
   }
 `;
 
-const Bar = styled.div`
+const BarStyled = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -105,28 +105,22 @@ const HomeHeroStyled = styled.section`
   }
 `;
 
-const HomeHero = ({ image, text1, text2, text3, text }) => (
+const HomeHero = ({ image, catchline, text }) => (
   <HomeHeroStyled className="hero is-fullheight-with-navbar">
     <GatsbyImage fluid={image.childImageSharp.fluid} />
     <div className="hero-head">
       <div className="container">
         <div className="columns">
           <div className="column">
-            <Catchline>
-              {[text1, text2, text3].map(item => (
-                <div className="catchline-line" key={item}>
-                  {item}
-                </div>
-              ))}
-            </Catchline>
+            <CatchlineStyled dangerouslySetInnerHTML={{ __html: catchline }} />
           </div>
-          <ColumnText className="column">
-            <Text>{text}</Text>
-          </ColumnText>
+          <ColumnTextStyled className="column">
+            <TextStyled>{text}</TextStyled>
+          </ColumnTextStyled>
         </div>
       </div>
     </div>
-    <Bar />
+    <BarStyled />
   </HomeHeroStyled>
 );
 
@@ -136,9 +130,7 @@ HomeHero.propTypes = {
       fluid: PropTypes.shape({}),
     }),
   }).isRequired,
-  text1: PropTypes.string.isRequired,
-  text2: PropTypes.string.isRequired,
-  text3: PropTypes.string.isRequired,
+  catchline: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
 };
 

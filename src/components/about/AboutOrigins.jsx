@@ -6,12 +6,12 @@ import ReactMarkdown from 'react-markdown';
 import Title from '../Title';
 import SubTitle from '../SubTitle';
 
-const FirstColumn = styled.div`
+const FirstColumnStyled = styled.div`
   background: #ffffff;
   padding: 30px;
 `;
 
-const Image1 = styled.img`
+const Image1Styled = styled.img`
   display: block;
   margin: auto;
 `;
@@ -34,10 +34,10 @@ const AboutOrigins = ({
     <SubTitle>{subTitle}</SubTitle>
     <div className="columns">
       <div className="column">
-        <FirstColumn>
-          <Image1 src={icon.publicURL} alt="" width="85" />
+        <FirstColumnStyled>
+          <Image1Styled src={icon.publicURL} alt="" width="85" />
           <ReactMarkdown source={text1} />
-        </FirstColumn>
+        </FirstColumnStyled>
       </div>
       <div className="column">
         <ReactMarkdown source={text2} />

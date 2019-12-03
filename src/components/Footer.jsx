@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Link from './Link';
 import LangSwitcher from './LangSwitcher';
 
-const LogoLinkWrapper = styled.div`
+const LogoLinkWrapperStyled = styled.div`
   a {
     padding: 0 !important;
 
@@ -19,7 +19,7 @@ const LogoLinkWrapper = styled.div`
   }
 `;
 
-const Logo = styled.img`
+const LogoStyled = styled.img`
   width: 100%;
   max-width: 300px;
   height: auto;
@@ -30,7 +30,7 @@ const Logo = styled.img`
   }
 `;
 
-const SocialLinks = styled.div`
+const SocialLinksStyled = styled.div`
   justify-content: center;
   align-items: stretch;
   display: flex;
@@ -40,7 +40,7 @@ const SocialLinks = styled.div`
   }
 `;
 
-const SocialLink = styled.div`
+const SocialLinkStyled = styled.div`
   display: flex;
 
   &:not(:first-child) {
@@ -68,13 +68,13 @@ const SocialLink = styled.div`
   }
 `;
 
-const FooterMenu = styled.div``;
+const FooterMenuStyled = styled.div``;
 
-const FooterMenuItem = styled.div`
+const FooterMenuItemStyled = styled.div`
   display: flex;
 `;
 
-const FooterMenuTop = styled(FooterMenu)`
+const FooterMenuTopStyled = styled(FooterMenuStyled)`
   display: flex;
   margin-top: 20px;
   flex-direction: row;
@@ -85,7 +85,7 @@ const FooterMenuTop = styled(FooterMenu)`
     justify-content: flex-end;
   }
 
-  ${FooterMenuItem} {
+  ${FooterMenuItemStyled} {
 
     &:not(:first-child) {
       margin-left: 20px;
@@ -100,13 +100,13 @@ const FooterMenuTop = styled(FooterMenu)`
   }
 `;
 
-const FooterMenuBottom = styled(FooterMenu)`
+const FooterMenuBottomStyled = styled(FooterMenuStyled)`
   margin-top: 20px;
   align-items: stretch;
   display: flex;
   justify-content: center;
 
-  ${FooterMenuItem} {
+  ${FooterMenuItemStyled} {
     &:not(:first-child) {
       margin-left: 20px;
     }
@@ -120,7 +120,7 @@ const FooterMenuBottom = styled(FooterMenu)`
   }
 `;
 
-const Copyrights = styled.p`
+const CopyrightsStyled = styled.p`
   cursor: default;
   color: ${props => props.theme.blue1};
   margin-bottom: 0 !important;
@@ -138,40 +138,40 @@ const Footer = ({
     <div className="container">
       <div className="content has-text-centered">
         <div className="columns">
-          <LogoLinkWrapper className="column is-one-third">
+          <LogoLinkWrapperStyled className="column is-one-third">
             <GatsbyLink to={logo.url} className="navbar-item">
-              <Logo src="/images/logo_horizontal_white.png" alt="" />
+              <LogoStyled src="/images/logo_horizontal_white.png" alt="" />
             </GatsbyLink>
-          </LogoLinkWrapper>
+          </LogoLinkWrapperStyled>
 
           <div className="column">
-            <SocialLinks>
+            <SocialLinksStyled>
               {socialLinks &&
                 socialLinks.map(link => (
-                  <SocialLink key={link.url}>
+                  <SocialLinkStyled key={link.url}>
                     <Link {...link} />
-                  </SocialLink>
+                  </SocialLinkStyled>
                 ))}
-            </SocialLinks>
+            </SocialLinksStyled>
 
-            <FooterMenuTop>
+            <FooterMenuTopStyled>
               {links &&
                 links.map(link => (
-                  <FooterMenuItem key={link.url}>
+                  <FooterMenuItemStyled key={link.url}>
                     <Link {...link} />
-                  </FooterMenuItem>
+                  </FooterMenuItemStyled>
                 ))}
-            </FooterMenuTop>
+            </FooterMenuTopStyled>
           </div>
         </div>
-        <Copyrights>{copyrights}</Copyrights>
+        <CopyrightsStyled>{copyrights}</CopyrightsStyled>
 
-        <FooterMenuBottom>
+        <FooterMenuBottomStyled>
           {links2 &&
             links2.map(link => (
-              <FooterMenuItem key={link.url}>
+              <FooterMenuItemStyled key={link.url}>
                 <Link {...link} />
-              </FooterMenuItem>
+              </FooterMenuItemStyled>
             ))}
           <LangSwitcher>
             {onClickLink => (
@@ -180,7 +180,7 @@ const Footer = ({
                   alternates
                     .filter(link => !link.current)
                     .map(link => (
-                      <FooterMenuItem key={link.lang}>
+                      <FooterMenuItemStyled key={link.lang}>
                         <GatsbyLink
                           key={link.lang}
                           to={link.path}
@@ -189,12 +189,12 @@ const Footer = ({
                           {link.lang === 'fr' && 'Version française'}
                           {link.lang === 'en' && 'English version'}
                         </GatsbyLink>
-                      </FooterMenuItem>
+                      </FooterMenuItemStyled>
                     ))}
               </>
             )}
           </LangSwitcher>
-        </FooterMenuBottom>
+        </FooterMenuBottomStyled>
       </div>
     </div>
   </footer>

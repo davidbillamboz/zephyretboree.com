@@ -5,27 +5,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
-const ContactContainer = styled.div`
+const ContactContainerStyled = styled.div`
   max-width: 300px;
   margin: auto;
 `;
 
-const ContactNameRole = styled.div`
+const ContactNameRoleStyled = styled.div`
   border: 1px solid ${props => props.theme.anthracite};
   padding: 10px;
   text-align: center;
   margin-bottom: 10px;
 `;
 
-const ContactName = styled.span`
+const ContactNameStyled = styled.span`
   font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
   margin-right: 10px;
 `;
 
-const ContactRole = styled.span``;
+const ContactRoleStyled = styled.span``;
 
-const ContactMethod = styled.div`
+const ContactMethodStyled = styled.div`
   margin-bottom: 10px;
   svg {
     color: ${props => props.theme.primary};
@@ -34,20 +34,20 @@ const ContactMethod = styled.div`
 `;
 
 const Contact = ({ name, role, email, phone }) => (
-  <ContactContainer>
-    <ContactNameRole>
-      <ContactName>{name}</ContactName>
-      <ContactRole>{role}</ContactRole>
-    </ContactNameRole>
-    <ContactMethod>
+  <ContactContainerStyled>
+    <ContactNameRoleStyled>
+      <ContactNameStyled>{name}</ContactNameStyled>
+      <ContactRoleStyled>{role}</ContactRoleStyled>
+    </ContactNameRoleStyled>
+    <ContactMethodStyled>
       <FontAwesomeIcon icon={faEnvelope} />
       {email}
-    </ContactMethod>
-    <ContactMethod>
+    </ContactMethodStyled>
+    <ContactMethodStyled>
       <FontAwesomeIcon icon={faPhone} />
       {phone}
-    </ContactMethod>
-  </ContactContainer>
+    </ContactMethodStyled>
+  </ContactContainerStyled>
 );
 
 Contact.propTypes = {

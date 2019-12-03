@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 
-const TextContainer = styled.div`
+const TextContainerStyled = styled.div`
   font-size: 1rem;
   margin-bottom: 20px;
 
@@ -26,9 +26,9 @@ const TextContainer = styled.div`
 `;
 
 const Markdown = ({ content }) => (
-  <TextContainer>
+  <TextContainerStyled>
     <ReactMarkdown source={content} />
-  </TextContainer>
+  </TextContainerStyled>
 );
 
 Markdown.propTypes = {

@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Column = styled.div`
+const ColumnStyled = styled.div`
   text-align: center;
   align-content: center;
 `;
 
-const ColumnContent = styled.div`
+const ColumnContentStyled = styled.div`
   background: #ffffff;
   padding: 30px;
   width: 100%;
 `;
 
-const Icon = styled.img`
+const IconStyled = styled.img`
   width: 40px;
   height: 40px;
 `;
@@ -25,12 +25,17 @@ const IconTextColumns = ({ items }) => {
     <div className={`columns ${classColumns}`}>
       {items &&
         items.map((item, index) => (
-          <Column className="column is-flex" key={index}>
-            <ColumnContent>
-              <Icon src={item.icon.publicURL} with="40" height="40" alt="" />
+          <ColumnStyled className="column is-flex" key={index}>
+            <ColumnContentStyled>
+              <IconStyled
+                src={item.icon.publicURL}
+                with="40"
+                height="40"
+                alt=""
+              />
               <div>{item.text}</div>
-            </ColumnContent>
-          </Column>
+            </ColumnContentStyled>
+          </ColumnStyled>
         ))}
     </div>
   );

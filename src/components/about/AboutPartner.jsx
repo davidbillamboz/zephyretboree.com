@@ -5,12 +5,12 @@ import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import GatsbyImage from 'gatsby-image/withIEPolyfill';
 
-const PartnerContainer = styled.div`
+const PartnerContainerStyled = styled.div`
   background: #ffffff;
   padding: 30px;
 `;
 
-const Title = styled.h3`
+const TitleStyled = styled.h3`
   font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
   font-size: 28px;
@@ -24,7 +24,7 @@ const TextContainerStyled = styled.div`
   }
 `;
 
-const LogoContainer = styled.div`
+const LogoContainerStyled = styled.div`
   text-align: center;
   filter: grayscale(100%);
   transition: filter 0.23s ease-in;
@@ -38,7 +38,7 @@ const LogoContainer = styled.div`
   }
 `;
 
-const ImageContainer = styled.div`
+const ImageContainerStyled = styled.div`
   text-align: right;
 `;
 
@@ -53,18 +53,18 @@ const AboutPartner = ({ title, text, link, button, image, logo }) => {
   const classText = !textVisibility ? 'is-hidden-mobile' : '';
 
   return (
-    <PartnerContainer>
+    <PartnerContainerStyled>
       <div className="columns">
         <div className="column is-three-fifths">
-          <Title>{title}</Title>
+          <TitleStyled>{title}</TitleStyled>
           <TextContainerStyled>
             <ReactMarkdown source={text} className={classText} />
           </TextContainerStyled>
-          <LogoContainer>
+          <LogoContainerStyled>
             <a href={link} target="_blank" rel="noopener noreferrer">
               <GatsbyImage fixed={logo.childImageSharp.fixed} />
             </a>
-          </LogoContainer>
+          </LogoContainerStyled>
           {!textVisibility && (
             <div className="has-text-centered	is-hidden-tablet">
               <a href="#" onClick={e => toggleText(e)}>
@@ -73,11 +73,11 @@ const AboutPartner = ({ title, text, link, button, image, logo }) => {
             </div>
           )}
         </div>
-        <ImageContainer className="column is-hidden-mobile">
+        <ImageContainerStyled className="column is-hidden-mobile">
           <GatsbyImage fluid={image.childImageSharp.fluid} />
-        </ImageContainer>
+        </ImageContainerStyled>
       </div>
-    </PartnerContainer>
+    </PartnerContainerStyled>
   );
 };
 

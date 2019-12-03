@@ -5,12 +5,12 @@ import Title from '../Title';
 import SubTitle from '../SubTitle';
 import AnimatedCheck from '../AnimatedCheck';
 
-const Form = styled.form`
+const FormStyled = styled.form`
   max-width: 500px;
   margin: auto;
 `;
 
-const FormSuccessMessage = styled.div`
+const FormSuccessMessageStyled = styled.div`
   margin-top: 10px;
   text-align: center;
 `;
@@ -77,11 +77,13 @@ const ContactForm = ({
       {formSent && (
         <div>
           <AnimatedCheck />
-          <FormSuccessMessage>{messages.success}</FormSuccessMessage>
+          <FormSuccessMessageStyled>
+            {messages.success}
+          </FormSuccessMessageStyled>
         </div>
       )}
       {!formSent && (
-        <Form
+        <FormStyled
           onSubmit={handleSubmit}
           name="contact"
           method="post"
@@ -159,7 +161,7 @@ const ContactForm = ({
               </div>
             </div>
           </fieldset>
-        </Form>
+        </FormStyled>
       )}
     </>
   );

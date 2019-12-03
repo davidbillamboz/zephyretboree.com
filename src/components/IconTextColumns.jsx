@@ -14,8 +14,8 @@ const ColumnContentStyled = styled.div`
 `;
 
 const IconStyled = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
 `;
 
 const IconTextColumns = ({ items }) => {

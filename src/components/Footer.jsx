@@ -20,8 +20,7 @@ const FooterStyled = styled.footer`
 `;
 
 const LogoStyled = styled.img`
-  width: 100%;
-  max-width: 300px;
+  width: 200px;
   height: auto;
   max-height: none !important;
 

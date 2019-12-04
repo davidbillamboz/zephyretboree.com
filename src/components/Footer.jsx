@@ -3,18 +3,18 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
 import styled from 'styled-components';
-import Link from './Link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import LangSwitcher from './LangSwitcher';
 
-const LogoLinkWrapperStyled = styled.div`
-  a {
-    padding: 0 !important;
+const FooterStyled = styled.footer`
+  padding: 1rem !important;
+  color: ${props => props.theme.black};
 
-    &:focus,
-    &:focus-within,
-    &:hover,
-    &.is-active {
-      background: transparent !important;
+  a {
+    color: ${props => props.theme.black};
+    &:hover {
+      text-decoration: underline;
     }
   }
 `;
@@ -30,174 +30,106 @@ const LogoStyled = styled.img`
   }
 `;
 
-const SocialLinksStyled = styled.div`
-  justify-content: center;
-  align-items: stretch;
-  display: flex;
-
+const RightColumnStyled = styled.div`
   @media (min-width: ${props => props.theme.breakpointTablet}) {
-    justify-content: flex-end;
+    margin-top: 40px;
   }
 `;
 
-const SocialLinkStyled = styled.div`
-  display: flex;
+const LinkedinLinkStyled = styled.a`
+  font-size: 2rem;
+`;
 
-  &:not(:first-child) {
-    margin-left: 20px;
-  }
-
+const MenuStyled = styled.div`
   a {
     display: block;
-    width: 40px;
-    height: 40px;
-    font-size: 1.5em;
-    line-height: 40px;
-    border: 1px solid ${props => props.theme.blue1};
-    color: ${props => props.theme.blue1};
 
-    &:hover {
-      color: ${props => props.theme.blue1};
-      opacity: 0.5;
-    }
-
-    img {
-      width: 40px;
-      height: 40px;
-    }
-  }
-`;
-
-const FooterMenuStyled = styled.div``;
-
-const FooterMenuItemStyled = styled.div`
-  display: flex;
-`;
-
-const FooterMenuTopStyled = styled(FooterMenuStyled)`
-  display: flex;
-  margin-top: 20px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
-    justify-content: flex-end;
-  }
-
-  ${FooterMenuItemStyled} {
-
-    &:not(:first-child) {
-      margin-left: 20px;
-    }
-
-    a {
-    color: #ffffff;
-
-    &:hover {
-      color: ${props => props.theme.blue1};
-    }
-  }
-`;
-
-const FooterMenuBottomStyled = styled(FooterMenuStyled)`
-  margin-top: 20px;
-  align-items: stretch;
-  display: flex;
-  justify-content: center;
-
-  ${FooterMenuItemStyled} {
-    &:not(:first-child) {
-      margin-left: 20px;
-    }
-
-    a {
-    color: ${props => props.theme.blue1};
-
-    &:hover {
-      color: #ffffff;
+    @media (min-width: ${props => props.theme.breakpointTablet}) {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 0.6rem;
+      }
     }
   }
 `;
 
 const CopyrightsStyled = styled.p`
   cursor: default;
-  color: ${props => props.theme.blue1};
-  margin-bottom: 0 !important;
+  font-size: 0.8rem;
 `;
 
 const Footer = ({
   logo,
-  socialLinks,
+  linkedinUrl,
   links,
-  copyrights,
   links2,
+  copyrights,
   alternates,
 }) => (
-  <footer className="footer">
+  <FooterStyled className="footer">
     <div className="container">
-      <div className="content has-text-centered">
+      <div className="content">
         <div className="columns">
-          <LogoLinkWrapperStyled className="column is-one-third">
-            <GatsbyLink to={logo.url} className="navbar-item">
-              <LogoStyled src="/images/logo_horizontal_white.png" alt="" />
+          <div className="column is-one-third has-text-centered-mobile">
+            <GatsbyLink to={logo.url}>
+              <LogoStyled src="/images/logo_horizontal_black.svg" alt="" />
             </GatsbyLink>
-          </LogoLinkWrapperStyled>
+          </div>
 
-          <div className="column">
-            <SocialLinksStyled>
-              {socialLinks &&
-                socialLinks.map(link => (
-                  <SocialLinkStyled key={link.url}>
-                    <Link {...link} />
-                  </SocialLinkStyled>
-                ))}
-            </SocialLinksStyled>
-
-            <FooterMenuTopStyled>
+          <RightColumnStyled className="column has-text-centered-mobile has-text-right-tablet">
+            <MenuStyled>
               {links &&
                 links.map(link => (
-                  <FooterMenuItemStyled key={link.url}>
-                    <Link {...link} />
-                  </FooterMenuItemStyled>
+                  <GatsbyLink key={link.url} to={link.url}>
+                    {link.title}
+                  </GatsbyLink>
                 ))}
-            </FooterMenuTopStyled>
-          </div>
-        </div>
-        <CopyrightsStyled>{copyrights}</CopyrightsStyled>
+            </MenuStyled>
 
-        <FooterMenuBottomStyled>
-          {links2 &&
-            links2.map(link => (
-              <FooterMenuItemStyled key={link.url}>
-                <Link {...link} />
-              </FooterMenuItemStyled>
-            ))}
-          <LangSwitcher>
-            {onClickLink => (
-              <>
-                {alternates &&
-                  alternates
-                    .filter(link => !link.current)
-                    .map(link => (
-                      <FooterMenuItemStyled key={link.lang}>
-                        <GatsbyLink
-                          key={link.lang}
-                          to={link.path}
-                          onClick={e => onClickLink(e, link.lang, link.path)}
-                        >
-                          {link.lang === 'fr' && 'Version française'}
-                          {link.lang === 'en' && 'English version'}
-                        </GatsbyLink>
-                      </FooterMenuItemStyled>
-                    ))}
-              </>
-            )}
-          </LangSwitcher>
-        </FooterMenuBottomStyled>
+            <MenuStyled>
+              {links2 &&
+                links2.map(link => (
+                  <GatsbyLink key={link.url} to={link.url}>
+                    {link.title}
+                  </GatsbyLink>
+                ))}
+              <LangSwitcher>
+                {onClickLink => (
+                  <>
+                    {alternates &&
+                      alternates
+                        .filter(link => !link.current)
+                        .map(link => (
+                          <GatsbyLink
+                            key={link.lang}
+                            to={link.path}
+                            onClick={e => onClickLink(e, link.lang, link.path)}
+                          >
+                            {link.lang === 'fr' && 'Version française'}
+                            {link.lang === 'en' && 'English version'}
+                          </GatsbyLink>
+                        ))}
+                  </>
+                )}
+              </LangSwitcher>
+            </MenuStyled>
+            <div>
+              <LinkedinLinkStyled
+                href={linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+              </LinkedinLinkStyled>
+            </div>
+          </RightColumnStyled>
+        </div>
+        <CopyrightsStyled className="has-text-centered">
+          {copyrights}
+        </CopyrightsStyled>
       </div>
     </div>
-  </footer>
+  </FooterStyled>
 );
 
 Footer.propTypes = {
@@ -212,15 +144,7 @@ Footer.propTypes = {
     url: PropTypes.string.isRequired,
   }).isRequired,
   copyrights: PropTypes.string.isRequired,
-  socialLinks: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-      icon: PropTypes.shape({
-        publicURL: PropTypes.string.isRequired,
-      }).isRequired,
-    })
-  ).isRequired,
+  linkedinUrl: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -247,13 +171,7 @@ export const query = graphql`
           url
         }
         copyrights
-        socialLinks {
-          title
-          url
-          icon {
-            publicURL
-          }
-        }
+        linkedinUrl
         links {
           title
           url

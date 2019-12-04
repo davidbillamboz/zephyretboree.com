@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
+import Icon from './Icon';
 
 const Link = ({ url, icon, title, ...rest }) => {
   const fixedUrl = `${url === 'home' ? '' : url}`;
@@ -10,12 +11,12 @@ const Link = ({ url, icon, title, ...rest }) => {
     <>
       {isExternal && (
         <a href={fixedUrl} target="_blank" rel="noopener noreferrer">
-          {icon ? <img src={icon.publicURL} alt={title} /> : title}
+          {icon ? <img src={`/images/icon_${icon}.svg`} alt={title} /> : title}
         </a>
       )}
       {!isExternal && (
         <GatsbyLink to={fixedUrl} {...rest}>
-          {icon ? <img src={icon.publicURL} alt={title} /> : title}
+          {icon ? <Icon name={icon} /> : title}
         </GatsbyLink>
       )}
     </>
@@ -25,9 +26,7 @@ const Link = ({ url, icon, title, ...rest }) => {
 Link.propTypes = {
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  icon: PropTypes.shape({
-    publicURL: PropTypes.string.isRequired,
-  }),
+  icon: PropTypes.string,
 };
 
 Link.defaultProps = {

@@ -71,9 +71,7 @@ export const pageQuery = graphql`
           text
           columns {
             text
-            icon {
-              publicURL
-            }
+            icon
           }
           image {
             childImageSharp {

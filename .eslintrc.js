@@ -23,6 +23,8 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/no-array-index-key': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
+    'jsx-a11y/alt-text': 'off',
   },
   settings: {
     'import/core-modules': [],

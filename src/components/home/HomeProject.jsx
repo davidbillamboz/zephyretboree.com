@@ -13,6 +13,10 @@ const ProjectStyled = styled.div`
   img {
     width: 100%;
     height: auto;
+
+    @media (min-width: ${props => props.theme.breakpointTablet}) {
+      max-width: auto;
+    }
   }
 
   h4 {

@@ -28,9 +28,9 @@ canopee:
   text: Baptisé Canopée, le navire que nous avons conçu répond à un cahier des charges particulièrement complexe compte tenu des exigences techniques dictées par le transport du lanceur Ariane 6 ainsi que des contraintes nautiques liées à l’accès au port de Pariacabo en Guyane.
   columns:
     - text: Equipé de quatre ailes articulées de 375 m²
-      icon: /images/icon_sail.svg
+      icon: sail
     - text: Equipé d’un moteur dual fuel Diesel - GNL
-      icon: /images/icon_gearing.svg
+      icon: gearing
   image: /images/page_ariane6_canopee_schema.jpg
   progressBar:
     value: "35"

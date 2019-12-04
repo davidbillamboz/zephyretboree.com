@@ -17,11 +17,11 @@ hero:
 presentation:
   services:
     - text: Des solutions sur mesure pour vos besoins de transport
-      icon: /images/icon_pencil.svg
+      icon: pencil
     - text: Pionniers du transport à la voile
-      icon: /images/icon_sail.svg
+      icon: sail
     - text: Un service R&D qui vise un transport zéro-carbone à terme
-      icon: /images/icon_gearing.svg
+      icon: gearing
 # News
 news: 
   title: Notre actualité

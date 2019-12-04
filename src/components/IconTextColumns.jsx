@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Icon from './Icon';
 
 const ColumnStyled = styled.div`
   text-align: center;
@@ -13,7 +14,7 @@ const ColumnContentStyled = styled.div`
   width: 100%;
 `;
 
-const IconStyled = styled.img`
+const IconStyled = styled(Icon)`
   width: 70px;
   height: 70px;
 `;
@@ -27,12 +28,7 @@ const IconTextColumns = ({ items }) => {
         items.map((item, index) => (
           <ColumnStyled className="column is-flex" key={index}>
             <ColumnContentStyled>
-              <IconStyled
-                src={item.icon.publicURL}
-                with="40"
-                height="40"
-                alt=""
-              />
+              <IconStyled name={item.icon} with="40" height="40" alt="" />
               <div>{item.text}</div>
             </ColumnContentStyled>
           </ColumnStyled>
@@ -44,9 +40,7 @@ const IconTextColumns = ({ items }) => {
 IconTextColumns.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      icon: PropTypes.shape({
-        publicURL: PropTypes.string.isRequired,
-      }).isRequired,
+      icon: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
     })
   ).isRequired,

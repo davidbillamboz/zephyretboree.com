@@ -31,9 +31,9 @@ canopee:
     the access to the port of Pariacabo in Guiana.
   columns:
   - text: Equipped with four articulated wing-sails of 363 square meters each
-    icon: "/images/icon_sail.svg"
+    icon: sail
   - text: Equipped with dual engine diesel/LNG
-    icon: "/images/icon_gearing.svg"
+    icon: gearing
   image: "/images/page_ariane6_canopee_schema.jpg"
   progressBar:
     value: "35"

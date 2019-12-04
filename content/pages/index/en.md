@@ -8,7 +8,7 @@ metadata:
 hero:
   image: /images/page_home_hero.jpg
   catchline: >-
-    <span>sail</span> <span>shipping</span><br><span>company</span>  
+    <span class="color-1">sail</span> <span class="color-2">shipping</span><br><span class="color-3">company</span>  
   text: Zéphyr & Borée designs and operates innovative vessels to offer low carbon transport services
   button:
     title: Discover our services
@@ -17,11 +17,11 @@ hero:
 presentation:
   services:
     - text: Custom solutions adapted to your transport needs
-      icon: /images/icon_pencil.svg
+      icon: pencil
     - text: Pioneers in modern sail shipping
-      icon: /images/icon_sail.svg
+      icon: sail
     - text: R&D service aiming at carbon neutral transport
-      icon: /images/icon_gearing.svg
+      icon: gearing
 # News
 news: 
   title: Latest updates

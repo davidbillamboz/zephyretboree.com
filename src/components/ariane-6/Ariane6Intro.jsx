@@ -19,12 +19,14 @@ const PartnerColumnStyled = styled.div`
 
 const PartnerImageContainerStyled = styled.div`
   padding: 0.5rem;
-  width: 100%;
   filter: grayscale(100%);
   transition: filter 0.23s;
+  width: 100%;
+  max-width: 100px;
+  margin-top: 1rem;
 
-  &:hover {
-    filter: none;
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    width: 70%;
   }
 
   img {

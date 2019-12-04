@@ -11,6 +11,7 @@ const HomeHeroStyled = styled.section`
   height: 100vh !important;
   min-height: 500px !important;
   margin: -${outerBorderSize}rem;
+  margin-bottom: -${outerBorderSize * 2}rem;
 `;
 
 const BackgroundImageStyled = styled(GatsbyBackgroundImage)`
@@ -126,14 +127,14 @@ const BorderBottomStyled = styled(BorderStyled)`
   left: 0;
   right: 0;
   bottom: 0;
-  height: ${outerBorderSize + outerBorderSize / 2}rem;
+  height: ${outerBorderSize * 2}rem;
   width: 100%;
   padding: 0 ${outerBorderSize}rem;
 `;
 
 const BorderBottomBisStyled = styled.div`
   width: 100%;
-  height: ${outerBorderSize / 2}rem;
+  height: ${outerBorderSize}rem;
   background: ${props => props.theme.anthracite};
 `;
 

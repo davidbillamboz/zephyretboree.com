@@ -178,6 +178,7 @@ const SliderLineStyled = styled.div`
 `;
 
 const SliderStyled = styled(ReactSlider)`
+  user-select: none;
   position: absolute;
   top: 0;
   left: 0;

@@ -5,13 +5,14 @@ import GatsbyImage from 'gatsby-image/withIEPolyfill';
 import ReactMarkdown from 'react-markdown';
 import Title from '../Title';
 import SubTitle from '../SubTitle';
+import Icon from '../Icon';
 
 const FirstColumnStyled = styled.div`
   background: #ffffff;
   padding: 30px;
 `;
 
-const Image1Styled = styled.img`
+const Image1Styled = styled(Icon)`
   display: block;
   margin: auto;
 `;
@@ -35,7 +36,7 @@ const AboutOrigins = ({
     <div className="columns">
       <div className="column">
         <FirstColumnStyled>
-          <Image1Styled src={icon.publicURL} alt="" width="85" />
+          <Image1Styled name={icon} width="85" />
           <ReactMarkdown source={text1} />
         </FirstColumnStyled>
       </div>
@@ -53,9 +54,7 @@ const AboutOrigins = ({
 AboutOrigins.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
-  icon: PropTypes.shape({
-    publicURL: PropTypes.string.isRequired,
-  }).isRequired,
+  icon: PropTypes.string.isRequired,
   text1: PropTypes.string.isRequired,
   text2: PropTypes.string.isRequired,
   image: PropTypes.shape({

@@ -67,9 +67,7 @@ export const pageQuery = graphql`
           url
         }
         services {
-          icon {
-            publicURL
-          }
+          icon
           title
           text
           tags

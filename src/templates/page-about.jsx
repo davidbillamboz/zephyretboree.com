@@ -97,9 +97,7 @@ export const pageQuery = graphql`
         origins {
           title
           subTitle
-          icon {
-            publicURL
-          }
+          icon
           text1
           text2
           image {
@@ -117,9 +115,7 @@ export const pageQuery = graphql`
           text
           values {
             title
-            icon {
-              publicURL
-            }
+            icon
             text
           }
         }

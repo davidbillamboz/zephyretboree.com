@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Icon from '../Icon';
 
 const ContainerStyled = styled.div`
   background: #ffffff;
@@ -16,7 +17,7 @@ const TitleStyled = styled.h3`
   text-align: center;
 `;
 
-const IconStyled = styled.img`
+const IconStyled = styled(Icon)`
   display: block;
   margin: auto;
   width: 85px;
@@ -27,16 +28,14 @@ const TextStyled = styled.div``;
 const AboutValue = ({ title, icon, text }) => (
   <ContainerStyled>
     <TitleStyled>{title}</TitleStyled>
-    <IconStyled src={icon.publicURL} alt="" width="40" height="40" />
+    <IconStyled name={icon} width="40" height="40" />
     <TextStyled dangerouslySetInnerHTML={{ __html: text }} />
   </ContainerStyled>
 );
 
 AboutValue.propTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.shape({
-    publicURL: PropTypes.string.isRequired,
-  }).isRequired,
+  icon: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
 };
 

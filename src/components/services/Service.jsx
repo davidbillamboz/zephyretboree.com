@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
 import styled from 'styled-components';
 import ServiceTag from './ServiceTag';
+import Icon from '../Icon';
 
 const ServiceTitleStyled = styled.h4`
   font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
@@ -53,19 +54,18 @@ const Service = ({ contactButton, icon, title, text, tags }) => (
   <ServiceStyled className="media">
     <figure className="media-left is-hidden-mobile">
       <p className="image is-64x64">
-        <img src={icon.publicURL} width="40" height="40" alt="" />
+        <Icon name={icon} width="40" height="40" />
       </p>
     </figure>
     <div className="media-content">
       <div className="content">
         <div className="icon-title is-flex-mobile">
           <div className="image is-64x64">
-            <img
+            <Icon
+              name={icon}
               className="is-hidden-tablet"
-              src={icon.publicURL}
               width="40"
               height="40"
-              alt=""
             />
           </div>
           <ServiceTitleStyled>{title}</ServiceTitleStyled>
@@ -94,9 +94,7 @@ Service.propTypes = {
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
   }).isRequired,
-  icon: PropTypes.shape({
-    publicURL: PropTypes.string.isRequired,
-  }).isRequired,
+  icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,

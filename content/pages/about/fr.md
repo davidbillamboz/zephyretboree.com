@@ -73,7 +73,7 @@ questions:
 origins:
   title: À propos
   subTitle: Nos origines
-  icon: /images/icon_co2.svg
+  icon: co2
   text1: >-
     **90%** des échanges de marchandises dans le monde transitent par voie maritime sur **45 000 cargos**. Faisant de l’industrie du transport maritime une importante source de pollution
   text2: Le projet Zéphyr & Borée est né en 2014 de ce constat et de la volonté de faire évoluer le modèle énergétique des navires de commerce pour réduire l’impact environnemental du shipping en utilisant des énergies renouvelables et des technologies bas-carbones. Rapidement la propulsion éolienne nous est apparue comme une des solutions les plus concrètes, efficaces, et matures parmi les alternatives au fuel.
@@ -86,11 +86,11 @@ values:
   text: "Notre ambition est de contribuer activement à la transition énergétique du transport maritime. Nous ne considérons pas la rentabilité de l’entreprise comme la finalité mais le moyen de participer à cette transition. Concrètement, les projets développés par Zéphyr & Borée répondent toujours à une double condition : être économiquement viables pour nos investisseurs et nos clients et participer activement à la décarbonation du transport maritime. Au delà de l’activité principale de l’entreprise, nous sommes aussi attachés à organiser la vie quotidienne de celle-ci autour de valeurs permettant de rendre l’entreprise vertueuse pour la société."
   values: 
     - title: Environnement
-      icon: /images/icon_co2.svg
+      icon: co2
       text: Nous tentons de réduire notre impact environnemental dans notre organisation quotidienne. Nous ne prenons jamais de vols intérieurs, nous limitons nos déplacements, nous privilégions des partenaires partageant ces engagements. Nous sommes éclairés au bureau par le fournisseur d’électricité renouvelable Enercoop. 
     - title: Impact social  et gestion financière
-      icon: /images/icon_impact.svg
+      icon: impact
       text: Nous pratiquons au sein de l’entreprise une gouvernance qui donne une place à chacun. Nous déployons une politique financière éthique, fondée sur une gestion équitable et transparente.
     - title: Transparence
-      icon: /images/icon_transparency.svg
+      icon: transparency
       text: Nous sommes convaincus que la transparence des entreprises est primordiale pour travailler en confiance avec nos clients, nos employés et nos partenaires. Nos clients en font l’expérience, nous construisons les projets de manière collaborative et transparente.

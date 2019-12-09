@@ -27,5 +27,5 @@ fields:
   name: content
   label: content
 pages:
-- content/pages/legal/en.md
 - content/pages/legal/fr.md
+- content/pages/legal/en.md

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import GatsbyBackgroundImage from 'gatsby-background-image';
 import GatsbyLink from 'gatsby-link';
+import { useSpring, useChain, animated } from 'react-spring';
 
 const outerBorderSize = 0.5;
 
@@ -19,6 +20,12 @@ const BackgroundImageStyled = styled(GatsbyBackgroundImage)`
   height: 100%;
 `;
 
+const BackgroundBorderStyled = styled(animated.div)`
+  width: 100%;
+  height: 100%;
+  border: 0 solid #ffffff;
+`;
+
 const ContainerStyled = styled.div`
   position: absolute;
   width: 100%;
@@ -28,7 +35,7 @@ const ContainerStyled = styled.div`
   padding: 1rem;
 `;
 
-const CatchlineStyled = styled.div`
+const CatchlineStyled = styled(animated.div)`
   font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
   line-height: 100%;
@@ -55,7 +62,7 @@ const CatchlineStyled = styled.div`
   }
 `;
 
-const TextStyled = styled.div`
+const TextStyled = styled(animated.div)`
   color: ${props => props.theme.anthracite};
   font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
@@ -75,7 +82,7 @@ const TextStyled = styled.div`
   }
 `;
 
-const ButtonWrapperStyled = styled.div`
+const ButtonWrapperStyled = styled(animated.div)`
   position: absolute;
   width: 100%;
   left: 0;
@@ -94,71 +101,73 @@ const ButtonStyled = styled(GatsbyLink)`
   }
 `;
 
-const BorderStyled = styled.div`
-  position: absolute;
-  background: ${props => props.theme.white};
-`;
+const HomeHero = ({ image, catchline, text, button }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
 
-const BorderLeftStyled = styled(BorderStyled)`
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: ${outerBorderSize}rem;
-  height: 100%;
-`;
+  const borderRef = useRef();
+  const borderStyleProps = useSpring({
+    ref: borderRef,
+    from: { borderWidth: 0 },
+    to: { borderWidth: imageLoaded ? 10 : 0 },
+  });
 
-const BorderTopStyled = styled(BorderStyled)`
-  left: 0;
-  right: 0;
-  top: 0;
-  height: ${outerBorderSize}rem;
-  width: 100%;
-`;
+  const catchlineRef = useRef();
+  const catchlineStyleProps = useSpring({
+    ref: catchlineRef,
+    from: { transform: 'translateX(-30%)', opacity: 0 },
+    to: { transform: 'translateX(0)', opacity: imageLoaded ? 1 : 0 },
+  });
 
-const BorderRightStyled = styled(BorderStyled)`
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: ${outerBorderSize}rem;
-  height: 100%;
-`;
+  const textRef = useRef();
+  const textStyleProps = useSpring({
+    ref: textRef,
+    from: { opacity: 0 },
+    to: { opacity: imageLoaded ? 1 : 0 },
+  });
 
-const BorderBottomStyled = styled(BorderStyled)`
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: ${outerBorderSize * 2}rem;
-  width: 100%;
-  padding: 0 ${outerBorderSize}rem;
-`;
+  const buttonRef = useRef();
+  const buttonStyleProps = useSpring({
+    ref: buttonRef,
+    from: { transform: 'translateY(30%)', opacity: 0 },
+    to: { transform: 'translateY(0)', opacity: 1 },
+  });
 
-const BorderBottomBisStyled = styled.div`
-  width: 100%;
-  height: ${outerBorderSize}rem;
-  background: ${props => props.theme.anthracite};
-`;
+  const onImageLoad = () => {
+    setTimeout(() => {
+      setImageLoaded(true);
+    }, 1000);
+  };
 
-const HomeHero = ({ image, catchline, text, button }) => (
-  <HomeHeroStyled className="hero is-fullheight-with-navbar">
-    <BackgroundImageStyled fluid={image.childImageSharp.fluid}>
-      <ContainerStyled>
-        <CatchlineStyled dangerouslySetInnerHTML={{ __html: catchline }} />
-        <TextStyled>{text}</TextStyled>
-      </ContainerStyled>
-      <ButtonWrapperStyled>
-        <ButtonStyled className="button" to={button.url}>
-          {button.title}
-        </ButtonStyled>
-      </ButtonWrapperStyled>
-    </BackgroundImageStyled>
-    <BorderLeftStyled />
-    <BorderTopStyled />
-    <BorderRightStyled />
-    <BorderBottomStyled>
-      <BorderBottomBisStyled />
-    </BorderBottomStyled>
-  </HomeHeroStyled>
-);
+  useChain([
+    { current: borderRef.current },
+    { current: catchlineRef.current },
+    { current: textRef.current },
+    { current: buttonRef.current },
+  ]);
+
+  return (
+    <HomeHeroStyled className="hero is-fullheight-with-navbar">
+      <BackgroundImageStyled
+        fluid={image.childImageSharp.fluid}
+        onLoad={onImageLoad}
+      >
+        <BackgroundBorderStyled style={borderStyleProps} />
+        <ContainerStyled>
+          <CatchlineStyled
+            style={catchlineStyleProps}
+            dangerouslySetInnerHTML={{ __html: catchline }}
+          />
+          <TextStyled style={textStyleProps}>{text}</TextStyled>
+        </ContainerStyled>
+        <ButtonWrapperStyled style={buttonStyleProps}>
+          <ButtonStyled className="button" to={button.url}>
+            {button.title}
+          </ButtonStyled>
+        </ButtonWrapperStyled>
+      </BackgroundImageStyled>
+    </HomeHeroStyled>
+  );
+};
 
 HomeHero.propTypes = {
   image: PropTypes.shape({

@@ -48,50 +48,48 @@ services:
 simulator:
   title: Simulateur
   subTitle: Développer des projets adaptés à vos priorités
-  text: En fonction de vos priorités, il est possible de privilégier l’utilisation de la propulsion mécanique conventionnelle ou bien celle des énergies décarbonnées. Ce choix impacte directement les différents critères de performances de votre service de transport.
+  text: Depending on your priorities, you can prioritize either traditional mechanical propulsion or the one coming from low-carbon power sources. This choice has a direct impact on the different performance criteria of your transport solution.
   sliderConfig:
+    defaultValue: 50
     min: 
       value: 30
-      title: Moteur
+      title: Engine
     max: 
       value: 70
-      title: Voile
+      title: Sail
   valuesConfig:
     - name: delay
-      title: Respect des délais
+      title: Timely delivery
       min: 80
       max: 80
     - name: speed
-      title: Vitesse
+      title: Operating speed
       min: 40
       max: 80
     - name: emissions
-      title: Réduction des émissions polluantes
+      title: Reduction of polluting emissions
       min: 70
       max: 30
     - name: price
-      title: Prix
+      title: Price
       min: 80
       max: 50
   propulsions:
-    - title: Propulsion mécanique Diesel
-      text: En privilégiant une vitesse d’exploitation et des prix similaires à ceux du marché, les économies de CO2 sont d’environ 30% selon les spécificités de la ligne maritime (géographie, statistiques de vent).
+    - text: By prioritizing operating speed and prices comparable to the average on the market, the CO2 savings will vary around 30%, depending on the specificities of particular maritime connection (the geographic zone and the wind statistics).
       valuesText:
-        delay: Nos délais sont garantis quelle que soit la configuration choisie
-        speed: Vitesse similaire à celle d'un navire classique à propulsion mécanique
-        emissions: Réduction de 30% en moyenne des émissions polluantes
-        price: Prix similaires à ceux d'un navire conventionnel à propulsion mécanique
-    - title: Propulsion mixte
-      text: En faisant un compromis, il est possible de réduire significativement les émissions polluantes (de l’ordre de 50%) en faisant des concessions raisonnables sur la vitesse et le prix du transport. En réduisant la vitesse, les économies de carburant sont certes plus importantes, mais la quantité de marchandise transportée sur une période donnée est plus faible, obligeant à augmenter le prix du transport pour couvrir les coûts d’exploitation.
+        delay: Our delays are guaranteed regardless of the chosen configuration
+        speed: Operating speed comparable to the vessel with traditional mechanical propulsion
+        emissions: Reduction by around 30%
+        price: Prices comparable to the vessel with traditional mechanical propulsion
+    - text: It is possible to cut-off significantly polluting emissions (by 50%) by making reasonable concessions when it comes to the operating speed and the transport price. By limiting the speed, the fuel savings are much more important, but the amount of transported goods during a particular period is lower. As a consequence, transport prices will raise to cover the operating costs.
       valuesText: 
-        delay: Nos délais sont garantis quelle que soit la configuration choisie
-        speed: Vitesse légèrement réduite
-        emissions: Réduction d'environ 50%
-        price: Prix légèrement supérieurs à ceux du marché
-    - title: Propulsion bas-carbone
-      text: Si la réduction de votre emprunte environnementale prime avant tout, alors nous pouvons vous proposer un service de transport très bas carbone, avec une réduction d’environ 70% des émissions de gaz polluants, au prix d’une vitesse de transport plus faible (environ 10 noeuds) et un prix plus élevés que ceux du marché.
+        delay: Our delays are guaranteed regardless of the chosen configuration
+        speed: Operating speed slightly
+        emissions: Reduction by around 50%
+        price: Prices slightly higher than the market ones
+    - text: If the reduction of the environmental impact is your priority, we can propose very low carbon transport solutions, with a 70% reduction of polluting emissions, at the expense of a lower operating speed (10 knots) and higher transport costs.
       valuesText: 
-        delay: Nos délais sont garantis quelle que soit la configuration choisie
-        speed: Vitesse réduite
-        emissions: Réduction de 70% en moyenne des émissions polluantes
-        price: Prix  supérieurs à ceux du marché
+        delay: Our delays are guaranteed regardless of the chosen configuration
+        speed: Reduced operating speed
+        emissions: Reduction by around 70%
+        price: Prices above the market ones

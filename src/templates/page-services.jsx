@@ -83,6 +83,7 @@ export const pageQuery = graphql`
           subTitle
           text
           sliderConfig {
+            defaultValue
             min {
               value
               title
@@ -99,7 +100,6 @@ export const pageQuery = graphql`
             max
           }
           propulsions {
-            title
             text
             valuesText {
               delay

@@ -40,8 +40,7 @@ const ServicesSimulator = ({
   valuesConfig,
   propulsions,
 }) => {
-  const sliderDefaultValue = sliderConfig.min.value;
-  const [sliderValue, setSliderValue] = useState(sliderDefaultValue);
+  const [sliderValue, setSliderValue] = useState(sliderConfig.defaultValue);
 
   const range = Math.abs(sliderConfig.max.value - sliderConfig.min.value);
   const ratio = (sliderValue - sliderConfig.min.value) / range;
@@ -78,7 +77,7 @@ const ServicesSimulator = ({
       </div>
 
       <Slider
-        defaultValue={sliderDefaultValue}
+        defaultValue={sliderValue}
         onChange={setSliderValue}
         min={sliderConfig.min.value}
         max={sliderConfig.max.value}
@@ -107,6 +106,7 @@ ServicesSimulator.propTypes = {
   subTitle: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   sliderConfig: PropTypes.shape({
+    defaultValue: PropTypes.number.isRequired,
     min: PropTypes.shape({
       value: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,

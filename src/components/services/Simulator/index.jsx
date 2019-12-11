@@ -6,6 +6,7 @@ import SubTitle from '../../SubTitle';
 import Markdown from '../../Markdown';
 import PropulsionDetail from './PropulsionDetail';
 import Slider from './Slider';
+import FadeTransition from './FadeTransition';
 
 const PropulsionDetailsStyled = styled.div`
   background: #fff;
@@ -27,6 +28,16 @@ const SliderTitleStyled = styled.div`
 
   @media (min-width: ${props => props.theme.breakpointTablet}) {
     font-size: 1rem;
+  }
+`;
+
+const PropulsionTextWrapperStyled = styled.div`
+  position: relative;
+  overflow: hidden;
+
+  .fade-exit {
+    position: absolute;
+    top: 0;
   }
 `;
 
@@ -88,14 +99,19 @@ const ServicesSimulator = ({
           <PropulsionDetail
             key={name}
             title={valueTitle}
+            propulsionId={currentPropulsion}
             text={propulsions[currentPropulsion].valuesText[name]}
             value={values[name]}
           />
         ))}
 
-        <PropulsionTextStyled>
-          {propulsions[currentPropulsion].text}
-        </PropulsionTextStyled>
+        <PropulsionTextWrapperStyled>
+          <FadeTransition id={currentPropulsion} withTranslationY>
+            <PropulsionTextStyled>
+              {propulsions[currentPropulsion].text}
+            </PropulsionTextStyled>
+          </FadeTransition>
+        </PropulsionTextWrapperStyled>
       </PropulsionDetailsStyled>
     </>
   );

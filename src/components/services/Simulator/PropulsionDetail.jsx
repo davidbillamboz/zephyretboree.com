@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import FadeTransition from './FadeTransition';
 
 const ProgressBarStyled = styled.progress`
   width: 100% !important;
@@ -34,21 +35,33 @@ const ValueColumnStyled = styled.div`
   }
 `;
 
+const TextWrapperStyled = styled.div`
+  margin-top: 0.5rem;
+  height: 2rem;
+  position: relative;
+  overflow: hidden;
+
+  .fade-exit {
+    position: absolute;
+    top: 0;
+  }
+`;
+
 const TextStyled = styled.div`
+  width: 100%;
+  height: 100%;
   font-style: italic;
   font-size: 0.8rem;
   text-align: left;
-  margin-top: 0.5rem;
   color: #858585;
   line-height: 100%;
-  height: 2rem;
 
   @media (min-width: ${props => props.theme.breakpointTablet}) {
     font-size: 0.9rem;
   }
 `;
 
-const PropulsionDetail = ({ title, text, value }) => (
+const PropulsionDetail = ({ propulsionId, title, text, value }) => (
   <div className="columns">
     <TitleColumnStyled className="column is-narrow">{title}</TitleColumnStyled>
     <ValueColumnStyled className="column">
@@ -59,12 +72,17 @@ const PropulsionDetail = ({ title, text, value }) => (
       >
         {value}%
       </ProgressBarStyled>
-      <TextStyled>{text}</TextStyled>
+      <TextWrapperStyled>
+        <FadeTransition id={propulsionId} withTranslationX>
+          <TextStyled>{text}</TextStyled>
+        </FadeTransition>
+      </TextWrapperStyled>
     </ValueColumnStyled>
   </div>
 );
 
 PropulsionDetail.propTypes = {
+  propulsionId: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,

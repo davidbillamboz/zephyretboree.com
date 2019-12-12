@@ -138,5 +138,5 @@ fields:
       name: text
       label: text
 pages:
-- content/pages/about/fr.md
 - content/pages/about/en.md
+- content/pages/about/fr.md

@@ -10,9 +10,12 @@ const BORDER_SIZE = 10;
 const HomeHeroStyled = styled.section`
   position: relative;
   height: 100vh !important;
-  min-height: 500px !important;
   margin: -${BORDER_SIZE}px;
   margin-bottom: -${BORDER_SIZE * 2}px;
+  min-height: 500px !important;
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    min-height: 700px !important;
+  }
 `;
 
 const BackgroundImageStyled = styled(GatsbyBackgroundImage)`

@@ -8,18 +8,23 @@ import SubTitle from '../SubTitle';
 
 const ImageContainerStyled = styled.div`
   position: relative;
+`;
 
-  .button-container {
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-    width: 100%;
+const ButtonContainerStyled = styled.div`
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  width: 100%;
 
-    @media (min-width: ${props => props.theme.breakpointTablet}) {
-      bottom: -20px;
-    }
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    bottom: -20px;
   }
+`;
+
+const ButtonStyled = styled(GatsbyLink)`
+  font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
+  border: none !important;
 `;
 
 const HomeNews = ({ title, subTitle, image, button }) => (
@@ -28,20 +33,20 @@ const HomeNews = ({ title, subTitle, image, button }) => (
     <SubTitle>{subTitle}</SubTitle>
     <ImageContainerStyled className="has-text-centered">
       <GatsbyImage fluid={image.childImageSharp.fluid} />
-      <div className="button-container">
-        <GatsbyLink
+      <ButtonContainerStyled className="button-container">
+        <ButtonStyled
           to={button.url}
           className="button is-primary is-hidden-tablet"
         >
           {button.title}
-        </GatsbyLink>
-        <GatsbyLink
+        </ButtonStyled>
+        <ButtonStyled
           to={button.url}
           className="button is-primary is-large is-hidden-mobile"
         >
           {button.title}
-        </GatsbyLink>
-      </div>
+        </ButtonStyled>
+      </ButtonContainerStyled>
     </ImageContainerStyled>
   </>
 );

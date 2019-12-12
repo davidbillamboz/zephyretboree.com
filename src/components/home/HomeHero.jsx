@@ -103,10 +103,16 @@ const ButtonStyled = styled(GatsbyLink)`
   font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
   margin-top: 4rem;
   font-size: 1rem;
+  border: none !important;
+  color: ${({ theme }) => theme.anthracite} !important;
 
   @media (min-width: ${props => props.theme.breakpointTablet}) {
     margin-top: 8rem;
     font-size: 1.5rem !important;
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.blue2} !important;
   }
 `;
 

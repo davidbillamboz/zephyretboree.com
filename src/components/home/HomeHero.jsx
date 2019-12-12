@@ -1,22 +1,38 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import GatsbyBackgroundImage from 'gatsby-background-image';
 import GatsbyLink from 'gatsby-link';
+import { useSpring, useChain, animated } from 'react-spring';
 
-const outerBorderSize = 0.5;
+const BORDER_SIZE = 10;
 
 const HomeHeroStyled = styled.section`
   position: relative;
   height: 100vh !important;
   min-height: 500px !important;
-  margin: -${outerBorderSize}rem;
-  margin-bottom: -${outerBorderSize * 2}rem;
+  margin: -${BORDER_SIZE}px;
+  margin-bottom: -${BORDER_SIZE * 2}px;
 `;
 
 const BackgroundImageStyled = styled(GatsbyBackgroundImage)`
   width: 100%;
   height: 100%;
+`;
+
+const BackgroundBorderStyled = styled(animated.div)`
+  width: 100%;
+  height: 100%;
+  border: 0 solid #ffffff;
+`;
+
+const BackgroundBorderBottomStyled = styled(animated.div)`
+  position: absolute;
+  background-color: ${props => props.theme.anthracite};
+  bottom: ${BORDER_SIZE}px;
+  left: ${BORDER_SIZE}px;
+  right: ${BORDER_SIZE}px;
+  height: ${BORDER_SIZE}px;
 `;
 
 const ContainerStyled = styled.div`
@@ -28,7 +44,7 @@ const ContainerStyled = styled.div`
   padding: 1rem;
 `;
 
-const CatchlineStyled = styled.div`
+const CatchlineStyled = styled(animated.div)`
   font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
   line-height: 100%;
@@ -55,7 +71,7 @@ const CatchlineStyled = styled.div`
   }
 `;
 
-const TextStyled = styled.div`
+const TextStyled = styled(animated.div)`
   color: ${props => props.theme.anthracite};
   font-family: 'ZephyrEtBoree', 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
@@ -75,7 +91,7 @@ const TextStyled = styled.div`
   }
 `;
 
-const ButtonWrapperStyled = styled.div`
+const ButtonWrapperStyled = styled(animated.div)`
   position: absolute;
   width: 100%;
   left: 0;
@@ -94,71 +110,79 @@ const ButtonStyled = styled(GatsbyLink)`
   }
 `;
 
-const BorderStyled = styled.div`
-  position: absolute;
-  background: ${props => props.theme.white};
-`;
+const HomeHero = ({ image, catchline, text, button }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
 
-const BorderLeftStyled = styled(BorderStyled)`
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: ${outerBorderSize}rem;
-  height: 100%;
-`;
+  const spring1Ref = useRef();
+  const spring1Props = useSpring({
+    ref: spring1Ref,
+    from: { borderWidth: 0, bottom: -BORDER_SIZE },
+    to: {
+      borderWidth: imageLoaded ? BORDER_SIZE : 0,
+      bottom: imageLoaded ? BORDER_SIZE : 0,
+    },
+  });
 
-const BorderTopStyled = styled(BorderStyled)`
-  left: 0;
-  right: 0;
-  top: 0;
-  height: ${outerBorderSize}rem;
-  width: 100%;
-`;
+  const spring2Ref = useRef();
+  const spring2Props = useSpring({
+    ref: spring2Ref,
+    from: { transform: 'translateX(-30%)', opacity: 0 },
+    to: { transform: 'translateX(0)', opacity: 1 },
+  });
 
-const BorderRightStyled = styled(BorderStyled)`
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: ${outerBorderSize}rem;
-  height: 100%;
-`;
+  const spring3Ref = useRef();
+  const spring3Props = useSpring({
+    ref: spring3Ref,
+    from: { transform: 'translateX(30%)', opacity: 0 },
+    to: { transform: 'translateX(0)', opacity: 1 },
+  });
 
-const BorderBottomStyled = styled(BorderStyled)`
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: ${outerBorderSize * 2}rem;
-  width: 100%;
-  padding: 0 ${outerBorderSize}rem;
-`;
+  const spring4Ref = useRef();
+  const spring4Props = useSpring({
+    ref: spring4Ref,
+    from: { transform: 'translateY(30%)', opacity: 0 },
+    to: { transform: 'translateY(0)', opacity: 1 },
+  });
 
-const BorderBottomBisStyled = styled.div`
-  width: 100%;
-  height: ${outerBorderSize}rem;
-  background: ${props => props.theme.anthracite};
-`;
+  const onImageLoad = () => {
+    setTimeout(() => {
+      setImageLoaded(true);
+    }, 1000);
+  };
 
-const HomeHero = ({ image, catchline, text, button }) => (
-  <HomeHeroStyled className="hero is-fullheight-with-navbar">
-    <BackgroundImageStyled fluid={image.childImageSharp.fluid}>
-      <ContainerStyled>
-        <CatchlineStyled dangerouslySetInnerHTML={{ __html: catchline }} />
-        <TextStyled>{text}</TextStyled>
-      </ContainerStyled>
-      <ButtonWrapperStyled>
-        <ButtonStyled className="button" to={button.url}>
-          {button.title}
-        </ButtonStyled>
-      </ButtonWrapperStyled>
-    </BackgroundImageStyled>
-    <BorderLeftStyled />
-    <BorderTopStyled />
-    <BorderRightStyled />
-    <BorderBottomStyled>
-      <BorderBottomBisStyled />
-    </BorderBottomStyled>
-  </HomeHeroStyled>
-);
+  useChain([
+    { current: spring1Ref.current },
+    { current: spring2Ref.current },
+    { current: spring3Ref.current },
+    { current: spring4Ref.current },
+  ]);
+
+  return (
+    <HomeHeroStyled className="hero is-fullheight-with-navbar">
+      <BackgroundImageStyled
+        fluid={image.childImageSharp.fluid}
+        onLoad={onImageLoad}
+      >
+        <BackgroundBorderStyled
+          style={{ borderWidth: spring1Props.borderWidth }}
+        />
+        <BackgroundBorderBottomStyled style={{ bottom: spring1Props.bottom }} />
+        <ContainerStyled>
+          <CatchlineStyled
+            style={spring2Props}
+            dangerouslySetInnerHTML={{ __html: catchline }}
+          />
+          <TextStyled style={spring3Props}>{text}</TextStyled>
+        </ContainerStyled>
+        <ButtonWrapperStyled style={spring4Props}>
+          <ButtonStyled className="button" to={button.url}>
+            {button.title}
+          </ButtonStyled>
+        </ButtonWrapperStyled>
+      </BackgroundImageStyled>
+    </HomeHeroStyled>
+  );
+};
 
 HomeHero.propTypes = {
   image: PropTypes.shape({

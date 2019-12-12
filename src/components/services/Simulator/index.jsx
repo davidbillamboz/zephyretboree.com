@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
+import FlipNumbers from 'react-flip-numbers';
 import Title from '../../Title';
 import SubTitle from '../../SubTitle';
 import Markdown from '../../Markdown';
@@ -25,9 +26,33 @@ const SliderTitleStyled = styled.div`
   color: ${props => props.theme.blue2};
   font-weight: bold;
   font-size: 0.9rem;
+  line-height: 1rem;
 
   @media (min-width: ${props => props.theme.breakpointTablet}) {
     font-size: 1rem;
+    line-height: 1.5rem;
+  }
+`;
+
+const SliderTitleValueStyled = styled.span`
+  color: ${props => props.theme.anthracite};
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+`;
+
+const FlipNumbersWrapperStyled = styled.div`
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  margin-left: 0.5rem;
+  transform: scale(0.9);
+
+  span {
+    font-weight: bold;
+  }
+
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    transform: scale(1);
   }
 `;
 
@@ -51,6 +76,7 @@ const ServicesSimulator = ({
   valuesConfig,
   propulsions,
 }) => {
+  const theme = useContext(ThemeContext);
   const [sliderValue, setSliderValue] = useState(sliderConfig.defaultValue);
 
   const range = Math.abs(sliderConfig.max.value - sliderConfig.min.value);
@@ -72,6 +98,9 @@ const ServicesSimulator = ({
     return accumulator;
   }, {});
 
+  const engineValue = 100 - sliderValue;
+  const sailValue = sliderValue;
+
   return (
     <>
       <Title>{title}</Title>
@@ -81,9 +110,37 @@ const ServicesSimulator = ({
       <div className="columns is-mobile">
         <SliderTitleStyled className="column">
           {sliderConfig.min.title}
+          <SliderTitleValueStyled>
+            <FlipNumbersWrapperStyled>
+              <FlipNumbers
+                width={11}
+                height={13}
+                color={theme.anthracite}
+                background="transparent"
+                play
+                perspective={100}
+                numbers={String(engineValue)}
+              />
+            </FlipNumbersWrapperStyled>
+            %
+          </SliderTitleValueStyled>
         </SliderTitleStyled>
         <SliderTitleStyled className="column has-text-right">
           {sliderConfig.max.title}
+          <SliderTitleValueStyled>
+            <FlipNumbersWrapperStyled>
+              <FlipNumbers
+                width={11}
+                height={13}
+                color={theme.anthracite}
+                background="transparent"
+                play
+                perspective={100}
+                numbers={String(sailValue)}
+              />
+            </FlipNumbersWrapperStyled>
+            %
+          </SliderTitleValueStyled>
         </SliderTitleStyled>
       </div>
 

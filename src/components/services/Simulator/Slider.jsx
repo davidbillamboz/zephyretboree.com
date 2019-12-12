@@ -12,7 +12,7 @@ const THUMB_WIDTH = 20;
 const STEP_WIDTH = 2;
 const INTERNAL_STEP_WIDTH = 1;
 
-const EXTERNAL_STEP_HEIGHT_PERCENTAGE = 80;
+const EXTERNAL_STEP_HEIGHT_PERCENTAGE = 60;
 const INTERNAL_STEP_HEIGHT_PERCENTAGE = 60;
 
 const ThumbStyled = styled.div`
@@ -114,10 +114,10 @@ const SliderStepsStyled = styled.div`
     &:last-child:after {
       position: absolute;
       right: 0;
-      top: 0;
+      top: ${(100 - EXTERNAL_STEP_HEIGHT_PERCENTAGE) / 2}%;
+      height: ${EXTERNAL_STEP_HEIGHT_PERCENTAGE}%;
       display: block;
       content: '';
-      height: 100%;
       background: ${props => props.theme.grayDark};
       width: ${STEP_WIDTH_MOBILE}px;
 

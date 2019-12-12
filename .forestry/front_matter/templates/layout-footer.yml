@@ -5,7 +5,6 @@ fields:
 - type: text
   name: title
   label: title
-  hidden: true
 - type: field_group
   name: logo
   label: logo
@@ -16,19 +15,9 @@ fields:
 - type: text
   name: copyrights
   label: copyrights
-- type: field_group_list
-  name: socialLinks
-  label: socialLinks
-  fields:
-  - type: text
-    name: title
-    label: title
-  - type: text
-    name: url
-    label: url
-  - type: file
-    name: icon
-    label: icon
+- type: text
+  name: linkedinUrl
+  label: linkedinUrl
 - type: field_group_list
   name: links
   label: links
@@ -50,5 +39,5 @@ fields:
     name: url
     label: url
 pages:
-- content/layout/footer/en.md
-- content/layout/footer/fr.md
+  - content/layout/footer/en.md
+  - content/layout/footer/fr.md

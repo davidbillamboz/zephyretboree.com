@@ -5,11 +5,9 @@ fields:
 - type: text
   name: title
   label: title
-  hidden: true
 - type: text
   name: slug
   label: slug
-  hidden: true
 - type: field_group
   name: metadata
   label: metadata
@@ -47,7 +45,7 @@ fields:
   name: services
   label: services
   fields:
-  - type: file
+  - type: text
     name: icon
     label: icon
   - type: text
@@ -59,3 +57,85 @@ fields:
   - type: list
     name: tags
     label: tags
+- type: field_group
+  name: simulator
+  label: simulator
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: subTitle
+    label: subTitle
+  - type: textarea
+    name: text
+    label: text
+  - type: field_group
+    name: sliderConfig
+    label: sliderConfig
+    fields:
+    - type: number
+      name: defaultValue
+      label: defaultValue
+    - type: field_group
+      name: min
+      label: min
+      fields:
+      - type: number
+        name: value
+        label: value
+      - type: text
+        name: title
+        label: title
+    - type: field_group
+      name: max
+      label: max
+      fields:
+      - type: number
+        name: value
+        label: value
+      - type: text
+        name: title
+        label: title
+  - type: field_group_list
+    name: valuesConfig
+    label: valuesConfig
+    fields:
+    - type: text
+      name: name
+      label: name
+    - type: text
+      name: title
+      label: title
+    - type: number
+      name: min
+      label: min
+    - type: number
+      name: max
+      label: max
+  - type: field_group_list
+    name: propulsions
+    label: propulsions
+    fields:
+    - type: textarea
+      name: text
+      label: text
+    - type: field_group
+      name: valuesText
+      label: valuesText
+      fields:
+      - type: text
+        name: delay
+        label: delay
+      - type: text
+        name: speed
+        label: speed
+      - type: text
+        name: emissions
+        label: emissions
+      - type: text
+        name: price
+        label: price
+pages:
+- content/pages/services/en.md
+- content/pages/services/fr.md

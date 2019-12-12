@@ -5,7 +5,6 @@ fields:
 - type: text
   name: title
   label: title
-  hidden: true
 - type: field_group
   name: metadata
   label: metadata
@@ -23,18 +22,22 @@ fields:
   - type: file
     name: image
     label: image
-  - type: text
-    name: text1
-    label: text1
-  - type: text
-    name: text2
-    label: text2
-  - type: text
-    name: text3
-    label: text3
-  - type: text
+  - type: textarea
+    name: catchline
+    label: catchline
+  - type: textarea
     name: text
     label: text
+  - type: field_group
+    name: button
+    label: button
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: text
+      name: url
+      label: url
 - type: field_group
   name: presentation
   label: presentation
@@ -46,19 +49,9 @@ fields:
     - type: text
       name: text
       label: text
-    - type: file
+    - type: text
       name: icon
       label: icon
-  - type: field_group_list
-    name: buttons
-    label: buttons
-    fields:
-    - type: text
-      name: title
-      label: title
-    - type: text
-      name: url
-      label: url
 - type: field_group
   name: news
   label: news
@@ -106,11 +99,11 @@ fields:
       name: text
       label: text
     - type: file
-      name: imageDesktop
-      label: imageDesktop
+      name: imageHorizontal
+      label: imageHorizontal
     - type: file
-      name: imageMobile
-      label: imageMobile
+      name: imageVertical
+      label: imageVertical
 pages:
-- content/pages/index/en.md
-- content/pages/index/fr.md
+  - content/pages/index/en.md
+  - content/pages/index/fr.md      

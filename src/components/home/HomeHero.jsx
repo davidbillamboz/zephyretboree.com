@@ -5,14 +5,14 @@ import GatsbyBackgroundImage from 'gatsby-background-image';
 import GatsbyLink from 'gatsby-link';
 import { useSpring, useChain, animated } from 'react-spring';
 
-const outerBorderSize = 0.5;
+const BORDER_SIZE = 10;
 
 const HomeHeroStyled = styled.section`
   position: relative;
   height: 100vh !important;
   min-height: 500px !important;
-  margin: -${outerBorderSize}rem;
-  margin-bottom: -${outerBorderSize * 2}rem;
+  margin: -${BORDER_SIZE}px;
+  margin-bottom: -${BORDER_SIZE * 2}px;
 `;
 
 const BackgroundImageStyled = styled(GatsbyBackgroundImage)`
@@ -24,6 +24,15 @@ const BackgroundBorderStyled = styled(animated.div)`
   width: 100%;
   height: 100%;
   border: 0 solid #ffffff;
+`;
+
+const BackgroundBorderBottomStyled = styled(animated.div)`
+  position: absolute;
+  background-color: ${props => props.theme.anthracite};
+  bottom: ${BORDER_SIZE}px;
+  left: ${BORDER_SIZE}px;
+  right: ${BORDER_SIZE}px;
+  height: ${BORDER_SIZE}px;
 `;
 
 const ContainerStyled = styled.div`
@@ -104,30 +113,33 @@ const ButtonStyled = styled(GatsbyLink)`
 const HomeHero = ({ image, catchline, text, button }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const borderRef = useRef();
-  const borderStyleProps = useSpring({
-    ref: borderRef,
-    from: { borderWidth: 0 },
-    to: { borderWidth: imageLoaded ? 10 : 0 },
+  const spring1Ref = useRef();
+  const spring1Props = useSpring({
+    ref: spring1Ref,
+    from: { borderWidth: 0, bottom: -BORDER_SIZE },
+    to: {
+      borderWidth: imageLoaded ? BORDER_SIZE : 0,
+      bottom: imageLoaded ? BORDER_SIZE : 0,
+    },
   });
 
-  const catchlineRef = useRef();
-  const catchlineStyleProps = useSpring({
-    ref: catchlineRef,
+  const spring2Ref = useRef();
+  const spring2Props = useSpring({
+    ref: spring2Ref,
     from: { transform: 'translateX(-30%)', opacity: 0 },
-    to: { transform: 'translateX(0)', opacity: imageLoaded ? 1 : 0 },
+    to: { transform: 'translateX(0)', opacity: 1 },
   });
 
-  const textRef = useRef();
-  const textStyleProps = useSpring({
-    ref: textRef,
-    from: { opacity: 0 },
-    to: { opacity: imageLoaded ? 1 : 0 },
+  const spring3Ref = useRef();
+  const spring3Props = useSpring({
+    ref: spring3Ref,
+    from: { transform: 'translateX(30%)', opacity: 0 },
+    to: { transform: 'translateX(0)', opacity: 1 },
   });
 
-  const buttonRef = useRef();
-  const buttonStyleProps = useSpring({
-    ref: buttonRef,
+  const spring4Ref = useRef();
+  const spring4Props = useSpring({
+    ref: spring4Ref,
     from: { transform: 'translateY(30%)', opacity: 0 },
     to: { transform: 'translateY(0)', opacity: 1 },
   });
@@ -139,10 +151,10 @@ const HomeHero = ({ image, catchline, text, button }) => {
   };
 
   useChain([
-    { current: borderRef.current },
-    { current: catchlineRef.current },
-    { current: textRef.current },
-    { current: buttonRef.current },
+    { current: spring1Ref.current },
+    { current: spring2Ref.current },
+    { current: spring3Ref.current },
+    { current: spring4Ref.current },
   ]);
 
   return (
@@ -151,15 +163,18 @@ const HomeHero = ({ image, catchline, text, button }) => {
         fluid={image.childImageSharp.fluid}
         onLoad={onImageLoad}
       >
-        <BackgroundBorderStyled style={borderStyleProps} />
+        <BackgroundBorderStyled
+          style={{ borderWidth: spring1Props.borderWidth }}
+        />
+        <BackgroundBorderBottomStyled style={{ bottom: spring1Props.bottom }} />
         <ContainerStyled>
           <CatchlineStyled
-            style={catchlineStyleProps}
+            style={spring2Props}
             dangerouslySetInnerHTML={{ __html: catchline }}
           />
-          <TextStyled style={textStyleProps}>{text}</TextStyled>
+          <TextStyled style={spring3Props}>{text}</TextStyled>
         </ContainerStyled>
-        <ButtonWrapperStyled style={buttonStyleProps}>
+        <ButtonWrapperStyled style={spring4Props}>
           <ButtonStyled className="button" to={button.url}>
             {button.title}
           </ButtonStyled>

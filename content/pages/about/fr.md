@@ -71,7 +71,7 @@ questions:
       d’exploitation et le type de navire. A partir des performances prévisionnelles
       du navire calculées par notre bureau d’étude et les statistiques météorologiques
       des années précédentes, nous pouvons évaluer les économies moyennes réalisables
-      en fonction des zones géographique et des saisons.              '
+      en fonction des zones géographiques et des saisons.              '
 origins:
   title: À propos
   subTitle: Nos origines

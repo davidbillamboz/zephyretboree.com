@@ -56,7 +56,7 @@ questions:
     text: "**Non**, les navires à voile que nous développons sont équipés d’une propulsion
       mixte, voile + moteur. La vitesse du navire reste donc constante et nous garantissons
       les même vitesses de transport qu’un navire «conventionnel» à moteur avec la
-      diminution de la consommation d'énergie fossil en plus."
+      diminution de la consommation d'énergie fossile en plus."
   - title: Si le vent n’est pas favorable, le navire est-il en retard ?
     text: "**Non**, lorsque les conditions de vent changent, c’est le ratio d’utilisation
       des voiles et du moteur qui varie, mais les délais de transport sont respectés

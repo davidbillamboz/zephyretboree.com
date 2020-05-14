@@ -105,5 +105,5 @@ fields:
       name: imageVertical
       label: imageVertical
 pages:
-  - content/pages/index/en.md
-  - content/pages/index/fr.md      
+- content/pages/index/en.md
+- content/pages/index/fr.md

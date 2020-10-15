@@ -32,7 +32,7 @@ canopee:
   columns:
   - text: Equipped with four articulated wing-sails of 363 square meters each
     icon: sail
-  - text: Equipped with dual engine diesel/LNG
+  - text: IMO tier III marine engine
     icon: gearing
   image: "/images/page_ariane6_canopee_schema.jpg"
   progressBar:

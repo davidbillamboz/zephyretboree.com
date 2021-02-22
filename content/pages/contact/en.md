@@ -37,6 +37,6 @@ press:
   subTitle: Do you want to talk about Zéphyr & Borée?
   buttonDownload:
     title: Download the press kit
-    url: https://drive.google.com/file/d/1o0nL637Sd7-nvSHadaxyeQurt-_D58GF/view?usp=sharing
+    url: https://drive.google.com/drive/folders/1WCPHZSGmbL_lqW8mEfhaK5Sq-uPk68rN?usp=sharing
 
 ---
